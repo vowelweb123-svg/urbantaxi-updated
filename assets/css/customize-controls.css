@@ -1,0 +1,31 @@
+.control-section-urbantaxi h3.accordion-section-title {
+  line-height: 30px;
+}
+#customize-theme-controls .control-panel-themes>.accordion-section-title, 
+#customize-theme-controls .control-panel-themes>.accordion-section-title:hover{
+  margin: 0;
+}
+.control-section-urbantaxi h3.accordion-section-title a{
+  float: right;
+}
+input#_customize-input-logo_size{
+  width: 100%;
+}
+#customize-controls .customize-pane-parent{
+  overflow-x: hidden;
+}
+#customize-theme-controls .accordion-section-title:has(a):after{
+  display: none !important;
+}
+.accordion-section-title button.accordion-trigger{
+  height: auto !important;
+}
+.urbantaxi-customizer-heading {
+  color: #2271b1;
+  padding: 10px;
+  background: #fff;
+  margin: 0;
+  border-left: solid 5px #2271b1;
+  font-size: 14px;
+  font-weight: 600;
+}

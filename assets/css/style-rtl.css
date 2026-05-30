@@ -1,0 +1,259 @@
+body{
+    overflow-x: hidden;
+}
+.taxi-slider-banner-social-box {
+    position: absolute;
+    right: 5%;
+    left: unset;
+}
+.urbantaxi-car-thumbs {
+    left: -100px;
+    right: unset;
+}
+.utcb-post-content-block .utcb-taxi-meta .utcb-km-price{
+    text-align: right !important;
+}
+.taxi-road-svg-box {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+.urbantaxi-footer-social-box .ekit_social_media{
+    text-align: right;
+}
+#urbantaxi-footer-main-section .urbantaxi-footer-menu-box li:after, #urbantaxi-footer-main-section .urbantaxi-footer-service-box li:after{
+    right: -10px;
+	left: unset;
+}
+.taxi-faq-left-image-box{
+    right: 30px;
+}
+.urbantaxi-meta-author{
+    padding: 5px 5px 5px 15px;
+}
+.taxi-get-service-car-image-box {
+    left: 0;
+    right: unset;
+}
+.pp-tm .pp-tm-name{
+    text-align: right;
+}
+.urbantaxi-button-box .elementor-button-content-wrapper,.post-query-item .post-read-more-btn,.post-read-more-btn{
+    flex-direction: row-reverse;
+}
+.urbantaxi-car-stage,.taxi-speed-main-image{
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+.urbantaxi-thumb img {
+    right: 20px;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+.taxi-check-availability-road-box{
+    right: -25%;
+    left: unset;
+    top: -10px;
+}
+.taxi-speed-content-box-one,.taxi-speed-content-box-two,.taxi-speed-content-box-four,.taxi-speed-content-box-three,.taxi-speed-content-box-five,.taxi-get-service-car-image-box{
+/*     flex-direction: row-reverse !important; */
+	-webkit-transform: scaleX(-1) !important;
+    transform: scaleX(-1);
+}
+.taxi-speed-content-inner-box-one,.taxi-speed-content-inner-box-three {
+	flex-direction: row-reverse !important;
+}
+.taxi-speed-content-inner-box-one .taxi-speed-content-box,.taxi-speed-content-inner-box-two .taxi-speed-content-box,.taxi-speed-content-inner-box-four .taxi-speed-content-box,.taxi-speed-content-inner-box-three .taxi-speed-content-box,.taxi-speed-content-inner-box-five .taxi-speed-content-box{
+    -webkit-transform: scaleX(-1) !important;
+    transform: scaleX(-1);
+}
+.taxi-speed-content-box-five{
+	left: 90px;
+    right: unset;
+}
+.taxi-speed-content-inner-box-four .taxi-speed-image-box{
+    justify-content: end;
+}
+.utcb-post-content-block .post-read-more-wrapper{
+	justify-content: right;
+}    
+.taxi-content-box-one .taxi-check-count-box {
+    position: relative;
+    left: 40px;
+}
+.taxi-content-box-two .taxi-check-count-box {
+    position: absolute;
+    transform: rotate(-40deg);
+    bottom: -155%;
+    right: -37%;
+    width: fit-content;
+}
+.taxi-content-box-three .taxi-check-count-box {
+    position: absolute;
+    width: fit-content;
+    right: unset;
+    transform: rotate(-20deg);
+    bottom: 140%;
+    left: 0;
+}
+.taxi-content-box-four .taxi-check-count-box {
+    position: absolute;
+    right: -30%;
+    transform: rotate(-55deg);
+    bottom: -110%;
+}
+.taxi-content-box-two .taxi-check-title-box {
+    position: absolute;
+    left: 45%;
+    transform: rotate(-41deg);
+    bottom: -195px;
+}
+.taxi-content-box-three .taxi-check-title-box {
+    position: absolute;
+    right: 50%;
+    transform: rotate(-22deg);
+    bottom: 120%;
+}
+.taxi-content-box-four .taxi-check-title-box {
+    position: absolute;
+    left: 55%;
+    transform: rotate(-50deg);
+    bottom: -95%;
+}
+.taxi-moving-car-box {
+	offset-path: unset;
+	top: 40px;
+	width: 150px !important;
+	right: 22%;
+	transform: rotate(180deg);
+}
+.taxi-slider-form-outer-box {
+    position: absolute;
+    top: -15%;
+    right: unset;
+    left: 0;
+    z-index: 2;
+}
+.utcb-title-list .utcb-title-heading{
+    text-align: right !important;
+}
+.taxi-check-availability-container-box {
+    left: 0%;
+}
+.urbantaxi-imported.home .elementor-icon-box-wrapper {
+    align-items: center !important;
+}
+.urbantaxi-imported .elementor-icon-box-wrapper {
+    align-items: start !important;
+}
+.urbantaxi-imported .elementor-icon-box-wrapper{
+    flex-direction: row !important;
+    text-align: end !important;
+    width: fit-content !important;
+}
+.urbantaxi-imported .urbantaxi-grid-container .urbantaxi-blog-title{
+    text-align: right !important;
+}
+.urbantaxi-imported .urbantaxi-grid-container .urbantaxi-blog-excerpt{
+    text-align: right !important;
+}
+
+@media screen and (max-width: 1366px){
+	.urbantaxi-car-thumbs{
+		left: 0;
+	}
+}
+@media screen and (max-width: 1120px) and (min-width: 1025px) {
+    .taxi-content-box-one .taxi-check-title-box {
+		top: 42px;
+        transform: rotate(-15deg);
+        left: -50px;
+    }
+	.taxi-content-box-two .taxi-check-title-box {
+		left: 25%;
+		transform: rotate(-26deg);
+		bottom: -155px;
+    }
+	.taxi-content-box-three .taxi-check-title-box {
+		right: 80%;
+		transform: rotate(-42deg);
+		bottom: 30%;
+    }
+	.taxi-content-box-four .taxi-check-title-box {
+		left: 30%;
+		transform: rotate(-53deg);
+		bottom: -125%;
+    }
+}
+@media screen and (max-width: 1024px) and (min-width: 992px) {
+    .taxi-content-box-one .taxi-check-title-box {
+        top: 28px;
+        left: 20px;
+        transform: rotate(-5deg);
+    }
+	.taxi-content-box-two .taxi-check-title-box {
+   	 	position: absolute;
+		left: 12%;
+		transform: rotate(-41deg);
+		bottom: -270px;
+	}
+	.taxi-content-box-three .taxi-check-title-box {
+		position: absolute;
+		right: 40%;
+		transform: rotate(-25deg);
+		bottom: 118%;
+	}
+	.taxi-content-box-four .taxi-check-title-box {
+		position: absolute;
+		left: 28%;
+		transform: rotate(-54deg);
+		bottom: -90%;
+	}
+	.taxi-moving-car-box {
+        offset-path: unset;
+        top: 40px;
+        width: 150px !important;
+        right: 22%;
+        transform: rotate(180deg);
+    }
+}
+
+@media screen and (max-width: 991px) and (min-width: 768px){
+	.taxi-speed-content-box-five {
+        position: relative;
+        top: 95px;
+        left: 45px;
+    }
+	.taxi-speed-content-inner-box-five .taxi-speed-content-box{
+		padding-left: 0px;
+		padding-right: 10px !important;
+	}
+	.taxi-speed-content-inner-box-five .taxi-speed-image-box{
+		align-self: start !important;
+	}
+}
+@media screen and (max-width: 767px){
+	.urbantaxi-car-thumbs{
+		left: 0;
+		right: 0;
+	}
+}
+
+
+
+
+
+/* moving car */
+.taxi-moving-car-box {
+    position: absolute;
+    bottom: 0;
+    offset-path: path('M1108.2 43.4979C999.004 4.72794 709.698 -42.5799 426.024 78.3469C156.378 200.319 44.8631 361.933 0.863586 437.294') !important;
+    animation: moveCar 4s linear infinite reverse;
+}
+.taxi-moving-car-box {
+    offset-path: unset;
+    top: 40px;
+    width: 150px !important;
+    right: 7%;
+    transform: rotate(180deg);
+    left: -50%;
+}

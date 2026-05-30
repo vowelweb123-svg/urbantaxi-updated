@@ -1,0 +1,5472 @@
+/*
+Theme Name: Urbantaxi
+Description: Urbantaxi is a modern taxi and transportation WordPress theme designed for cab services, airport transfers, chauffeur companies, and ride-booking businesses. It features a bold, professional design with Elementor page-builder support, one-click demo import, custom transportation post types, location taxonomy, responsive layouts, RTL support, and full WordPress Customizer integration.
+Author: Vowel Web
+Theme URI: https://www.vowelweb.com/
+Author URI: https://www.vowelweb.com/
+Version: 1.0.0
+Requires PHP: 7.4
+Tested up to: 6.8
+Requires at least: 5.0
+Text Domain: urbantaxi
+Tags: left-sidebar, right-sidebar, custom-background, custom-colors, custom-logo, custom-menu, custom-header, featured-images, full-width-template, one-column, two-columns, theme-options, translation-ready, rtl-language-support, blog, portfolio, e-commerce
+License: GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+*/
+
+:root {
+  --urbantaxi-primary-theme-color: #FDC702;
+  --urbantaxi-secondary-theme-color: #ffffff;
+  --urbantaxi-tertiary-theme-color: #0B0B0B;
+  --urbantaxi-quaternary-theme-color: #111317;
+  --urbantaxi-light-yellow: #40381A;
+  --urbantaxi-font-family: "Roboto";
+  --urbantaxi-primary-font-family: "Lexend";
+}
+.axi-wrapper,
+.axicab-wrapper,
+[class*="axi"] {
+   --color_theme: var(--urbantaxi-primary-theme-color) !important;
+}
+/* Roboto */
+@font-face {
+  font-family: 'Roboto';
+  src: url('fonts/roboto/Roboto-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Roboto';
+  src: url('fonts/roboto/Roboto-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Roboto';
+  src: url('fonts/roboto/Roboto-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+/* Lexend */
+@font-face {
+  font-family: 'Lexend';
+  src: url('fonts/lexend/Lexend-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Lexend';
+  src: url('fonts/lexend/Lexend-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Lexend';
+  src: url('fonts/lexend/Lexend-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+.screen-reader-text {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  width: 1px;
+  word-wrap: normal !important;
+  -webkit-transition: none;
+  -moz-transition: none;
+  -o-transition: none;
+  transition: none;
+}
+.screen-reader-text:focus {
+  background-color: #f1f1f1;
+  border-radius: 3px;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  clip: auto !important;
+  clip-path: none;
+  color: #21759b;
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000;
+}
+#content[tabindex="-1"]:focus {
+  outline: 0;
+}
+body {
+  font-family: var(--urbantaxi-font-family);
+  background: #0B0B0B;
+  margin: 0;
+  overflow-x: hidden;
+}
+h1,
+h6 {
+  margin: 0;
+}
+.wp-block-search__label {
+  font: 600 32px/42px var(--urbantaxi-font-family);
+  margin: 0;
+}
+h3 {
+  margin: 0;
+}
+h4 {
+  margin: 0;
+}
+h5 {
+  font: 400 18px/28px var(--urbantaxi-font-family);
+  margin: 0;
+}
+p {
+  color: #fff;
+}
+#content .post-single p {
+  margin-bottom: 10px;
+}
+#content .wp-block-cover p{
+  color: var(--urbantaxi-secondary-theme-color) !important;
+}
+a {
+  color: var(--urbantaxi-secondary-theme-color);
+  -webkit-transition: color 0.1s linear;
+  -moz-transition: color 0.1s linear;
+  -o-transition: color 0.1s linear;
+  transition: color 0.1s linear;
+}
+.urbantaxi-imported a:focus-visible,.urbantaxi-imported a:visited {
+  text-decoration: none;
+}
+a:focus-visible,#main-menu ul li:focus-visible,#main-menu ul li a:focus-visible,.ue-nav-menu-mobile svg:focus-visible,.hfe-site-logo a:focus-visible,.search-icon-box:focus-visible,.search-widget-icon-box:focus-visible,.hfe-nav-menu li a:focus-visible,.sidebar-widget li a:focus-visible,.navigation.pagination a:focus-visible,.post-social-icon-box .sidebar-widget a:focus-visible, .urbantaxi-sidebar-com-box .sidebar-widget a:focus-visible {
+  outline: 2px solid var(--urbantaxi-secondary-theme-color);
+  outline-offset: 4px;
+}
+.pp-accordion-item .pp-accordion-tab-title:focus-visible {
+  outline: 2px solid var(--urbantaxi-primary-theme-color);
+  outline-offset: -4px;
+}
+.hfe-site-logo a:focus-visible img,.hfe-site-logo a:focus-visible img,#uc_nav_menu_elementor_5d56b76 .ue-menu > li > .sub-menu li a:focus-visible {
+  box-shadow: 0 0 0 3px var(--urbantaxi-secondary-theme-color);
+  border-radius: 4px;
+}
+.hfe-site-logo-container{
+  display: flex;
+}
+.urbantaxi-post-date, .urbantaxi-post-comments{
+  color: var(--urbantaxi-secondary-theme-color);
+}
+.e-n-accordion-item:focus-visible,.elementor-widget-n-accordion .e-n-accordion-item:focus-visible,.post-query-carousel .slick-dots.custom-dots li:focus-visible,.e-n-accordion-item-title:focus-visible,button[tabindex="-1"]:focus-visible {
+  border-radius: 6px;
+}
+.page-single{
+  margin-bottom: 40px;
+}
+.page-single.type-page a {
+  text-decoration: underline;
+}
+.page-single a,
+.sidebar-area .textwidget a,
+.comment-content a,
+#tab-description a,
+.extra-home-content a {
+  text-decoration: none;
+  color: var(--urbantaxi-primary-theme-color);
+}
+.post-content a {
+  color: var(--urbantaxi-secondary-theme-color);
+  text-decoration: underline;
+}
+.post-content a:hover,
+.post-content a:focus {
+  text-decoration: none;
+}
+.wp-block-button__link {
+  color: var(--urbantaxi-secondary-theme-color) !important;
+}
+.has-large-font-size {
+  line-height: 35px;
+}
+.sidebar-widget .textwidget,.sidebar-widget.widget_tag_urbantaxi a{
+  color: var(--urbantaxi-secondary-theme-color);
+}
+.sidebar-widget a{
+  text-decoration: underline;
+  color: var(--urbantaxi-secondary-theme-color);
+}
+/* ===============================================
+   HEADER BOX
+   ============================================= */
+#menu-topbar-menu.ue-menu a{
+  padding: 4px 0px;
+}
+#urbantaxi-header-button-box{
+  position: relative;
+}
+#urbantaxi-header-button-box:after{
+  content: '';
+  position: absolute;
+  background: var(--urbantaxi-secondary-theme-color);
+  width: 600px;
+  height: 100%;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+}
+.header-icon p {
+  word-break: break-all;
+}
+.phone-number i,
+.location-text i {
+  color: var(--urbantaxi-tertiary-theme-color);
+}
+.phone-number a span,
+.location-text a {
+  color: var(--urbantaxi-secondary-theme-color);
+  font-size: 15px;
+  font-weight: 500;
+}
+.top-header .adv-text {
+  color: var(--urbantaxi-secondary-theme-color);
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0px;
+}
+.header-icon i {
+  background: var(--urbantaxi-tertiary-theme-color);
+  padding: 10px;
+  font-size: 20px;
+  border-radius: 5px;
+  color: var(--urbantaxi-secondary-theme-color);
+}
+.header-icon a {
+  color: var(--urbantaxi-tertiary-theme-color);
+}
+.current_page_item a{
+  position: relative;
+}
+.current_page_item a:after{
+  content: "";
+  z-index: 2;
+  position: absolute;
+  background: var(--urbantaxi-primary-theme-color);
+  width: 60%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+/* ===============================================LOGO BOX============================================= */
+.logo a {
+  color: var(--urbantaxi-primary-theme-color);
+  font-size: 20px;
+  line-height: 20px;
+  text-decoration: none;
+  -webkit-transition: color 0.1s linear;
+  -moz-transition: color 0.1s linear;
+  -o-transition: color 0.1s linear;
+  transition: color 0.1s linear;
+  font-weight: 600;
+  word-break: break-all;
+  font-family: var(--urbantaxi-font-family) !important;
+  padding: 5px;
+}
+.logo span {
+  display: block;
+  font-size: 14px;
+  line-height: 18px;
+  color: var(--urbantaxi-secondary-theme-color);
+  word-break: break-all;
+}
+/* ===============================================
+MENU BOX
+============================================= */
+.header-main-box{
+  padding: 10px 0px;
+}
+#main-menu {
+  display: block;
+  position: relative;
+}
+#main-menu ul {
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+#main-menu ul li {
+  position: relative;
+  display: block;
+  float: left;
+  text-align: left;
+}
+#main-menu ul li a {
+  display: block;
+  z-index: 1;
+  font-size: 15px;
+  color: var(--urbantaxi-secondary-theme-color);
+  line-height: 1.5;
+  font-weight: 500;
+  text-transform: capitalize;
+  margin: 3px 10px;
+  padding: 5px;
+}
+#main-menu .sub-menu li a:hover::after {
+  display: none;
+}
+#main-menu a:hover,
+#main-menu ul li a:hover,
+#main-menu li:hover > a,
+#main-menu a:focus,
+#main-menu ul li a:focus,
+#main-menu li.focus > a,
+#main-menu li:focus > a,
+#main-menu ul li.current-menu-item > a,
+#main-menu ul li.current_page_item > a,
+#main-menu ul li.current-menu-parent > a,
+#main-menu ul li.current_page_ancestor > a,
+#main-menu ul li.current-menu-ancestor > a {
+  background: var(--urbantaxi-primary-theme-color);
+  color: var(--urbantaxi-tertiary-theme-color);
+}
+#main-menu ul li.current_page_item > a::after {
+  position: absolute;
+  background-color: var(--urbantaxi-primary-theme-color);
+  right: 0px;
+  left: 0;
+  bottom: 5%;
+  content: "";
+  width: 80%;
+  height: 4px;
+  display: block;
+  margin: 7px auto 0;
+}
+#main-menu ul.children,
+#main-menu ul.sub-menu {
+  opacity: 0;
+  position: absolute;
+  top: 40px;
+  left: -9999em;
+  background: var(--urbantaxi-primary-theme-color);
+  border-radius: 15px;
+  z-index: 10001;
+  width: 190px;
+  padding-left: 0;
+  -webkit-transition: opacity 0.3s ease 0s;
+  -moz-transition: opacity 0.3s ease 0s;
+  -o-transition: opacity 0.3s ease 0s;
+  transition: opacity 0.3s ease 0s;
+}
+#main-menu ul.children li,
+#main-menu ul.sub-menu li {
+  position: relative;
+  margin: 0;
+  line-height: 1.2em;
+  text-transform: none;
+  width: 190px;
+  min-height: inherit;
+  margin: 0;
+}
+#main-menu li li:hover > ul,
+#main-menu li li:focus > ul,
+#main-menu li li.focus > ul {
+  top: 0px;
+  left: 103%;
+}
+#main-menu ul.children li a,
+#main-menu ul.sub-menu li a {
+  text-decoration: none;
+  text-align: left;
+  display: block;
+  padding: 10px 15px;
+  margin: 0;
+  border: none;
+  line-height: inherit;
+  color: var(--urbantaxi-tertiary-theme-color);
+  border-radius: 15px;
+}
+#main-menu ul.children li a:hover,
+#main-menu ul.sub-menu li a:hover {
+  background: var(--urbantaxi-tertiary-theme-color);
+  color: var(--urbantaxi-secondary-theme-color);
+}
+#main-menu ul.children li ul:before,
+#main-menu ul.sub-menu li ul:before,
+.menu-toggle,
+.dropdown-toggle,
+.close-menu {
+  display: none;
+}
+#main-menu li:hover > ul,
+#main-menu li:focus > ul,
+#main-menu li.focus > ul {
+  opacity: 1;
+  left: 0;
+}
+/* ===============================================
+  menu dropdown css
+ ============================================= */
+#main-menu ul li.menu-item-has-children:after {
+  content: "\f078";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 600;
+  position: absolute;
+  right: -10px;
+  top: 50%;
+  display: inline-block;
+  padding: 0px;
+  transform: translate(-50%, -50%);
+  color: var(--urbantaxi-tertiary-theme-color);
+}
+#main-menu ul.sub-menu li.menu-item-has-children:after {
+  color: var(--urbantaxi-tertiary-theme-color);
+}
+#main-menu ul li.menu-item-has-children {
+  padding-right: 10px;
+  margin-right: 10px;
+}
+#main-menu ul.sub-menu li.menu-item-has-children:after {
+  right: 30px;
+}
+.custom-logo {
+  max-width: 100%;
+}
+.wp-block-image.is-style-circle-mask img,
+.post-single img.alignleft {
+  width: auto;
+}
+.post-single .post-content p:nth-child(11) {
+  line-height: 50px;
+}
+.banner-section .bdt-ps-slide-img {
+  border-radius: 20px;
+  z-index: 0;
+  overflow: hidden;
+}
+.banner-section .bdt-ps-slide-img:before {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: var(--urbantaxi-tertiary-theme-color) !important;
+  z-index: 1;
+}
+/* ===============================================
+   POST BOX
+   ============================================= */
+.post-box {
+  border: 1px solid var(--urbantaxi-primary-theme-color);
+  border-radius: 6px;
+  text-align: center;
+  padding: 10px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+.post-title {
+  font: 500 20px / 35px var(--urbantaxi-font-family);
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.post-content-box {
+  display: grid;
+  gap: 8px;
+  border-radius: 0px 0px 10px 10px;
+  padding: 10px 0px;
+}
+.post-box .post-thumbnail {
+  border-radius: 6px;
+}
+.post-meta-content span {
+  font: 400 16px / 16px var(--urbantaxi-font-family);
+  text-transform: capitalize;
+  align-self: center;
+  color: var(--urbantaxi-secondary-theme-color);
+}
+.post-meta-content span i{
+  color: var(--urbantaxi-primary-theme-color);
+  font-size: 18px;
+}
+.taxi-single-blog-meta-image-box img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.post-meta,
+.crumb-box a:hover {
+  color: var(--urbantaxi-secondary-theme-color);
+}
+pre {
+  display: block;
+  padding: 9.5px;
+  margin: 0 0 10px;
+  font-size: 13px;
+  line-height: 1.42857143;
+  color: var(--urbantaxi-tertiary-theme-color);
+  white-space: break-spaces;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.post-content img,
+.post-thumbnail img,
+.post-content iframe,
+.post-content object,
+.post-content embed {
+  max-width: 100%;
+}
+.post-content .wp-block-avatar img {
+  width: auto;
+}
+.post-meta-content .entry-author {
+  padding: 4px 18px 4px 4px;
+  width: fit-content;
+}
+.post-meta-content .single-author-image{
+  width: 30px;
+  height: 30px;
+  margin-right: 6px;
+  border-radius: 50px;
+  padding: 0;
+}
+.post-meta-content .entry-author a{
+  color: var(--urbantaxi-secondary-theme-color);
+  text-transform: capitalize;
+}
+.post-content img,
+.post-thumbnail img {
+  max-height: 100%;
+  height: 100% !important;
+  width: auto;
+  object-fit: cover;
+  border-radius: 6px;
+}
+.post-content:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.post-content {
+  word-wrap: break-word;
+}
+.home.urbantaxi-imported #content,.home.urbantaxi-imported footer {
+  float: left;
+  width: 100%;
+}
+.post-box:hover:before {
+  opacity: 1;
+  transform: translateX(0);
+}
+.box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.box .box-content {
+  opacity: 0;
+  transform: scale(0);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  right: 0;
+  text-align: center;
+  z-index: 1;
+  transition: all 0.5s ease;
+}
+.post-box:hover .box-content {
+  opacity: 1;
+  transform: scale(1);
+}
+.post-info span,
+.post-info a {
+  color: var(--urbantaxi-tertiary-theme-color);
+  font-size: 15px;
+  line-height: 15px;
+  display: inline-block;
+}
+.post-info i {
+  color: var(--urbantaxi-primary-theme-color);
+  font-size: 14px;
+}
+/* ===============================================
+   Pagination
+   ============================================= */
+.urbantaxi-pagination {
+  width: fit-content;
+  margin: 25px auto;
+  border-radius: 6px;
+  gap: 5px;
+  background: linear-gradient(280deg, var(--urbantaxi-senary-theme-color) 0%, var(--urbantaxi-septenary-theme-color) 100%);
+}
+.nav-links {
+  border-radius: 6px;
+  gap: 5px;
+  background: linear-gradient(
+    280deg,
+    var(--urbantaxi-senary-theme-color) 0%,
+    var(--urbantaxi-septenary-theme-color) 100%
+  );
+}
+.pagination .nav-links a,
+.pagination .nav-links span.current,
+.urbantaxi-pagination a span,
+.urbantaxi-pagination span.current {
+  display: inline-block;
+  text-decoration: none;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--urbantaxi-tertiary-theme-color);
+  text-align: center;
+  cursor: pointer;
+  margin: 0 10px;
+}
+.pagination .nav-links a i {
+  font-size: 15px;
+}
+.pagination .nav-links a:hover,
+.pagination .nav-links a:focus,
+.pagination .nav-links span.current,
+.urbantaxi-pagination span.current,
+.urbantaxi-pagination span.current:hover,
+.urbantaxi-pagination span.current:focus,
+.urbantaxi-pagination a span:hover,
+.urbantaxi-pagination a span:focus {
+  color: var(--urbantaxi-tertiary-theme-color);
+  background: var(--urbantaxi-primary-theme-color);
+}
+.pagination .nav-links span.current{
+  background: var(--urbantaxi-primary-theme-color);
+  border-radius: 50px;
+}
+.ut-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 40px;
+}
+.ut-pages {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.ut-pages .page-numbers, .ut-next-wrap a, .ut-prev-wrap a {
+  display: flex;
+  font-size: 16px;
+  font-weight: 400;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  border: 1px solid #fff;
+  text-decoration: none;
+  color: var(--urbantaxi-secondary-theme-color);
+  transition: 0.3s;
+  background: transparent;
+}
+.ut-pages .current {
+  background: var(--urbantaxi-primary-theme-color);
+  color: var(--urbantaxi-tertiary-theme-color);
+  border: none;
+}
+/* unit test data */
+.post-content p{
+  color: var(--urbantaxi-secondary-theme-color);
+}
+body{
+  color: #fff;
+}
+.wp-block-button__link {
+  color: #fff !important;
+  background-color: var(--urbantaxi-tertiary-theme-color);
+  margin-bottom: 10px;
+}
+.wp-block-button.is-style-squared a, .wp-block-button__link.wp-block-button.is-style-squared {
+  border-radius: 0;
+}
+.wc-block-cart__empty-cart__title,.wc-block-cart__empty-cart__title .wp-block-heading{
+   color: var(--urbantaxi-secondary-theme-color);
+}
+.ut-prev-wrap.disabled,.ut-next-wrap.disabled,.pagination-arrow.prev-arrow.disabled{
+  opacity: 0;
+}
+.utx-prev.disabled,
+.utx-next.disabled,.next-arrow.disabled {
+  opacity: 0;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+.wp-theme-urbantaxi.single-post .post-thumbnail{
+  height: 600px;
+  width: 100%;
+}
+.wp-theme-urbantaxi.single-post .post-thumbnail img{
+  width: 100%;
+  height: 100%;
+}
+.wp-block-post-featured-image{
+  height: 350px;
+}
+.wp-block-post-featured-image img{
+  width: 100%;
+  height: 100%;
+}
+.wp-block-button.is-style-outline.is-style-outline--1 a{
+  background-color: #32373c;
+}
+.wp-block-button.aligncenter {
+  margin: unset !important;
+}
+.wp-block-button.is-style-urbantaxi-primary .wp-block-button__link {
+  background-color: var(--urbantaxi-primary-theme-color);
+  border: 2px solid var(--urbantaxi-primary-theme-color);
+  border-radius: 999px;
+  color: var(--urbantaxi-quaternary-theme-color);
+  transition: all 0.3s ease;
+}
+.wp-block-button.is-style-urbantaxi-primary .wp-block-button__link:hover,
+.wp-block-button.is-style-urbantaxi-primary .wp-block-button__link:focus {
+  background-color: transparent;
+  color: var(--urbantaxi-primary-theme-color);
+}
+.wp-block-post-template{
+  display: grid;
+  gap: 29px;
+}
+.wp-block-cover .has-background-dim:not([class*=-background-color]), .wp-block-cover-image .has-background-dim:not([class*=-background-color]), .wp-block-cover-image.has-background-dim:not([class*=-background-color]), .wp-block-cover.has-background-dim:not([class*=-background-color]){
+  border-radius: 20px;
+}
+.post-content .wp-block-file__button{
+  color: var(--urbantaxi-secondary-theme-color);
+}
+.wp-block-gallery.columns-2.wp-block-gallery-is-layout-flex{
+  padding-right: 15px;
+}
+.page_item_has_children::before {
+  content: "\f0d7";
+  font-family: 'font awesome 5 free';
+  font-weight: 800;
+  position: absolute;
+  right: 6px;
+  bottom: 0;
+  top: 8px;
+  font-size: 14px;
+  color: var(--urbantaxi-tertiary-theme-color)000;
+}
+.ut-pages a:hover,.ut-next-wrap a:hover,.ut-prev-wrap a:hover{
+  border-color: var(--urbantaxi-tertiary-theme-color);
+  background: var(--urbantaxi-primary-theme-color);
+  color: var(--urbantaxi-tertiary-theme-color);
+}
+/*--------------------------------------------------------------
+# Comments
+--------------------------------------------------------------*/
+.comment-reply a:focus {
+  color: var(--urbantaxi-secondary-theme-color);
+}
+.comment-respond input#submit:hover,
+.comment-reply a:hover {
+  background: var(--urbantaxi-tertiary-theme-color);
+}
+.comment-form-url input,
+.navigation.pagination {
+  width: 100%;
+  justify-content: center;
+}
+.comment-respond input#submit {
+  background: var(--urbantaxi-primary-theme-color);
+  border: none;
+  color: var(--urbantaxi-secondary-theme-color);
+  padding: 10px;
+  font-weight: 600;
+}
+.comment-content a {
+  word-wrap: break-word;
+}
+.bypostauthor {
+  display: block;
+}
+.comments-title {
+  font-size: 1.125rem;
+}
+.comment-body .pull-left {
+  padding-right: 0.625rem;
+}
+.comment-list {
+  padding-left: 0;
+}
+.comment-list .comment {
+  display: block;
+}
+.comment-list .pingback {
+  border-top: 1px solid rgba(0, 0, 0, 0.125);
+  padding: 0.563rem 0;
+}
+.comment-list .pingback a {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.comment-content.card-block {
+  padding: 15px;
+}
+.comment-reply a {
+  padding: 10px;
+  color: var(--urbantaxi-secondary-theme-color);
+  background: var(--urbantaxi-primary-theme-color);
+}
+#comments footer.comment-reply.card-footer {
+  border-top: none !important;
+  background-color: var(--urbantaxi-secondary-theme-color) !important;
+  margin-bottom: 10px;
+}
+#comments .comment-body img {
+  margin-bottom: 10px;
+}
+.comment-form-cookies-consent label {
+  display: inline;
+  font-family: var(--urbantaxi-font-family);
+}
+label,.logged-in-as{
+  font-family: var(--urbantaxi-font-family);
+  color: var(--urbantaxi-secondary-theme-color);
+}
+.search-no-results  .entry-title-result,.search-no-results .entry-description{
+  color: var(--urbantaxi-secondary-theme-color);
+}
+/* ===============================================
+   SIDEBARS
+   =============================================== */
+.sidebar-area {
+  border-left: solid 1px #e4e7ee;
+  padding: 0 0 0 20px;
+}
+.sidebar-area .textwidget img,
+.footer-area .textwidget img {
+  width: 100%;
+  height: auto;
+}
+.sidebar-area .sidebar-widget {
+  margin-bottom: 25px;
+}
+.sidebar-area a,
+.sidebar-area p,
+.sidebar-area li,
+.sidebar-area address,
+.sidebar-area dd,
+.sidebar-area blockquote,
+.sidebar-area td,
+.sidebar-area th,
+.sidebar-area .textwidget {
+  line-height: 1.9em;
+  font-weight: normal;
+}
+.sidebar-area ul,
+#calendar_wrap,
+.sidebar-area .textwidget,
+.tagurbantaxi {
+  list-style: none;
+  margin: 0;
+}
+.sidebar-area ul {
+  padding: 15px 30px 25px;
+  border-radius: 10px;
+  border: solid 1px #e4e7ee;
+}
+.wp-calendar .sidebar-area li a,
+.sidebar-area li {
+  font-size: 15px;
+  color: var(--urbantaxi-tertiary-theme-color);
+}
+.sidebar-area li a:hover,
+.sidebar-area li:hover {
+  color: var(--urbantaxi-primary-theme-color);
+}
+.sidebar-area li {
+  padding: 14px 10px;
+  border-bottom: solid 1px #e4e7ee;
+}
+.sidebar-area h4.title {
+  position: relative;
+  font-size: 25px;
+  margin-left: 60px;
+  margin-bottom: 20px;
+}
+.sidebar-area h4.title:before {
+  position: absolute;
+  content: "";
+  width: 50px;
+  left: -60px;
+  height: 2px;
+  background: var(--urbantaxi-primary-theme-color);
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+.sidebar-area h4.title:after {
+  position: absolute;
+  content: "";
+  width: 10px;
+  left: -60px;
+  height: 10px;
+  border-radius: 10px;
+  background: var(--urbantaxi-primary-theme-color);
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+.sidebar-area .tagurbantaxi a,
+.footer-area .tagurbantaxi a {
+  font-size: 15px !important;
+  color: var(--urbantaxi-tertiary-theme-color);
+  display: inline-block;
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 5px;
+  border: solid 1px #e4e7ee;
+}
+.footer-area .tagurbantaxi a {
+  border: solid 1px var(--urbantaxi-secondary-theme-color);
+  color: var(--urbantaxi-secondary-theme-color);
+}
+.sidebar-area .tagurbantaxi a:before,
+.footer-area .tagurbantaxi a:before {
+  content: "#";
+}
+.sidebar-area .tagurbantaxi a:hover,
+.footer-area .tagurbantaxi a:hover {
+  background: var(--urbantaxi-primary-theme-color);
+  color: var(--urbantaxi-secondary-theme-color);
+}
+.sidebar-area .wp-block-group__inner-container h2 {
+  color: var(--urbantaxi-secondary-theme-color) !important;
+  font-size: 20px;
+}
+.sidebar-area select,
+.footer-area select,
+.sidebar-area textarea,
+#comments textarea,
+.sidebar-area input[type="text"],
+#comments input[type="text"],
+#comments input[type="search"],
+.sidebar-area input[type="search"],
+.sidebar-area input[type="password"],
+.sidebar-area input[type="datetime"],
+.sidebar-area input[type="datetime-local"],
+.sidebar-area input[type="date"],
+.sidebar-area input[type="month"],
+.sidebar-area input[type="time"],
+.sidebar-area input[type="week"],
+.sidebar-area input[type="number"],
+.sidebar-area input[type="email"],
+.sidebar-area input[type="url"],
+.sidebar-area input[type="search"],
+.sidebar-area input[type="tel"],
+.sidebar-area input[type="color"],
+.sidebar-area .uneditable-input,
+#comments input[type="email"],
+#comments input[type="url"] {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  width: 100%;
+  padding: 5px 2%;
+  border: solid 1px #e4e7ee;
+}
+.sidebar-area ol.wp-block-latest-comments {
+  padding-left: 0px;
+}
+#wp-calendar th,
+#wp-calendar #today,
+#wp-calendar #today a {
+  background: #f3f4f7;
+  color: var(--urbantaxi-tertiary-theme-color) !important;
+}
+#wp-calendar a:hover {
+  border: none;
+}
+#wp-calendar {
+  background: var(--urbantaxi-secondary-theme-color);
+  width: 100%;
+}
+#wp-calendar caption {
+  font-size: 14px;
+  text-transform: uppercase;
+  margin: 0 0 10px 0;
+  text-align: left;
+  color: var(--urbantaxi-secondary-theme-color);
+  font-weight: 500;
+}
+#wp-calendar th,
+#wp-calendar td {
+  text-align: center;
+  font-size: 14px;
+  color: var(--urbantaxi-tertiary-theme-color) !important;
+  padding: 3px 6px;
+}
+#wp-calendar td a {
+  display: block;
+  text-align: center;
+  font-size: 14px;
+  color: var(--urbantaxi-tertiary-theme-color) !important;
+  text-decoration: underline;
+}
+#wp-calendar td#prev a,
+#wp-calendar td#prev a {
+  text-decoration: none;
+  text-align: left;
+}
+#wp-calendar th {
+  font-weight: bold;
+}
+.post-content tbody{
+  margin: 10px 0px;
+}
+.post-content td {
+  padding: 10px 10px;
+}
+tr:nth-child(2n + 2) {
+  background-color: #f3f4f7;
+}
+.searchform label {
+  display: block;
+}
+.searchform input[type="text"],
+.searchform input[type="search"] {
+  width: calc(100% - 40px);
+  margin: 0;
+  padding: 12px;
+  float: left;
+  background-color: transparent;
+  border: none;
+  border-radius: 0px;
+}
+#searchform {
+  border: solid 1px #e4e7ee;
+  border-radius: 6px;
+  position: relative;
+  background: #F5F5F5;
+  padding: 6px 8px;
+}
+.searchform:before {
+  content: '\f002';
+  font-family: 'FontAwesome';
+  background: var(--urbantaxi-primary-theme-color);
+  padding: 8px 12px;
+  border-radius: 10px;
+  position: absolute;
+  right: 10px;
+  top: 0;
+  bottom: 0;
+  height: fit-content;
+  align-self: center;
+}
+.middle-header #searchform {
+  border: solid 0px #e4e7ee;
+  border-radius: 0px;
+}
+.footer-side .searchform input[type="submit"] {
+  border: none;
+  color: var(--urbantaxi-primary-theme-color);
+}
+.footer-side .searchform input[type="submit"]:hover {
+  border: none;
+  color: var(--urbantaxi-secondary-theme-color);
+}
+.searchform input[type="submit"] {
+  background: transparent;
+  border: none;
+  color: var(--urbantaxi-secondary-theme-color);
+  font-size: 0px;
+  font-weight: 600;
+  text-align: center;
+  position: relative;
+  border-radius: 6px;
+  text-shadow: none;
+  padding: 10px 0;
+  margin: 4px auto;
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  -webkit-transition: color 0.3s ease, background-color 0.3s ease;
+  -moz-transition: color 0.3s ease, background-color 0.3s ease;
+  -o-transition: color 0.3s ease, background-color 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+.searchform:hover::before {
+  background: var(--urbantaxi-tertiary-theme-color);
+  color: var(--urbantaxi-secondary-theme-color);
+  text-decoration: none;
+}
+.searchform:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.footer-widget {
+  background: var(--urbantaxi-tertiary-theme-color);
+}
+.footer-copyright {
+  background: var(--urbantaxi-primary-theme-color);
+  padding: 20px 0px;
+}
+.sidebar-area li,
+footer .sidebar-area address,
+footer .sidebar-area dd,
+footer .sidebar-area blockquote,
+footer .sidebar-area td,
+footer .sidebar-area th,
+footer .sidebar-area .title,
+footer .sidebar-area .textwidget,
+.footer-area li,
+.footer-area input[type="text"],
+.footer-area input[type="search"],
+.wp-block-group__inner-container h2,
+.wp-block-search__label {
+  color: var(--urbantaxi-secondary-theme-color);
+}
+footer a:hover {
+  color: var(--urbantaxi-secondary-theme-color);
+}
+.footer-area ul {
+  padding: 0;
+  list-style: none;
+}
+.footer-area h4.title {
+  font-size: 30px;
+  color: var(--urbantaxi-secondary-theme-color);
+  margin: 30px 0px;
+  word-wrap: break-word;
+}
+.footer-area li {
+  padding: 8px 0;
+}
+.footer-area a:focus {
+  color: var(--urbantaxi-secondary-theme-color);
+}
+.footer-area input[type="search"] {
+  width: 100%;
+  border: none;
+  padding: 13px;
+}
+.footer-area #searchform input[type="search"] {
+  width: calc(100% - 88px);
+}
+img.size-auto,
+img.size-full,
+img.size-large,
+img.size-medium,
+img.alignleft,
+img.alignright,
+img.aligncenter,
+.attachment img {
+  max-width: 100%;
+  height: auto;
+}
+.alignleft,
+img.alignleft {
+  display: inline;
+  float: left;
+  margin-right: 24px;
+  margin-top: 4px;
+}
+.alignright,
+img.alignright {
+  display: inline;
+  float: right;
+  margin-left: 24px;
+  margin-top: 4px;
+}
+div.aligncenter,
+img.aligncenter {
+  display: block;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  float: none;
+}
+img.alignleft,
+img.alignright,
+img.aligncenter {
+  margin-bottom: 12px;
+}
+.wp-caption {
+  line-height: 18px;
+  margin-bottom: 25px;
+  max-width: 100% !important;
+  padding: 4px;
+  text-align: center;
+}
+.wp-caption img {
+  margin: 5px 5px 0;
+  width: 96%;
+  height: 100%;
+}
+.wp-caption p.wp-caption-text {
+  color: #888;
+  font-size: 12px;
+  margin: 5px;
+}
+.sidebar-widget .wp-block-latest-comments__comment-meta a {
+  color: var(--urbantaxi-secondary-theme-color);
+}
+.sidebar-widget.widget_block ol.wp-block-latest-comments {
+  padding-left: 0px;
+}
+.sidebar-widget .widget_text a,
+.sidebar-widget .wp-block-heading a {
+  text-decoration: underline !important;
+}
+.footer-area .wp-block-heading a,
+.footer-area .widget_text a {
+  text-decoration: underline !important;
+}
+.wp-block-query-pagination {
+  padding: 10px 0px;
+}
+/* ===============================================
+    BLOCK CSS
+  =============================================== */
+.sidebar-area .widget_search .wp-block-search__inside-wrapper {
+  border: solid 1px #e4e7ee;
+  border-radius: 6px;
+}
+.sidebar-area
+  .widget_search
+  .wp-block-search__inside-wrapper
+  .wp-block-search__input {
+  width: calc(100% - 110px);
+  margin: 0;
+  padding: 12px;
+  float: left;
+  background-color: transparent;
+  border: none;
+  border-radius: 6px;
+  color: var(--urbantaxi-secondary-theme-color);
+}
+button.wp-block-search__button {
+  background-color: var(--urbantaxi-primary-theme-color);
+  color: var(--urbantaxi-tertiary-theme-color);
+}
+button.wp-block-search__button:hover {
+  background-color: var(--urbantaxi-secondary-theme-color);
+  color: var(--urbantaxi-tertiary-theme-color);
+}
+.sidebar-area .widget_search button.wp-block-search__button.wp-element-button {
+  background: var(--urbantaxi-primary-theme-color);
+  border: none;
+  color: var(--urbantaxi-tertiary-theme-color);
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  position: relative;
+  float: left;
+  border-radius: 6px;
+  text-shadow: none;
+  padding: 10px 0;
+  width: 105px;
+  margin: 4px auto;
+  cursor: pointer;
+  -webkit-transition: color 0.3s ease, background-color 0.3s ease;
+  -moz-transition: color 0.3s ease, background-color 0.3s ease;
+  -o-transition: color 0.3s ease, background-color 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+.sidebar-area .widget_search button.wp-block-search__button:hover,
+.sidebar-area .widget_search button.wp-block-search__button:focus {
+  background: var(--urbantaxi-primary-theme-color);
+  text-decoration: none;
+}
+.sidebar-area .widget_search .wp-block-search__inside-wrapper {
+  content: "";
+  display: table;
+  clear: both;
+}
+.sidebar-area .widget_search label,
+.sidebar-area .sidebar-widget.widget_block .wp-block-heading {
+  position: relative;
+  font-size: 25px;
+  margin-left: 60px;
+  margin-bottom: 20px;
+  color: var(--urbantaxi-secondary-theme-color);
+}
+.sidebar-area .wp-block-search label {
+  display: inline;
+}
+.sidebar-area .widget_search label:before,
+.sidebar-area .sidebar-widget.widget_block .wp-block-heading:before {
+  position: absolute;
+  content: "";
+  width: 50px;
+  left: -60px;
+  height: 2px;
+  background: var(--urbantaxi-primary-theme-color);
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+.sidebar-area .widget_search label:after,
+.sidebar-area .sidebar-widget.widget_block .wp-block-heading:after {
+  position: absolute;
+  content: "";
+  width: 10px;
+  left: -60px;
+  height: 10px;
+  border-radius: 10px;
+  background: var(--urbantaxi-primary-theme-color);
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+.sidebar-area .wp-block-tag-urbantaxi a,
+.footer-area .wp-block-tag-urbantaxi a,
+.tag-urbantaxi-link {
+  font-size: 15px !important;
+  color: var(--urbantaxi-secondary-theme-color);
+  display: inline-block;
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 5px;
+  border: solid 1px #e4e7ee;
+}
+.footer-area .wp-block-tag-urbantaxi a {
+  border: solid 1px var(--urbantaxi-secondary-theme-color);
+  color: var(--urbantaxi-secondary-theme-color);
+}
+.sidebar-area .wp-block-tag-urbantaxi a:before,
+.footer-area .wp-block-tag-urbantaxi a:before,
+.tag-urbantaxi-link:before {
+  content: "#";
+}
+.sidebar-area .wp-block-tag-urbantaxi a:hover,
+.footer-area .wp-block-tag-urbantaxi a:hover,
+.tag-urbantaxi-link:hover {
+  background: var(--urbantaxi-primary-theme-color);
+  color: var(--urbantaxi-secondary-theme-color);
+}
+.sidebar-area ol footer.wp-block-latest-comments__comment-meta {
+  float: none !important;
+}
+.sidebar-area ol.wp-block-latest-comments {
+  padding-left: 0px !important;
+  padding: 15px 30px 25px;
+  border-radius: 10px;
+  border: solid 1px #e4e7ee;
+}
+.footer-area .wp-block-heading {
+  font-size: 30px;
+  color: var(--urbantaxi-secondary-theme-color);
+  margin-top: 30px;
+  word-wrap: break-word;
+}
+.footer-area {
+  margin-bottom: 10px;
+}
+/*  SINGLE POST */
+.single-post-category span {
+  font-weight: 600;
+  color: var(--urbantaxi-secondary-theme-color);
+}
+.post-tags strong{
+  color: var(--urbantaxi-secondary-theme-color);
+}
+.single-post-category .post-categories li,
+.single-post-category ul {
+  display: inline-block;
+  padding-left: 0px;
+}
+.single-post-category .post-categories li a,.post-tags a {
+  margin-right: 8px;
+  margin-bottom: 8px;
+  background-color: var(--urbantaxi-primary-theme-color);
+  padding: 8px 10px;
+  color: var(--urbantaxi-tertiary-theme-color);
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1;
+  border-radius: 6px;
+}
+.single-post-category .post-categories li a:hover,.post-tags a:hover {
+  background: var(--urbantaxi-secondary-theme-color);
+  color: var(--urbantaxi-tertiary-theme-color);
+}
+/*scroll-to-top*/
+.scroll-up {
+  position: fixed;
+  bottom: 12px;
+  right: 30px;
+  z-index: 999;
+}
+.scroll-up a {
+  background: var(--urbantaxi-tertiary-theme-color);
+  color: var(--urbantaxi-secondary-theme-color);
+}
+.scroll-up a:hover {
+  background: var(--urbantaxi-primary-theme-color);
+}
+ .scroll-up a {
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  z-index: 9999;
+  transition: border-width 0.3s ease-in-out;
+}
+.scroll-up a i {
+  position: relative;
+  top: 0px;
+  right: 20px;
+  font-size: 20px;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  padding: 0px 0px;
+  color: var(--urbantaxi-secondary-theme-color) !important;
+  transform: translate(66%);
+  width: 50px;
+  height: 50px;
+  display: block;
+  line-height: 50px;
+  border-radius: 50px;
+  background: var(--urbantaxi-tertiary-theme-color);
+  text-decoration: none;
+}
+.scroll-up a:hover i {
+  top: 5px;
+}
+.result-search #searchform {
+  display: table;
+}
+.not-found-content #searchform {
+  display: inline-block;
+}
+/* css */
+/* loader */
+.custom-main{
+  background-size: 150px !important;
+}
+.loader {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  cursor: pointer;
+  z-index: 999999;
+  background: var(--urbantaxi-quaternary-theme-color);
+  background-repeat: no-repeat;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.preloader {
+  display: inline-block;
+  width: 10%;
+  height: 100%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-image: url(assets/images/loader.gif);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
+}
+/* title banner */
+.wp-theme-urbantaxi.page-template-default,.wp-theme-urbantaxi.single{
+  /* background: var(--urbantaxi-tertiary-theme-color); */
+}
+.single-post .post-thumbnail[alt="Horizontal Featured Image"]{
+  width: auto !important;
+  height: 100% !important;
+  object-fit: contain;
+  padding: 0;
+}
+.theme-urbantaxi div.mptbm_transport_search_area 
+#content:has(.book-taxies-section),#content:has(.theme-urbantaxi){
+  padding: 0%;
+}
+#content:has(.mptbm_transport_search_area){
+  padding: 80px 0px;
+}
+#content:has(#taxi-about-history-section){
+  padding: 0;
+}
+#content:has(.taxi-booking-form-main-box) .mptbm_transport_search_area{
+  border: none !important;
+}
+.title-banner-image-box h1{
+  color: var(--urbantaxi-secondary-theme-color);
+  font-family: var(--urbantaxi-primary-font-family) !important;
+  font-weight: 500;
+  font-size: 28px;
+}
+.title-banner-image-box a,.title-banner-image-box span{
+  color: var(--urbantaxi-secondary-theme-color);
+  text-decoration: none;
+}
+.title-banner-image-box h1 span {
+  color: var(--urbantaxi-secondary-theme-color);
+  text-transform: capitalize;
+}
+.title-banner-bread-box{
+  padding-top: 30px;
+}
+.crumb-box {
+  font-family: var(--urbantaxi-primary-font-family) !important;
+  font-weight: 400;
+  font-size: 15px;
+  color: var(--urbantaxi-secondary-theme-color);
+}
+.title-banner-heading-box {
+  z-index: 1;
+  text-align: center;
+}
+.taxi-service-bg-text-box p {
+  font: 900 210px / 210px var(--urbantaxi-primary-font-family);
+  color: #757575;
+}
+.taxi-service-bg-text-box {
+  position: absolute;
+  z-index: 0;
+  left: 0;
+  right: 0;
+  width: fit-content;
+  height: fit-content;
+  margin: 0 auto;
+  opacity: 0.1;
+  top: 45%;
+}
+.title-banner-image-box {
+  overflow: hidden;
+  position: relative;
+}
+.title-banner-right-img{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 250px;
+  animation: carMovePause 5s ease-in-out infinite;
+  will-change: transform;
+}
+@keyframes carMovePause {
+    0% {
+        transform: translateX(300px);
+    }
+    20% {
+        transform: translateX(0);
+    }
+    80% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(300px);
+    }
+}
+.title-banner-right-img img{
+  width: 100%;
+  height: 100%;
+}
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+/* header */
+.taxi-header-contact-box,.taxi-header-admin-box{
+  width: fit-content;
+}
+#uc_nav_menu_elementor_5d56b76 .ue-menu > li > .sub-menu li a:after {
+  background: var(--urbantaxi-secondary-theme-color)fff2b;
+  border: 1px solid var(--urbantaxi-secondary-theme-color)fff2b;
+  border-radius: 6px;
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  height: 0%;
+  width: 0px;
+}
+.urbantaxi-header-menu-box ul ul li a{
+  border-radius: 8px !important;
+  position: relative;
+}
+.urbantaxi-header-menu-box ul ul li a:hover::after {
+  content: '';
+  position: absolute;
+  left: -10px;
+  top: 2px;
+  bottom: 0;
+  height: 90%;
+  width: 3px;
+  background: var(--urbantaxi-tertiary-theme-color);
+  border-radius: 50px;
+  margin: 0 auto;
+}
+#uc_nav_menu_elementor_5d56b76 .ue-menu > li > .sub-menu li:hover a:after{
+	width: 100%;
+	height: 100%;
+	border: 1px solid var(--urbantaxi-secondary-theme-color)fff2b;
+}
+#uc_nav_menu_elementor_5d56b76 .ue-menu > li:hover a:after {
+  width: 100%;
+  height: 100%;
+  border: 1px solid var(--urbantaxi-secondary-theme-color)fff2b;
+}
+#uc_nav_menu_elementor_5d56b76 .ue-menu > li a:after {
+  background: var(--urbantaxi-secondary-theme-color)fff2b;
+  border: 0px solid var(--urbantaxi-secondary-theme-color)fff2b;
+  border-radius: 6px;
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  height: 0%;
+  width: 0px;
+}
+/* Zoom in Keyframes */
+@-webkit-keyframes zoomin {
+  0% {transform: scale(1);}
+  50% {transform: scale(1.5);}
+  100% {transform: scale(1);}
+}
+@keyframes zoomin {
+  0% {transform: scale(1);}
+  50% {transform: scale(1.5);}
+  100% {transform: scale(1);}
+} 
+@keyframes translateX {
+  0% {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  80% {
+    transform: translateY(-5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+.urbantaxi-stickynavbar {
+  position: fixed !important;
+  top: 0px;
+  left: 0;
+  width: 100%;
+  z-index: 9;
+}
+.urbantaxi-stickynavbar {
+  background: #424141;
+}
+/* footer */
+.urbantaxi-footer-main-box .menu-item a.hfe-menu-item {
+  padding-right: 10px !important;
+}
+.urbantaxi-footer-contact-box .elementor-icon-box-wrapper{
+  display: flex;
+}
+.urbantaxi-footer-contact-box .elementor-heading-title a{
+  color: var(--urbantaxi-secondary-theme-color);
+}
+.urbantaxi-footer2-unique-class .urbantaxi-subscribe-btn .wpcf7-form-control{
+  background: var(--urbantaxi-tertiary-theme-color); 
+  color: var(--urbantaxi-secondary-theme-color);
+}
+.urbantaxi-subscribe-btn .wpcf7-form-control{
+  background: var(--urbantaxi-primary-theme-color);
+  position: absolute;
+  top: 3px;
+  bottom: 0;
+  right: 4px;
+  font-family: 'fontawesome';
+  border: none;
+  width: 38px;
+  height: 38px;
+  border-radius: 6px;
+}
+.urbantaxi-nesletter-form-box .wpcf7-form br {
+  display: none;
+}
+.urbantaxi-nesletter-form-box input.wpcf7-email {
+  padding: 10px 15px;
+  border-radius: 6px;
+  border: none;
+  width: 100%;
+  background: #0b0b0b;
+}
+.urbantaxi-subscribe-btn .wpcf7-spinner {
+  position: absolute;
+  right: 0;
+  bottom: -35px;
+}
+.urbantaxi-nesletter-form-box .wpcf7 form.invalid .wpcf7-response-output, .urbantaxi-nesletter-form-box .wpcf7 form.failed .wpcf7-response-output, .urbantaxi-nesletter-form-box .wpcf7 form.aborted .wpcf7-response-output,.wpcf7 form.invalid .wpcf7-response-output, .wpcf7 form.unaccepted .wpcf7-response-output, .wpcf7 form.payment-required .wpcf7-response-output{
+  color: var(--urbantaxi-secondary-theme-color);
+}
+.taxi-footer-contact-icon-box .elementor-icon{
+  background: var(--urbantaxi-primary-theme-color);
+  border-radius: 6px;
+}
+.taxi-footer-contact-icon-box .elementor-icon svg{
+  width: 30px;
+  height: 30px;
+  padding: 6px;
+}
+#urbantaxi-footer-main-section .urbantaxi-footer-menu-box li:hover::after,#urbantaxi-footer-main-section .urbantaxi-footer-service-box li:hover::after{
+  color: var(--urbantaxi-primary-theme-color);
+}
+.taxi-footer-contact-box .elementor-widget-icon{
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+}
+/* return to top */
+#urbantaxi-return-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  text-decoration: none;
+  -webkit-border-radius: 35px;
+  -moz-border-radius: 35px;
+  border-radius: 35px;
+  display: none;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  z-index: 999;
+  cursor: pointer;
+}
+#urbantaxi-return-to-top div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  right: -10px;
+  bottom: 40px;
+  transform: rotate(180deg);
+}
+#urbantaxi-return-to-top {
+  -o-transform: rotate(720deg);
+  -ms-transform: rotate(720deg);
+  -moz-transform: rotate(720deg);
+  -webkit-transform: rotate(720deg);
+  transform: rotate(720deg);
+  position: fixed;
+  bottom: 3em;
+  right: 30px;
+  padding: 4px;
+  background-color: transparent;
+  line-height: 22px;
+  text-align: center;
+  font-size: 25px;
+  transform: rotate(180deg);
+  text-decoration: none;
+  z-index: 99999;
+  width: 40px;
+  height: 40px;
+  transition: all 0.2s ease 0.2s;
+}
+svg:not(:root) {
+  overflow: hidden;
+}
+/* common blog */
+.urbantaxi-blog-slider-wrapper .urbantaxi-custom-pagination .utx-page-item.utx-dot.active{
+  width: 40px;
+}
+.urbantaxi-blog-slider-wrapper .urbantaxi-custom-pagination {
+  gap: 0 !important;
+}
+.product-type-simple .box img{
+  object-fit: contain;
+}
+.custom-post-comment-box {
+  margin: 0 2px;
+}
+.urbantaxi-blog-title a,.post-content-box h3 a{
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.urbantaxi-blog-content .urbantaxi-blog-excerpt,.post-box .post-content{
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  color: var(--urbantaxi-secondary-theme-color);  
+}
+.post-content-box h3{
+  margin: 0;
+}
+.post-content-box h3 a {
+  font: 500 20px / 25px var(--urbantaxi-primary-font-family);
+  word-break: break-word;
+}
+.post-box .box .post-thumbnail{
+  height: 250px;
+  background: var(--urbantaxi-tertiary-theme-color);
+}
+.post-box:hover{
+  transition: all 1s;
+  background: var(--urbantaxi-primary-theme-color);
+}
+.post-box:hover .post-meta-content i{
+  color: var(--urbantaxi-tertiary-theme-color);
+}
+.post-box:hover .post-content-box h3 a,.post-box:hover .post-content,.post-box:hover .post-meta-content a,.post-box:hover .post-meta-content span{
+  color: var(--urbantaxi-tertiary-theme-color);
+}
+/* single team page */
+.urbantaxi-single-driver-box .ekit_social_media a:hover i {
+    color: var(--urbantaxi-tertiary-theme-color) !important;
+    fill: var(--urbantaxi-tertiary-theme-color) !important;
+}
+p.driver-title {
+  font: 500 30px / 35px var(--urbantaxi-primary-font-family);
+  color: var(--urbantaxi-secondary-theme-color);
+}
+p.driver-designation {
+  background: var(--urbantaxi-primary-theme-color);
+  width: fit-content;
+  padding: 4px 15px;
+  border-radius: 50px;
+  margin-bottom: 10px;
+}
+/* single blog page */
+.single-post .post-meta-content{
+  display: flex;
+  padding-bottom: 30px;
+  gap: 10px;
+  justify-content: start !important;
+}
+.single-post .post-thumbnail,.single-post .single-comment-box {
+  padding-bottom: 50px;
+}
+.single-post-comment-icon{
+  margin-left: 2px;
+  margin-right: 2px;
+}
+.post-meta-content i{
+  margin-right: 1px;
+}
+.taxi-single-blog-quote-box img{
+  object-fit: contain;
+}
+.taxi-single-blog-author-name{
+  position: relative;
+}
+.taxi-single-blog-author-name:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 14px;
+  bottom: 0;
+  width: 40px;
+  height: 2px;
+  margin: 0 auto;
+  background: var(--urbantaxi-tertiary-theme-color);
+}
+.post-social-icon-box{
+  position: sticky;
+  align-self: flex-start;
+  top: 110px;
+}
+.urbantaxi-sidebar-com-box{
+  height: 100%;
+}
+.urbantaxi-pages-sidebar-main-box{
+  position: sticky;
+  top: 110px;
+}
+.post-social-icon-box-main i{
+  width: 50px;
+  height: 50px;
+  background: var(--urbantaxi-secondary-theme-color);
+  color: var(--urbantaxi-tertiary-theme-color);
+  text-align: center;
+  align-self: center;
+  line-height: 50px;
+  border-radius: 6px;
+  font-size: 20px;
+  font-family: 'FontAwesome';
+}
+.post-social-icon-box-main{
+  display: grid;
+  gap: 15px;
+}
+.post-social-icon-box-main i:hover{
+  background: var(--urbantaxi-primary-theme-color);
+  color: var(--urbantaxi-tertiary-theme-color);
+}
+.post-content .single-author-image{
+  border-radius: 50px;
+  padding: 0;
+}
+.post-query-widget .post-query-item .post-content a{
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.post-author svg, .post-date svg, .post-comments svg {
+  align-self: center;
+}
+.post-query-item .post-author, .post-query-item .post-date,.post-query-item .post-comments {
+  display: flex;
+}
+.related-post a {
+  text-decoration: none;
+}
+#comments .comment-list li .children {
+  padding-left: 15px;
+}
+.single-post .rating-label,
+.single-post .comments-rating {
+  display: none;
+}
+.single-post .comment-body {
+  display: flex;
+  gap: 10px;
+}
+#comments {
+  /* float: left; */
+  width: 100%;
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+}
+.home.urbantaxi-imported #content{
+  /* padding: 0px 0px; */
+}
+#content{
+  padding: 100px 0px;
+}
+#content .comment-respond {
+  width: 100%;
+  max-width: 40%;
+  height: fit-content;
+  order: 1;
+  padding: 30px;
+  border-radius: 6px;
+  border: 1px solid #B5B5B5;
+  box-shadow: 0px 0px 3px 0px #B5B5B5;
+  background: var(--urbantaxi-quaternary-theme-color);
+}
+#content .comment-list li .comment-respond {
+  max-width: 100%;
+}
+#content #commentform {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px 0px;
+}
+#content .comment-list {
+  list-style-type: none;
+  width: 55%;
+  order: 2;
+  height: 510px;
+  overflow-y: scroll;
+  padding: 2px 10px 2px 5px;
+}
+#content .comment-list::-webkit-scrollbar {
+  width: 8px;
+  border-radius: 10px;
+  margin-right: 5px;
+}
+#content .comment-list::-webkit-scrollbar-track {
+  background: #bfbfbf;
+  border-radius: 10px;
+}
+#content .comment-list::-webkit-scrollbar-thumb {
+  background:var(--urbantaxi-primary-theme-color);
+  height: 20px;
+  border-radius: 10px;
+}
+#comments h2.comments-title {
+  display: none;
+}
+#content .comment-form-url,
+.comment-notes {
+  display: none;
+}
+#content .comment-form-author {
+  order: 2;
+  width: 100%;
+  display: grid;
+}
+#content .comment-form-email {
+  order: 3;
+  width: 100%;
+  display: grid;
+}
+#content .comment-form-comment {
+  order: 4;
+  width: 100%;
+  display: grid;
+}
+#content .comment-form-cookies-consent {
+  order: 5;
+  display: flex;
+  align-items: start;
+}
+#content input#wp-comment-cookies-consent {
+  margin-right: 10px;
+  margin-top: 6px;
+  width: fit-content;
+}
+#content .comment-form-cookies-consent {
+  display: flex;
+}
+#content .form-submit {
+  order: 6;
+  width: fit-content;
+  position: relative;
+}
+#content .comment-form-url,
+#content .reply > a i {
+  display: none;
+}
+.comment-author.vcard img {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  position: relative;
+  top: 20px;
+}
+.comment-author.vcard {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+cite {
+  font: 500 20px / 28px var(--urbantaxi-font-family);
+  letter-spacing: 0px;
+  color: var(--urbantaxi-secondary-theme-color);
+  text-transform: capitalize;
+}
+.reply > a {
+  font: 500 14px / 26px var(--urbantaxi-font-family);
+  letter-spacing: 0px;
+  color: var(--urbantaxi-tertiary-theme-color);
+}
+.comment-list li {
+  background: var(--urbantaxi-quaternary-theme-color);
+  box-shadow: 0px 0px 0px 1px #bfbfbf;
+  padding: 30px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+.comment-list > li:nth-child(1) {
+  border-top: none;
+}
+#comments h2.comments-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+#comments h3.comment-reply-title {
+  font: 400 35px / 60px var(--urbantaxi-font-family);
+  color: var(--urbantaxi-tertiary-theme-color);
+}
+#comments input[type="text"], #comments input[type="email"], #comments textarea {
+  padding: 10px 12px;
+  font-size: 14px;
+  border: 1px solid #d6d6d6;
+  border-radius: 6px;
+  font-family: var(--urbantaxi-font-family);
+  width: 100%;
+  outline: none;
+  background: var(--urbantaxi-quaternary-theme-color);
+  color: var(--urbantaxi-secondary-theme-color);
+}
+#comments textarea {
+  height: 120px;
+  border-radius: 6px;
+}
+#comments .form-submit{
+  /* margin-top: 25px; */
+}
+#comments input[type="submit"].submit {
+  border-radius: 6px;
+  background: var(--urbantaxi-secondary-theme-color);
+  font: 400 15px / 20px var(--urbantaxi-font-family);
+  letter-spacing: 0px;
+  color: var(--urbantaxi-tertiary-theme-color);
+  padding: 10px 25px 10px 25px;
+  border: none;
+}
+#comments input[type="submit"].submit:hover {
+  background: var(--urbantaxi-primary-theme-color);
+  color: var(--urbantaxi-tertiary-theme-color);
+  border: none;
+}
+#reply-title {
+  position: relative;
+  font: 600 32px / 42px var(--urbantaxi-font-family);
+  color: var(--urbantaxi-secondary-theme-color);
+}
+#comments a time {
+  color: var(--urbantaxi-tertiary-theme-color);
+  font-weight: bold;
+  font-size: 12px;
+}
+#comments .comment-metadata {
+  width: 90%;
+  float: left;
+  padding: 1% 0 0 0;
+}
+#comments .comment-body img {
+  margin-bottom: 10px;
+  border-radius: 50%;
+  width: 65px;
+  height: 65px;
+}
+#comments .media-body-wrap.card {
+  border: none;
+  background: transparent;
+}
+#comments .comment-content {
+  padding: 10px 0px;
+  top: -20px;
+  position: relative;
+}
+#comments .reply,#comments footer.comment-reply.card-footer {
+  background-color: transparent !important;
+  margin: 0;
+  padding: 0;
+}
+.comment-awaiting-moderation {
+  display: none;
+}
+#comments .reply a {
+  padding: 0;
+  text-decoration: none;
+  font: 400 16px / 25px var(--urbantaxi-font-family);
+  color: #5D5D5D;
+  text-decoration: none;
+  background: transparent;
+}
+#comments .card-header {
+  background: transparent;
+  border: none;
+  padding: 0px 0px 10px 0px;
+}
+#comments .comment-meta {
+  display: none;
+}
+#comments .comment-content p {
+  font: 400 16px / 24px var(--urbantaxi-font-family);
+  color: #5D5D5D;
+  margin: 0;
+}
+#comments .comment-author a {
+  font: 400 20px / 20px var(--urbantaxi-font-family);
+  color: var(--urbantaxi-tertiary-theme-color);
+  text-decoration: none;
+  text-transform: capitalize;
+}
+.single-post .post-content .e-con-inner{
+  justify-content: start;
+  margin: unset;
+}
+/* single transportation */
+.urbantaxi-transportation-sidebar-com-box {
+  height: 100%;
+  background: var(--urbantaxi-primary-theme-color);
+  padding: 25px;
+  border-radius: 6px;
+}
+.urbantaxi-transportation-sidebar-com-box li {
+  background: var(--urbantaxi-secondary-theme-color);
+  margin-bottom: 15px;
+  padding: 13px 15px;
+  border-radius: 6px;
+  box-shadow: 0px 0px 0px 1px var(--urbantaxi-tertiary-theme-color);
+  display: flex;
+  justify-content: space-between;
+  font: 400 16px / 16px var(--urbantaxi-font-family) !important;
+  color: var(--urbantaxi-tertiary-theme-color);
+}
+.urbantaxi-transportation-sidebar-com-box ul{
+  list-style-type: none;
+  color: var(--urbantaxi-quaternary-theme-color);
+}
+.urbantaxi-transportation-content-box{
+  background: #393737;
+  text-align: center;
+  border-radius: 20px;
+  height: 100%;
+}
+.urbantaxi-transportation-image-box{
+  height: 100%;
+}
+.urbantaxi-transportation-content-box img {
+  margin: 0 auto;
+  align-self: center;
+  height: 100%;
+  object-fit: contain;
+  padding: 40px 0px 0px 0px;
+}
+span.cab-booking-btn-text {
+  font: 400 16px / 16px var(--urbantaxi-font-family);
+  position: relative;
+  top: 2px;
+}
+.transportation-price-box{
+  align-self: center;
+  font: 600 22px / 22px var(--urbantaxi-primary-font-family);
+  color: var(--urbantaxi-quaternary-theme-color);
+}
+.transportation-price-box span{
+  font: 400 14px/14px var(--urbantaxi-primary-font-family);
+}
+.transportation-btn-box{
+	display: flex;
+  justify-content: space-between;
+}
+.transportation-read-more-btn-custom {
+  background-color: var(--urbantaxi-tertiary-theme-color) !important;
+  color: var(--urbantaxi-secondary-theme-color) !important;
+  border-radius: 6px;
+  padding: 10px 15px 10px 15px;
+}
+.transportation-read-more-btn-custom svg path{
+  fill: var(--urbantaxi-secondary-theme-color);
+}
+.urbantaxi-single-transportation-box .transportation-read-more-btn-custom:hover {
+  background-color: var(--urbantaxi-secondary-theme-color) !important;
+  color: var(--urbantaxi-tertiary-theme-color) !important;
+}
+.transportation-read-more-btn-custom:hover svg path{
+  fill: var(--urbantaxi-tertiary-theme-color);
+}
+.cab-booking-features-text{
+  gap : 30px 0px;
+  width: 80%;
+  margin: 0 auto;
+}
+.features-content-box {
+  display: flex;
+  gap: 15px;
+}
+.feature-icon-box {
+  background: var(--urbantaxi-primary-theme-color);
+  height: fit-content;
+  align-self: center;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  border: 1px solid var(--urbantaxi-tertiary-theme-color);
+}
+.urbantaxi-single-transportation-box .transportation-feature-title{
+  color: var(--urbantaxi-secondary-theme-color);
+}
+.transportation-paragraph-text{
+  margin-top: 40px;
+  font: 400 16px / 28px var(--urbantaxi-font-family);
+  text-align: center;
+  color: var(--urbantaxi-secondary-theme-color) !important;
+}
+.cab-booking-content-box {
+  display: grid;
+  gap: 40px;
+  padding-top: 40px;
+}
+.cab-booking-content-box p {
+  font: 400 16px / 28px var(--urbantaxi-font-family);
+  color: var(--urbantaxi-secondary-theme-color);
+  margin: 0;
+}
+.cab-booking-features-box h4{
+  font: 600 22px / 22px var(--urbantaxi-primary-font-family);
+  padding: 30px 0px;
+  border-top: 1px solid #B3B2B0;
+  color: var(--urbantaxi-secondary-theme-color);
+}
+.transportation-feature-title,.transportation-feature-text{
+  color: var(--urbantaxi-secondary-theme-color);
+}
+.transportation-feature-main-box{
+  display: flex;
+  gap: 30px 0px;
+}
+.feature-title-box{
+  text-align: start;
+  align-self: center;
+}
+/* location page */
+.cab-list{
+  gap: 40px 0px;
+}
+.cat-item-btn-price-box{
+  display: flex;
+  justify-content: space-between;
+}
+.cab-item {
+  border: 1px solid #FFFFFF26;
+  border-radius: 6px;
+  background: var(--urbantaxi-secondary-theme-color);
+}
+.cab-item-img-box {
+  width: 100%;
+  height: 250px;
+  background: var(--urbantaxi-tertiary-theme-color);
+  border-radius: 6px 6px 0px 0px;
+}
+.cab-item-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.cab-item-content-box {
+  padding: 15px;
+  gap: 10px 0px;
+  display: grid;
+}
+.cab-item-content-box h4{
+  font: 600 22px / 22px var(--urbantaxi-primary-font-family);
+  color: var(--urbantaxi-tertiary-theme-color);
+}
+.cab-item:hover .cab-item-content-box h4{
+  color: var(--urbantaxi-primary-theme-color);
+}
+.cat-item-btn-price-box a{
+  color: var(--urbantaxi-tertiary-theme-color);
+  padding: 8px 20px;
+  border-radius: 50px;
+}
+.cab-item:hover .cat-item-btn-price-box a{
+  background: var(--urbantaxi-primary-theme-color);
+  color: var(--urbantaxi-tertiary-theme-color);
+}
+.cat-item-btn-price-box p {
+  align-self: center;
+  font: 500 18px / 18px var(--urbantaxi-primary-font-family);
+}
+.cab-item-list {
+  gap: 4px 0px;
+  display: grid;
+}
+.cab-item-list p {
+  font: 400 16px / 25px var(--urbantaxi-font-family);
+  display: flex;
+  justify-content: space-between;
+}
+.cat-item-btn-price-box span{
+  font: 400 16px / 16px var(--urbantaxi-primary-font-family);
+}
+/* gallery */
+/* .urbantaxi-gallery-page-grid-box {
+  display: grid;
+  grid-template-columns: repeat(29, 1fr);
+  gap: 12px;
+  grid-template-rows: repeat(27, 50px);
+}
+.urbantaxi-gallery-page-grid-box .urbantaxi-gallery-page-image:nth-child(1){
+  grid-row-start: 1;
+  grid-row-end: 7;
+  grid-column-start: 1;
+  grid-column-end: 10;
+}
+.urbantaxi-gallery-page-grid-box .urbantaxi-gallery-page-image:nth-child(2){
+  grid-row-start: 1;
+  grid-row-end: 7;
+  grid-column-start: 10;
+  grid-column-end: 23;
+}
+.urbantaxi-gallery-page-grid-box .urbantaxi-gallery-page-image:nth-child(3){
+  grid-row-start: 1;
+  grid-row-end: 7;
+  grid-column-start: 23;
+  grid-column-end: 30;
+}
+.urbantaxi-gallery-page-grid-box .urbantaxi-gallery-page-image:nth-child(4){
+  grid-row-start: 7;
+  grid-row-end: 13;
+  grid-column-start: 1;
+  grid-column-end: 15;
+}
+.urbantaxi-gallery-page-grid-box .urbantaxi-gallery-page-image:nth-child(5){
+  grid-row-start: 7;
+  grid-row-end: 13;
+  grid-column-start: 15;
+  grid-column-end: 30;
+}
+.urbantaxi-gallery-page-grid-box .urbantaxi-gallery-page-image:nth-child(6){
+  grid-row-start: 13;
+  grid-row-end: 22;
+  grid-column-start: 1;
+  grid-column-end: 10;
+}
+.urbantaxi-gallery-page-grid-box .urbantaxi-gallery-page-image:nth-child(7){
+  grid-row-start: 13;
+  grid-row-end: 19;
+  grid-column-start: 10;
+  grid-column-end: 20;
+}
+.urbantaxi-gallery-page-grid-box .urbantaxi-gallery-page-image:nth-child(8){
+  grid-row-start: 13;
+  grid-row-end: 22;
+  grid-column-start: 20;
+  grid-column-end: 30;
+}
+.urbantaxi-gallery-page-grid-box .urbantaxi-gallery-page-image:nth-child(9){
+  grid-row-start: 22;
+  grid-row-end: 28;
+  grid-column-start: 1;
+  grid-column-end: 10;
+}
+.urbantaxi-gallery-page-grid-box .urbantaxi-gallery-page-image:nth-child(10){
+  grid-row-start: 19;
+  grid-row-end: 28;
+  grid-column-start: 10;
+  grid-column-end: 20;
+}
+.urbantaxi-gallery-page-grid-box .urbantaxi-gallery-page-image:nth-child(11){
+  grid-row-start: 22;
+  grid-row-end: 28;
+  grid-column-start: 20;
+  grid-column-end: 30;
+}
+.urbantaxi-gallery-page-grid-box .urbantaxi-gallery-page-image img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+} */
+.urbantaxi-gallery-page-grid-box{
+    display:grid;
+    grid-template-columns:repeat(29,1fr);
+    grid-auto-rows:50px;
+    gap:12px;
+}
+
+/* IMAGES */
+.urbantaxi-gallery-page-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+
+/* ===== REPEATING 11-ITEM PATTERN ===== */
+
+/* 1 */
+.urbantaxi-gallery-page-image:nth-child(11n + 1){
+    grid-column:1 / span 9;
+    grid-row:span 6;
+}
+
+/* 2 */
+.urbantaxi-gallery-page-image:nth-child(11n + 2){
+    grid-column:10 / span 13;
+    grid-row:span 6;
+}
+
+/* 3 */
+.urbantaxi-gallery-page-image:nth-child(11n + 3){
+    grid-column:23 / span 7;
+    grid-row:span 6;
+}
+
+/* 4 */
+.urbantaxi-gallery-page-image:nth-child(11n + 4){
+    grid-column:1 / span 14;
+    grid-row:span 6;
+}
+
+/* 5 */
+.urbantaxi-gallery-page-image:nth-child(11n + 5){
+    grid-column:15 / span 15;
+    grid-row:span 6;
+}
+
+/* 6 */
+.urbantaxi-gallery-page-image:nth-child(11n + 6){
+    grid-column:1 / span 9;
+    grid-row:span 9;
+}
+
+/* 7 */
+.urbantaxi-gallery-page-image:nth-child(11n + 7){
+    grid-column:10 / span 10;
+    grid-row:span 6;
+}
+
+/* 8 */
+.urbantaxi-gallery-page-image:nth-child(11n + 8){
+    grid-column:20 / span 10;
+    grid-row:span 9;
+}
+
+/* 9 */
+.urbantaxi-gallery-page-image:nth-child(11n + 9){
+    grid-column:1 / span 9;
+    grid-row:span 6;
+}
+
+/* 10 */
+/* .urbantaxi-gallery-page-image:nth-child(11n + 10){
+    grid-column:10 / span 10;
+    grid-row:span 6;
+} */
+.urbantaxi-gallery-page-image:nth-child(11n + 10){
+    grid-column: 10 / 20;
+    grid-row: 19 / 28;
+}
+
+/* 11 */
+.urbantaxi-gallery-page-image:nth-child(11n + 11){
+    grid-column:20 / span 10;
+    grid-row:span 6;
+}
+/* single service */
+.service-meta-button-box i{
+  font-family: 'FontAwesome';
+  margin-left: 10px;
+}
+.service-meta-button-box a {
+  background: var(--urbantaxi-primary-theme-color);
+  color: var(--urbantaxi-tertiary-theme-color);
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  border-radius: 6px;
+  padding: 8px 20px;
+  align-self: center;
+}
+.urbantaxi-single-service-box .service-meta-button-box img {
+  width: 16px !important;
+  margin-left: 10px;
+  position: relative;
+  top: -2px;
+}
+.service-meta-button-box a:hover {
+  background: var(--urbantaxi-secondary-theme-color);
+}
+#taxi-service-car-main-box .post-query-item:hover .post-read-more-btn svg {
+  background-color: transparent !important;
+}
+.urbantaxi-single-service-box .tab-content .post-single,.post-single{
+  margin-bottom: 40px;
+}
+.urbantaxi-single-service-box .post-thumbnail.post-img{
+  height: 450px;
+}
+.urbantaxi-single-service-box .post-thumbnail.post-img img{
+  height: 100%;
+	width: 100%;
+	object-fit: cover;
+}
+.urbantaxi-single-service-box .post-thumbnail.post-img .service-meta-image img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+.urbantaxi-single-service-box .post-thumbnail.post-img:hover .service-meta-image {
+  background: var(--urbantaxi-primary-theme-color);
+}
+.service-meta-image {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: var(--urbantaxi-tertiary-theme-color);
+  width: 80px;
+  height: 80px;
+  border-radius: 50px;
+  padding: 10px;
+}
+.service-meta-image img{
+  padding: 10px;
+  border-radius: 0px;
+}
+.urbantaxi-service-sidebar-box {
+  margin-bottom: 40px;
+  position: sticky;
+  top: 130px;
+}
+.urbantaxi-service-sidebar-box .nav-pills .nav-link {
+  padding: 10px 10px;
+  background: var(--urbantaxi-quaternary-theme-color);
+  border-radius: 6px;
+  border: 1px solid #FFFFFF26;
+  width: 100%;
+}
+.urbantaxi-service-sidebar-box .service-single-body{
+  color: var(--urbantaxi-secondary-theme-color);
+  font: 400 16px / 16px var(--urbantaxi-primary-font-family);
+  align-items: center;
+}
+.urbantaxi-service-sidebar-box .nav-pills{
+  display: grid;
+  gap: 20px;
+}
+.urbantaxi-service-sidebar-box .service-count-box {
+  background: var(--urbantaxi-tertiary-theme-color);
+  width: 45px;
+  height: 45px;
+  border-radius: 6px;
+  line-height: 40px;
+  text-align: center;
+  font: 900 20px / 22px var(--urbantaxi-primary-font-family);
+  font-family: sans-serif;
+  color: var(--urbantaxi-secondary-theme-color);
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.urbantaxi-service-sidebar-box .nav-pills .nav-link.active {
+  background: var(--urbantaxi-primary-theme-color);
+}
+.urbantaxi-service-sidebar-box .nav-pills .nav-link.active .service-single-body {
+  color: var(--urbantaxi-tertiary-theme-color);
+}
+.key-features-box .elementor-icon-box-icon {
+  margin-top: 6px;
+}
+/* sidebar start */
+.urbantaxi-post-title a {
+  color: var(--urbantaxi-tertiary-theme-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.urbantaxi-recent-post-item{
+  background: #0B0B0B;
+}
+.urbantaxi-recent-post-item:hover .urbantaxi-post-title a {
+  color: var(--urbantaxi-primary-theme-color);
+}
+.urbantaxi-icon {
+  flex-shrink: 0;
+  color: var(--urbantaxi-primary-theme-color);
+}
+.urbantaxi-widget-sidebar-box {
+  position: sticky;
+  align-self: flex-start;
+  top: 110px;
+}
+.urbantaxi-widget{
+	position: relative;
+	z-index: 0;
+}
+.post-social-icon-box .sidebar-widget h4,.urbantaxi-sidebar-com-box .sidebar-widget h4{
+  color: var(--urbantaxi-secondary-theme-color);
+  margin-bottom: 20px;
+}
+.post-social-icon-box .sidebar-widget ul,.urbantaxi-sidebar-com-box .sidebar-widget ul{
+  list-style-type: none;
+  display: grid;
+  gap: 15px;
+  padding: 0;
+}
+.post-social-icon-box .sidebar-widget ul li,.urbantaxi-sidebar-com-box .sidebar-widget ul li{
+  background: #0B0B0B;
+  padding: 15px 18px;
+  border-radius: 6px;
+}
+.post-social-icon-box .sidebar-widget,.urbantaxi-sidebar-com-box .sidebar-widget{
+  background: var(--urbantaxi-quaternary-theme-color);
+  border: 1px solid #FFFFFF26;
+  border-radius: 6px;
+  padding: 30px 20px;
+  margin-bottom: 20px;
+}
+.post-social-icon-box .sidebar-widget a ,.urbantaxi-sidebar-com-box .sidebar-widget a{
+  display: flex !important;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  color: var(--urbantaxi-secondary-theme-color);
+}
+.urbantaxi-term-name {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 300;
+  color: var(--urbantaxi-secondary-theme-color);
+}
+.urbantaxi-term-count {
+  font-size: 14px;
+  color: #666;
+  font-weight: 400;
+}
+.urbantaxi-taxonomy-item.highlighted .urbantaxi-term-count,.urbantaxi-post-title a {
+  color: var(--urbantaxi-tertiary-theme-color);
+}
+.urbantaxi-arrow {
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--urbantaxi-secondary-theme-color);
+  margin-left: 10px;
+  transition: transform 0.3s ease;
+}
+.urbantaxi-arrow svg path{
+  fill: var(--urbantaxi-secondary-theme-color);
+}
+.post-social-icon-box .sidebar-widget a:hover span{
+  color: var(--urbantaxi-tertiary-theme-color); 
+}
+.post-social-icon-box .sidebar-widget a:hover .urbantaxi-arrow svg path{
+  fill: var(--urbantaxi-tertiary-theme-color); 
+}
+.urbantaxi-taxonomy-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 10px;
+  background: #0B0B0B;
+  border-radius: 6px;
+  text-decoration: none;
+  color: var(--urbantaxi-tertiary-theme-color);
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+.urbantaxi-taxonomy-item:hover,.urbantaxi-pages-sidebar-main-box .sidebar-widget ul li:hover {
+  background: var(--urbantaxi-primary-theme-color);
+}
+.urbantaxi-taxonomy-item.highlighted {
+  background: var(--urbantaxi-primary-theme-color);
+  color: var(--urbantaxi-tertiary-theme-color);
+  font-weight: 600;
+}
+.urbantaxi-taxonomy-item.highlighted:hover {
+  background: var(--urbantaxi-primary-theme-color);
+  border-color: var(--urbantaxi-primary-theme-color);
+}
+/* custom 404 page */
+.not-found-content{
+  margin-bottom: 50px;
+  padding: 50px 0px;
+}
+.error-page-heading {
+  font: 600 400px / 400px var(--urbantaxi-primary-font-family);
+  text-align: center;
+}
+.error-btn{
+  margin-top: 40px;
+}
+.error-btn a {
+  background: var(--urbantaxi-tertiary-theme-color);
+  color: var(--urbantaxi-secondary-theme-color);
+  padding: 12px 25px;
+  border-radius: 50px;
+}
+.error-btn a:hover {
+  background: var(--urbantaxi-primary-theme-color) !important;
+  color: var(--urbantaxi-tertiary-theme-color);
+}
+.not-found-content img {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  bottom: 25%;
+  width: 250px;
+}
+/* 404 page */
+#error-page-mainbox .urbantaxi-button-box:hover .elementor-button-icon svg{
+  right: 0px;
+}
+.taxi-404-image-box {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  bottom: -30px;
+  width: 250px;
+}
+/* registration page */
+.registration-form-box label {
+  font: 400 16px / 18px var(--urbantaxi-primary-font-family);
+  color: var(--urbantaxi-secondary-theme-color);
+  margin-bottom: 10px;
+}
+.registration-form-box input, .registration-form-box optgroup, .registration-form-box select, .registration-form-box textarea {
+  box-shadow: none;
+  border-radius: 6px;
+  padding: 10px 15px;
+  background: #0B0B0B;
+  width: 100%;
+  border: 1px solid #FFFFFF26;
+  color: var(--urbantaxi-secondary-theme-color);
+}
+.registration-form-box .wpcf7-form-control-wrap input::placeholder,
+.registration-form-box .wpcf7-form-control.wpcf7-select::placeholder,.registration-form-box select option{
+  font: 400 16px/20px var(--urbantaxi-font-family), sans-serif;
+  color: var(--urbantaxi-secondary-theme-color);
+  outline: none;
+}
+.registration-form-box .driver-form-box {
+  padding: 15px 0px;
+  gap: 15px 0px;
+}
+.registration-form-box .driver-form-address-box {
+  background: var(--urbantaxi-tertiary-theme-color);
+  border: 1px solid var(--urbantaxi-primary-theme-color);
+  border-radius: 6px;
+  padding: 20px;
+}
+/* For select dropdown first option */
+.registration-form-box select option {
+    color: #fff;
+}
+.registration-form-box .custom-file-upload {
+  position: relative;
+  border-radius: 6px;
+  padding: 20px 20px;
+  text-align: center;
+  background: #0B0B0B;
+  border: 1px solid #FFFFFF26;
+}
+.registration-form-box .custom-file-upload input[type="file"] {
+  position: absolute;
+  width: 200px;
+  height: 100px;
+  left: -100px;
+  top: -50px;
+  opacity: 0;
+  cursor: pointer;
+  border-radius: 0px;
+}
+.registration-form-box .custom-file-upload .upload-text {
+  display: block;
+  font: 400 15px / 15px var(--urbantaxi-font-family);
+  color: var(--urbantaxi-secondary-theme-color);
+}
+.registration-form-box .custom-file-upload::before {
+  content: url(assets/images/upload-icon.png) !important;
+  font-size: 30px;
+  display: block;
+  margin-bottom: 10px;
+  opacity: 0.2;
+}
+.registration-form-box .taxi-button-box br{
+  display: none;
+}
+.registration-form-box .submit_btn_icon .elementor-button-content-wrapper {
+  background: var(--urbantaxi-primary-theme-color);
+  border-radius: 6px;
+  width: fit-content;
+  padding: 8px 15px 8px 15px;
+  gap: 5px;
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+}
+.registration-form-box .submit_btn_icon .elementor-button-content-wrapper .wpcf7-form-control{
+  border: none;
+  background: transparent;
+  color: var(--urbantaxi-tertiary-theme-color);
+  padding: 0;
+}
+.registration-form-box .submit_btn_icon .elementor-button-content-wrapper:hover{
+  background: var(--urbantaxi-secondary-theme-color);
+}
+.registration-form-box .submit_btn_icon .elementor-button-content-wrapper:hover .wpcf7-form-control{
+  color: var(--urbantaxi-tertiary-theme-color);
+}
+.registration-form-box .taxi-button-box .elementor-button-text{
+  margin: auto;
+}
+.registration-form-box .submit_btn_icon .elementor-button-content-wrapper:hover i{
+  color: var(--urbantaxi-tertiary-theme-color);
+}
+.registration-form-box .wpcf7-spinner{
+  position: absolute;
+}
+.registration-form-box .taxi-contact-form-box .submit_btn_icon p{
+  padding: 0px;
+}
+/* contact page  */
+#urbantaxi-contact-page .taxi-button-box br {
+  display: none !important;
+}
+.taxi-contact-form-box p{
+  padding: 8px 0px;
+}
+.urbantaxi-contact-box .elementor-widget-icon {
+  width: 60px;
+  height: 55px;
+  line-height: 65px;
+  text-align: center;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+.comment-form p input.wpcf7-form-control.wpcf7-text,.wpcf7 form .wpcf7-response-output{
+  color: var(--urbantaxi-secondary-theme-color);
+}
+#urbantaxi-contact-page input.wpcf7-form-control.wpcf7-text, #urbantaxi-contact-page .wpcf7-form-control.wpcf7-select, #urbantaxi-contact-page .wpcf7-form-control.wpcf7-select, #urbantaxi-contact-page textarea{
+  border: 1px solid #B5B5B5;
+  border-radius: 6px;
+  padding: 10px 15px;
+  background: var(--urbantaxi-quaternary-theme-color);
+  width: 100%;
+  color: var(--urbantaxi-secondary-theme-color);
+}
+#urbantaxi .wpcf7-form-control-wrap input::placeholder,
+#urbantaxi .wpcf7-form-control.wpcf7-select::placeholder,
+#urbantaxi textarea::placeholder {
+  font: 300 16px/20px var(--urbantaxi-font-family), sans-serif;
+  color: var(--urbantaxi-secondary-theme-color);
+  outline: none;
+}
+#urbantaxi-contact-page .wpcf7 select.wpcf7-form-control.wpcf7-select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  font-size: 16px;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='10' viewBox='0 0 20 20' width='10' xmlns='http://www.w3.org/2000/svg'><path d='M5.25 7.5l4.5 4.5 4.5-4.5H5.25z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 22px;
+  outline: none;
+  cursor: pointer;
+}
+#urbantaxi-contact-page textarea {
+  height: 180px;
+}
+#urbantaxi-contact-page .submit_btn_icon .elementor-button-content-wrapper {
+  background: var(--urbantaxi-secondary-theme-color);
+  border-radius: 6px;
+  width: fit-content;
+  padding: 8px 15px 8px 15px;
+  gap: 5px;
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+}
+#urbantaxi-contact-page .submit_btn_icon .elementor-button-content-wrapper .wpcf7-form-control{
+  border: none;
+  background: transparent;
+  color: var(--urbantaxi-tertiary-theme-color);
+  padding: 0;
+}
+#urbantaxi-contact-page .submit_btn_icon .elementor-button-content-wrapper:hover{
+  background: var(--urbantaxi-primary-theme-color);
+}
+#urbantaxi-contact-page .submit_btn_icon .elementor-button-content-wrapper:hover .wpcf7-form-control{
+  color: var(--urbantaxi-tertiary-theme-color);
+}
+#urbantaxi-contact-page .taxi-button-box .elementor-button-text{
+  margin: auto;
+}
+#urbantaxi-contact-page .submit_btn_icon .elementor-button-content-wrapper:hover i{
+  color: var(--urbantaxi-tertiary-theme-color);
+}
+#urbantaxi-contact-page .wpcf7-spinner{
+  position: absolute;
+}
+#urbantaxi-contact-page .taxi-contact-form-box .submit_btn_icon p{
+  padding: 0px;
+}
+/* booking form */
+.taxi-booking-form-box{
+  width: 80%;
+  margin: 0 auto;
+}
+.theme-urbantaxi .taxi-slider-banner-main-section .mptbm_transport_search_area {
+  width: 100%;
+  max-width: 100%;
+  border-radius: 20px !important;
+  position: relative;
+  margin: auto;
+  padding: 0;
+  background: transparent;
+  backdrop-filter: unset;
+  -webkit-backdrop-filter: blur(25px);
+  border: none;
+  box-shadow: none;
+  z-index: 0;
+}
+.theme-urbantaxi .mptbm_transport_search_area{
+  width: 100%;
+  max-width: 65%;
+  border-radius: 6px !important;
+  position: relative;
+  margin: auto;
+  padding: 20px 40px 60px 40px;
+  background: linear-gradient(135deg, rgb(200 200 200 / 0%), rgb(200 200 200 / 0%));
+  -webkit-backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  z-index: 0;
+}
+.theme-urbantaxi .mpStyle ul.list_inline_two li i{
+  color: var(--urbantaxi-tertiary-theme-color);
+}
+.theme-urbantaxi ._mR_xs .mp_load_more_text_area {
+  display: grid;
+  gap: 6px;
+  padding-bottom: 20px;
+}
+.theme-urbantaxi div.mptbm_transport_search_area button.mptbm_price_calculation{
+  color: var(--urbantaxi-tertiary-theme-color);
+}
+.theme-urbantaxi div.mpStyle [data-read] span {
+  background: var(--urbantaxi-primary-theme-color);
+  color: var(--urbantaxi-tertiary-theme-color);
+  padding: 10px 15px;
+  border-radius: 6px;
+}
+.theme-urbantaxi .mpStyle .flexWrap{
+  flex-wrap: nowrap !important;
+  height: 450px;
+}
+.mpStyle .mainSection{
+  margin-left: 15px !important;
+  max-width:calc(100% - 245px) !important;
+}
+.list_inline_two .fas{
+  display: none !important;
+}
+.theme-urbantaxi div.mptbm_transport_search_area ul.list_inline_two li i,
+.theme-urbantaxi div.mptbm_transport_search_area ul.list_inline_two li .fas,
+.theme-urbantaxi div.mptbm_transport_search_area ul.list_inline_two li .mi {
+  display: none !important;
+  align-items: center;
+  justify-content: center;
+  min-width: 16px;
+}
+.leftSidebar::-webkit-scrollbar,.mainSection::-webkit-scrollbar {
+  width: 4px;             
+  height: 2px;     
+  padding-right: 30px;       
+}
+.leftSidebar::-webkit-scrollbar-track,.mainSection::-webkit-scrollbar-track {
+  background: var(--urbantaxi-secondary-theme-color);   
+  margin-right: 30px;  
+  border-radius: 20px;
+}
+.leftSidebar::-webkit-scrollbar-thumb,.mainSection::-webkit-scrollbar-thumb {
+  background: var(--urbantaxi-tertiary-theme-color);
+  border-radius: 10px;
+  padding-right: 30px;
+}
+.leftSidebar{
+  height: 445px !important;
+  overflow-y: scroll !important;
+}
+.mainSection{
+  max-width: 230px !important;        
+  height: 445px !important;
+  overflow-y: scroll !important;
+}
+.theme-urbantaxi .mptbm-show-search-result .background-img-skin {
+  background: var(--urbantaxi-quaternary-theme-color);
+  border-radius: 30px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 0px;
+  margin: 25px 0px;
+}
+.mptbm-show-search-result .leftSidebar{
+  margin-right: 0px !important;
+}
+.mptbm-show-search-result{
+  background-color: #0B0B0B;
+}
+.mptbm-show-search-result .mptbm_booking_item{
+  border-radius: 6px !important;
+}
+.mptbm-vehicle-wrapper div.bg_image_area{
+  border-radius: 6px;
+}
+.theme-urbantaxi .summary-box {
+  min-height: 400px;
+  overflow: auto;
+  background: var(--urbantaxi-secondary-theme-color) !important;
+  padding: 15px;
+  border-radius: 6px !important;
+  height: fit-content;
+  position: sticky;
+  top: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+.theme-urbantaxi div.mptbm_transport_search_area .leftSidebar h3{
+  padding-bottom: 10px;
+  color: var(--urbantaxi-tertiary-theme-color) !important;
+}
+.theme-urbantaxi div.mptbm_booking_item h5 {
+  color: var(--urbantaxi-tertiary-theme-color);
+  font-size: 20px;
+  text-align: start;
+  margin-top: 10px;
+  font-weight: 500;
+}
+.theme-urbantaxi div.mptbm_booking_item h4 {
+  color: var(--urbantaxi-tertiary-theme-color);
+  font-size: 24px;
+  font-weight: 500;
+}
+.theme-urbantaxi ._mpBtn_xs_w_150.mptbm_transport_select.active_select {
+  background-image: none;
+}
+.e-n-accordion-item-title:focus-visible {
+  outline: 2px solid #005fcc;
+  outline-offset: 0px;
+}
+/* new css */
+.urbantaxi-imported a {
+  text-decoration: none !important;
+}
+.container{
+  max-width: 1320px !important;
+}
+.taxi-section-heading-icon-box{
+  height: fit-content;
+}
+.taxi-section-heading-box{
+  width: fit-content;
+  margin: auto;
+}
+.taxi-section-left-heading-box{
+  width: fit-content;
+  margin: unset;
+}
+.taxi-section-right-heading-box{
+  width: fit-content;
+  align-self: end;
+}
+.book-taxies-bottom-white-image-box{
+  position: relative;
+  top: 50px;
+  z-index: 1;
+}
+.book-taxies-bottom-white-image-box img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#taxi-about-us-section .urbantaxi-animated-heading,#taxi-our-gallery-main-section .urbantaxi-animated-heading{
+  font-family: sans-serif;
+  background: transparent;
+}
+/* slider form */
+.mptbm-osm-autocomplete{
+  color: #000;
+}
+.slider-main-outer-box .ut-sidebar-content .divider,.taxi-booking-form-box .tabsContentNext .divider{
+  display: none;
+}
+.inputList .fdColumn:has(#mptbm_toggle_extra_stop){
+	margin: 0px;
+}
+div.mptbm_transport_search_area div.tabsContentNext {
+	padding: 0px; 
+}
+.mptbm_transport_search_area .tabListsNext {
+  padding: 20px 0px; 
+}
+.list_inline_two {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+}
+div[class*="dLoader"] {
+  background: var(--urbantaxi-secondary-theme-color);
+  color: var(--urbantaxi-tertiary-theme-color);
+}
+.taxi-slider-form-box {
+  background: var(--urbantaxi-tertiary-theme-color);
+  border-radius: 6px;
+  border: none;
+  z-index: 2;
+}
+.theme-urbantaxi .mpStyle .inputList {
+  margin: 15px 0 0 0;
+}
+.theme-urbantaxi .mpStyle ul.mp_input_select_list li, .theme-urbantaxi .mpStyle ul.mp_input_select_list li{
+  color: var(--urbantaxi-tertiary-theme-color);
+}
+.theme-urbantaxi .mpStyle .mpForm label span,.theme-urbantaxi .mptbm_transport_search_area option,.theme-urbantaxi div.mptbm_transport_search_area .mptbm_search_area label .formControl{
+  color: var(--urbantaxi-secondary-theme-color);
+}
+#taxi-slider-main-section #mptbm_get_vehicle:hover {
+  background-color: var(--urbantaxi-secondary-theme-color) !important;
+  color: var(--urbantaxi-tertiary-theme-color) !important;
+}
+.theme-urbantaxi #taxi-slider-main-section div.mptbm_transport_search_area .mptbm_left_icon path {
+  fill: var(--urbantaxi-secondary-theme-color);
+}
+.theme-urbantaxi #taxi-slider-main-section .inputList input.formControl {
+  color: var(--urbantaxi-secondary-theme-color) !important;
+  -webkit-text-fill-color: var(--urbantaxi-secondary-theme-color) !important; 
+}
+div.mptbm_transport_search_area ul.list_inline_two li {
+  display: flex;
+  border: none;
+  width: 100% !important;
+  gap: 0 8px;
+  align-items: center;
+}
+/* slider banner */
+.ut-sidebar-static-icon-wrap{
+  position: relative;
+}
+.ut-sidebar-static-header{
+  padding: 10px 0px 0px 10px;
+}
+.ut-sidebar-static-icon-wrap:after {
+  content: '';
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  background: transparent;
+  border: 1px solid var(--urbantaxi-primary-theme-color);
+  color: var(--urbantaxi-primary-theme-color);
+  top: -7px;
+  left: -7px;
+  border-radius: 50%;
+}
+.taxi-slider-banner-main-container-box{
+  right: 0;
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  bottom: 0;
+  top: 15%;
+  margin: 0 auto;
+  width: fit-content;
+}
+.taxi-banner-slider-carousel-box,.taxi-banner-slider-carousel-box .swiper-wrapper,.taxi-banner-slider-carousel-box .swiper-slide,.taxi-banner-slider-carousel-box .swiper-slide-inner,.taxi-banner-slider-carousel-box .elementor-image-carousel-wrapper{
+  height: 800px;
+}
+.taxi-banner-slider-carousel-box .swiper-slide-inner img{
+  height: 100%;
+  object-fit: cover;
+}
+.taxi-slider-form-cab-icon{
+  width: 70px;
+  height: 60px;
+  line-height: 60px;
+	position: relative;
+}
+.taxi-slider-form-cab-icon:after{
+	content: '';
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  background: transparent;
+  border: 2px dashed var(--urbantaxi-primary-theme-color);
+  color: var(--urbantaxi-primary-theme-color);
+  top: -6px;
+  left: -6px;
+  border-radius: 50%;
+  animation: spin 10s linear infinite;
+}
+#taxi-slider-main-section .swiper-pagination-bullet-active {
+  width: 50px !important;
+  border-radius: 50px;
+}
+#taxi-slider-main-section .swiper-pagination{
+  margin-bottom: 20px;
+  z-index: 2 !important;
+}
+#taxi-slider-main-section .elementor-swiper-button{
+  background: var(--urbantaxi-quaternary-theme-color);
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+#taxi-slider-main-section .elementor-swiper-button:hover{
+  background: var(--urbantaxi-primary-theme-color);
+}
+#taxi-slider-main-section .elementor-swiper-button:hover svg{
+  fill: var(--urbantaxi-tertiary-theme-color);
+}
+#taxi-slider-main-section .ekit-video-popup-btn{
+  display: flex;
+  width: 100%;
+  padding: 0px 15px 0px 15px;
+  height: auto;
+  gap: 10px;
+}
+#taxi-slider-main-section .elementor-swiper-button-next{
+  right: 50px;
+}
+#taxi-slider-main-section .elementor-swiper-button-prev{
+  left: 50px;
+}
+/* service */
+.urbantaxi-imported .post-query-item .post-custom-meta,.taxi-check-icon-box,.taxi-offer-section-svg-icon-box{
+  animation: flipInX 3s infinite;
+}
+.taxi-feature-bottom-image-box,.book-taxies-bottom-image-box {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.taxi-our-blog-bottom-image-box{
+  position: absolute;
+  bottom: -30px;
+  left: 0;
+  z-index: 0;
+}
+.book-taxies-top-image-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#taxi-service-car-main-box .taxi-feature-bg-image-box{
+  width: auto !important;
+} 
+/* about  */
+.about-image-right,.about-image-left,.taxi-gallery-right-content-box .elementor-widget-image{
+  position: relative;
+}
+.about-image-right:hover::after, .about-image-left:hover::after,.taxi-gallery-right-content-box .elementor-widget-image:hover::after {
+    transform: scaleY(1);
+}
+.about-image-right:hover::before, .about-image-left:hover::before,.taxi-gallery-right-content-box .elementor-widget-image:hover::before {
+    transform: scaleX(1);
+}
+.about-image-right:before, .about-image-left:before,.taxi-gallery-right-content-box .elementor-widget-image:before{
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0.4;
+  border-radius: 6px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+  transform: scaleX(0);
+  transition: all 0.6s ease 0s;
+}
+.about-image-right:after, .about-image-left:after,.taxi-gallery-right-content-box .elementor-widget-image:after{
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0.4;
+  border-radius: 6px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+  transform: scaleX(0);
+  transition: all 0.6s ease 0s;
+}
+.taxi-about-image-box .about-image-left img,.about-image-right img {
+  height: 100% !important;
+  width: 100% !important;
+}
+.taxi-about-service-icon-box .elementor-icon-box-icon {
+  width: 80px;
+  height: 80px;
+  line-height: 80px;
+  border-radius: 6px;
+  transition: all 0.5s ease-in-out;
+  border: 1px solid #FFFFFF26;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+.taxi-about-service-icon-box .elementor-icon-box-icon svg {
+  height: 50px;
+}
+.taxi-about-section-image{
+  position: relative;
+  top: 30px;
+  left: 10px;
+}
+.taxi-about-overlay-box {
+  position: relative;
+  width: 100%;
+  height: 60px;
+  background: #998915;
+  clip-path: polygon(10% 0, 90% 0, 100% 60%, 0 60%);
+  z-index: -1;
+}
+.taxi-about-image-after-box{
+  position: absolute;
+  bottom: 60px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  z-index: -1;
+  height: 0;
+  overflow: hidden;
+  transition: height 1.2s ease;
+}
+.taxi-about-image-after-box.active{
+  height: 100%;
+}
+.taxi-about-section-paragraph{
+  width: 92%;
+}
+/* how it works */
+.taxi-how-works-section-svg-icon-box{
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  align-items: center;
+  padding: 8px;
+  margin: 0 auto;
+}
+.how-works-count-box{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+.how-works-content-main-box .elementor-icon-box-title span{
+  position: relative;
+}
+.how-works-content-main-box .elementor-icon-box-title span:after {
+  content: '';
+  width: 50px;
+  height: 3px;
+  position: absolute;
+  bottom: -15px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  background: var(--urbantaxi-primary-theme-color);
+}
+/* gallery */
+.taxi-gallery-center-image-box,.taxi-gallery-icon-main-box{
+  position: relative;
+}
+.taxi-gallery-icon-main-box:after {
+  content: '';
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  background: transparent;
+  border: 2px dashed var(--urbantaxi-primary-theme-color);
+  color: var(--urbantaxi-primary-theme-color);
+  top: -8px;
+  left: -8px;
+  border-radius: 50%;
+  animation: spin 10s linear infinite;
+}
+.taxi-gallery-icon-main-box{
+	width: 80px;
+  height: 80px;
+  line-height: 80px;
+  padding: 15px;
+  border-radius: 50%;
+  position: absolute;
+  top: 45%;
+  bottom: 0;
+  margin: 0 auto;
+  left: -30px;
+}
+.taxi-gallery-center-image-box:before {
+  content: "";
+  position: absolute;
+  inset: -14px;
+  border: 2px solid var(--urbantaxi-primary-theme-color);
+  border-radius: 6px;
+  transform: rotate(6deg);
+  z-index: 0;
+  width: 80%;
+  height: 80%;
+  right: 25px;
+  left: unset;
+  top: 28px;
+}
+/* faq */
+.taxi-faq-accordian-box .pp-accordion-item .pp-accordion-tab-title .pp-accordion-tab-icon {
+  padding: 11px 10px;
+  background: var(--urbantaxi-light-yellow);
+  align-items: center;
+  border-radius: 50px;
+  line-height: 45px;
+  justify-content: center;
+  display: flex;
+}
+.taxi-faq-accordian-box .pp-accordion-item .pp-accordion-tab-title .pp-accordion-toggle-icon{
+  z-index: 1;
+}
+.taxi-faq-left-image-box {
+  z-index: 1;
+}
+/* why-choose */
+.why-choose-service-icon-box .elementor-icon-box-icon {
+  background: var(--urbantaxi-light-yellow);
+  width: 58px;
+  height: 58px;
+  border-radius: 6px;
+  text-align: center;
+  transition: all 1s ease-in-out;
+  box-shadow: 0px 2px 7px 0px #11131733;
+}
+.why-choose-service-icon-box .elementor-icon-box-icon svg {
+  height: 58px;
+}
+.taxi-why-choose-left-line{
+  position: relative;
+  top: 20px;
+}
+.why-choose-bg-circle-image{
+  position: absolute;
+  z-index: 0;
+}
+.why-choose-center-box{
+  z-index: 1;
+}
+.why-choose-left-box,.why-choose-right-box{
+  z-index: 2;
+}
+/* get service banner */
+.taxi-get-service-car-image-box {
+  position: absolute;
+  bottom: 50px;
+  right: 80px;
+  left: unset;
+  width: 700px;
+}
+.taxi-get-service-mobile-image-box {
+  position: relative;
+  top: -50px;
+  width: 900px;
+  left: 100px;
+}
+.taxi-get-service-icon .elementor-icon-box-icon {
+  background: var(--urbantaxi-light-yellow);
+  width: 58px;
+  height: 58px;
+  border-radius: 6px;
+  text-align: center;
+  transition: all 1s ease-in-out;
+  box-shadow: 0px 2px 7px 0px #11131733;
+  align-items: center;
+  align-self: center;
+  justify-content: center;
+  display: flex;
+}
+.taxi-get-service-bg-overlay-box{
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  box-shadow: 10px 0px 125px 40px;
+  color: var(--yellow);
+  position: absolute;
+  left: 0;
+  top: 15%;
+}
+.taxi-footer-contact-box .elementor-icon{
+  position: relative;
+  top: 3px;
+}
+/* cost calculator */
+.summary-table th{
+  color: #fff !important;
+}
+.summary-table th:nth-child(2){
+  text-align: end;
+}
+/* blog */
+.pp-posts-container .pp-post-thumbnail{
+  height: 250px;
+}
+.pp-posts-container .pp-post-thumbnail img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.pp-posts-container .pp-post-author{
+  background: var(--urbantaxi-tertiary-theme-color);
+  padding: 5px 8px;
+  border-radius: 50px;
+}
+.pp-posts-container .pp-post-author .pp-meta-text a{
+  color: var(--urbantaxi-secondary-theme-color) !important;
+  font: 500 18px/18px var(--urbantaxi-primary-font-family);
+}
+/* partner */
+.taxi-partner-main-box .elementor-widget-image{
+  position: relative;
+}
+.taxi-partner-main-box .elementor-widget-image:after{
+  content: '';
+  position: absolute;
+  border-right: 1px solid #A6A6A6;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+.taxi-partner-main-box .elementor-widget-image:last-child::after{
+  display: none;
+}
+/* offer */
+.offer-counter-box .ccb-dropdown__list ul li[data-v-817b562c]{
+  flex-direction: row;
+}
+.offer-counter-box .ccb-dropdown__list ul li[data-v-817b562c] span {
+  align-self: center;
+}
+.offer-counter-box .ccb-vertical-layout{
+  gap: 0px 10px;
+}
+.taxi-offer-section-svg-icon-box {
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  align-items: center;
+  padding: 8px;
+}
+.offer-counter-shape-box{
+  clip-path: polygon( 0.952% 0.1%,50.317% 0.1%,50.317% 0.1%,50.459% 0.114%,50.593% 0.156%,50.719% 0.222%,50.833% 0.312%,50.935% 0.421%,51.022% 0.549%,51.093% 0.693%,51.146% 0.851%,51.179% 1.02%,51.19% 1.198%,51.19% 12.335%,51.19% 12.335%,51.204% 12.546%,51.243% 12.745%,51.306% 12.931%,51.39% 13.101%,51.493% 13.252%,51.613% 13.382%,51.748% 13.488%,51.896% 13.566%,52.055% 13.616%,52.222% 13.632%,99.048% 13.632%,99.048% 13.632%,99.189% 13.647%,99.324% 13.688%,99.449% 13.755%,99.563% 13.844%,99.665% 13.954%,99.752% 14.082%,99.823% 14.226%,99.876% 14.383%,99.909% 14.552%,99.921% 14.73%,99.921% 98.762%,99.921% 98.762%,99.909% 98.94%,99.876% 99.109%,99.823% 99.267%,99.752% 99.411%,99.665% 99.538%,99.563% 99.648%,99.449% 99.738%,99.324% 99.804%,99.189% 99.846%,99.048% 99.86%,0.952% 99.86%,0.952% 99.86%,0.811% 99.846%,0.676% 99.804%,0.551% 99.738%,0.437% 99.648%,0.335% 99.538%,0.248% 99.411%,0.177% 99.267%,0.124% 99.109%,0.091% 98.94%,0.079% 98.762%,0.079% 1.198%,0.079% 1.198%,0.091% 1.02%,0.124% 0.851%,0.177% 0.693%,0.248% 0.549%,0.335% 0.421%,0.437% 0.312%,0.551% 0.222%,0.676% 0.156%,0.811% 0.114%,0.952% 0.1% );
+}
+.offer-counter-shape-border-box{
+  clip-path: polygon( 0.952% 0.1%,50.317% 0.1%,50.317% 0.1%,50.459% 0.114%,50.593% 0.156%,50.719% 0.222%,50.833% 0.312%,50.935% 0.421%,51.022% 0.549%,51.093% 0.693%,51.146% 0.851%,51.179% 1.02%,51.19% 1.198%,51.19% 12.335%,51.19% 12.335%,51.204% 12.546%,51.243% 12.745%,51.306% 12.931%,51.39% 13.101%,51.493% 13.252%,51.613% 13.382%,51.748% 13.488%,51.896% 13.566%,52.055% 13.616%,52.222% 13.632%,99.048% 13.632%,99.048% 13.632%,99.189% 13.647%,99.324% 13.688%,99.449% 13.755%,99.563% 13.844%,99.665% 13.954%,99.752% 14.082%,99.823% 14.226%,99.876% 14.383%,99.909% 14.552%,99.921% 14.73%,99.921% 98.762%,99.921% 98.762%,99.909% 98.94%,99.876% 99.109%,99.823% 99.267%,99.752% 99.411%,99.665% 99.538%,99.563% 99.648%,99.449% 99.738%,99.324% 99.804%,99.189% 99.846%,99.048% 99.86%,0.952% 99.86%,0.952% 99.86%,0.811% 99.846%,0.676% 99.804%,0.551% 99.738%,0.437% 99.648%,0.335% 99.538%,0.248% 99.411%,0.177% 99.267%,0.124% 99.109%,0.091% 98.94%,0.079% 98.762%,0.079% 1.198%,0.079% 1.198%,0.091% 1.02%,0.124% 0.851%,0.177% 0.693%,0.248% 0.549%,0.335% 0.421%,0.437% 0.312%,0.551% 0.222%,0.676% 0.156%,0.811% 0.114%,0.952% 0.1% );
+  position: relative;
+  bottom: 65px;
+}
+.offer-counter-content-box-one,.offer-counter-content-box-two,.offer-counter-content-box-three,.offer-counter-content-box-four{
+  position: relative;
+}
+.offer-counter-image-box{
+  position: absolute;
+  width: fit-content;
+  right: 30px;
+  bottom: 25%;
+  align-items: center;
+  justify-content: center;
+}
+.offer-counter-box{
+  position: relative;
+}
+.offer-top-box-image {
+  position: absolute;
+  left: 0;
+  top: -60px;
+  width: 100%;
+  height: fit-content;
+  border-radius: 6px;
+}
+.offer-counter-shape-border-box{
+  position: relative;
+  top: 5px;
+}
+.taxi-offer-section-svg-icon-box{
+  width: 65px;
+  height: 65px;
+}
+.offer-counter-box #uc_timer_countdown_elementor_270ba32 .uc_countdown_section{
+  clip-path: unset;
+}
+.urbantaxi-imported .offer-counter-box .uc_countdown_section {
+  position: relative;
+  padding: 15px 10px !important;
+  background-color: #0B0B0B !important;
+  border-radius: 6px !important;
+  width: 88px;
+  height: 88px;
+  line-height: 88px;
+}
+.uc_countdown_section:after{
+  content: ":";
+  position: absolute;
+  right: -25px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--urbantaxi-tertiary-theme-color);
+  font-size: 44px;
+  font-weight: 800;
+  z-index: 5;
+}
+.uc_countdown_section:nth-child(4)::after{
+  display: none;
+}
+/* woocomerce login page */
+.middle-content ul li {
+  list-style-position: inside;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.page .middle-content p, .terms-conditions-para, .custo-para {
+  color: var(--urbantaxi-tertiary-theme-color);
+  font: 400 15px / 25px var(--urbantaxi-font-family);
+}
+.woocommerce-MyAccount-navigation ul {
+  list-style-type: none;
+}
+.woocommerce-MyAccount-navigation ul li a{
+  color: var(--urbantaxi-secondary-theme-color);
+}
+.woocommerce li.woocommerce-MyAccount-navigation-link.is-active{
+  border: 1px solid var(--urbantaxi-primary-theme-color) !important;
+  background: var(--urbantaxi-primary-theme-color) !important;
+}
+.woocommerce li.woocommerce-MyAccount-navigation-link.is-active a{
+  color: var(--urbantaxi-tertiary-theme-color);
+}
+.woocommerce .woocommerce-MyAccount-navigation ul li{
+  background: var(--urbantaxi-quaternary-theme-color) !important;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #FFFFFF26;
+  border-radius: 6px;
+}
+.woocommerce .woocommerce-MyAccount-navigation ul li br{
+  display: none;
+}
+.woocommerce-info{
+  border-color: var(--urbantaxi-primary-theme-color) !important;
+}
+button.woocommerce-Button.button, .woocommerce-Button, .woocommerce-info a.woocommerce-Button.wc-forward.button,.woocommerce-info a {
+  border: none !important;
+  background: var(--urbantaxi-primary-theme-color) !important;
+  color: var(--urbantaxi-tertiary-theme-color) !important;
+  padding: 14px 24px !important;
+  border-radius: 6px !important;
+  font: 400 16px / 16px var(--urbantaxi-font-family) !important;
+}
+button.woocommerce-Button.button:hover, .woocommerce-Button:hover, .woocommerce-info a.woocommerce-Button.wc-forward.button:hover, .woocommerce-info a:hover{
+  background: var(--urbantaxi-tertiary-theme-color) !important;
+  color: var(--urbantaxi-secondary-theme-color) !important;
+}
+button.woocommerce-Button.button:hover, .woocommerce-Button:hover, .woocommerce-info a.woocommerce-Button.wc-forward.button:hover,.woocommerce-info a:hover{
+  background: var(--urbantaxi-tertiary-theme-color);
+  color: var(--urbantaxi-secondary-theme-color);
+}
+.woocommerce .col2-set, .woocommerce-page .col2-set{
+  display: flex;
+  flex-direction: column;
+}
+#customer_login{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+#customer_login .u-column1,#customer_login .u-column2{
+  max-width: 48%;
+}
+.woocommerce-account .addresses .title .edit {
+  float: left !important;
+}
+.woocommerce-account.page-template-default .middle-content {
+  padding: 5% 0px;
+}
+.woocommerce-MyAccount-content p{
+  color: var(--urbantaxi-secondary-theme-color);
+}
+.woocommerce-form-login label{
+  font:400 16px/20px var(--urbantaxi-tertiary-theme-color)
+}
+.woocommerce .form-row .woocommerce-form__input-checkbox{
+  width: fit-content !important;
+  top: 2px;
+  position: relative;
+}
+.woocommerce .form-row .woocommerce-form-login label{
+  position: relative;
+  top: 6px;
+}
+.woocommerce form .form-row .input-text, .woocommerce form .form-row select{
+  padding: 12px 20px;
+  border: 1px solid #FFFFFF26;
+  border-radius: 6px;
+  background: var(--urbantaxi-tertiary-theme-color);
+  width: 100%;
+  color: #fff;
+}
+#tracking-page-main-box label,#tracking-page-main-box .logged-in-as,#tracking-page-main-box p{
+  font-family: var(--urbantaxi-font-family);
+  color: var(--urbantaxi-secondary-theme-color);
+}
+#tracking-page-main-box .form-row .button {
+  font: 500 15px / 15px var(--urbantaxi-font-family);
+  background: var(--urbantaxi-secondary-theme-color);
+  border-radius: 6px;
+  color: var(--urbantaxi-tertiary-theme-color);
+  padding: 12px 25px;
+}
+#tracking-page-main-box .form-row .button:hover{
+  background: var(--urbantaxi-primary-theme-color);
+  color: var(--urbantaxi-tertiary-theme-color);
+}
+.woocommerce-form-row br,.woocommerce-form__label label{
+  display: none;
+}
+.woocommerce .woocommerce-form-login .woocommerce-form-login__submit{
+  background: var(--urbantaxi-primary-theme-color);
+  border-radius: 6px;
+  color: var(--urbantaxi-tertiary-theme-color);
+  padding: 12px 25px;
+  font-weight: 500;
+  font-family: var(--urbantaxi-primary-font-family)';
+}
+.woocommerce .woocommerce-form-login .woocommerce-form-login__submit:hover{
+  background: var(--urbantaxi-tertiary-theme-color);
+  color: var(--urbantaxi-secondary-theme-color);
+  animation-name: elementor-animation-wobble-skew;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+}
+.woocommerce form.checkout_coupon, .woocommerce form.login, .woocommerce form.register {
+  border: none;
+  padding: 20px;
+  margin: 2em 0;
+  text-align: left;
+  border-radius: 5px;
+  box-shadow: 0px 0px 8px 1px #dcdcdc;
+  background: var(--urbantaxi-secondary-theme-color);
+}
+.wc-block-components-form .wc-block-components-text-input label, .wc-block-components-text-input label{
+  color: var(--urbantaxi-secondary-theme-color) !important;
+}
+.woocommerce h2{
+  font: 400 40px / 40px var(--urbantaxi-primary-font-family);
+  color: var(--urbantaxi-secondary-theme-color);
+}
+.woocommerce address{
+  color: var(--urbantaxi-secondary-theme-color);
+}
+.wc-block-components-order-summary .wc-block-components-order-summary-item__quantity span{
+  color: var(--urbantaxi-tertiary-theme-color) !important;
+}
+.woocommerce-checkout .wc-block-components-product-price__value.is-discounted,.woocommerce-checkout .wc-block-components-product-price__regular,.woocommerce-checkout .price del{
+  font: 400 22px / 28px var(--urbantaxi-primary-font-family);
+  color: var(--urbantaxi-tertiary-theme-color);
+}
+.woocommerce-cart .wc-block-components-product-price__value.is-discounted,.woocommerce-cart .wc-block-components-product-price__regular,.woocommerce-cart .price del{
+  font: 400 22px / 28px var(--urbantaxi-primary-font-family);
+  color: var(--urbantaxi-tertiary-theme-color);
+}
+li.woolentor-cart {
+  z-index: 6;
+}
+.urbantaxi-imported .wc-block-components-sidebar-layout .wc-block-components-main {
+  padding-right: 0 !important;
+  width: 60% !important;
+}
+.wc-block-components-sidebar{
+  width: 40% !important;
+}
+.wp-block-latest-comments{
+  color: var(--urbantaxi-secondary-theme-color);
+}
+.woocommerce-products-header__title,.woocommerce-breadcrumb,.woocommerce-breadcrumb a{
+  color: #fff !important;
+  text-align: center;
+}
+.wc-blocks-components-select .wc-blocks-components-select__container,.wc-block-components-form .wc-block-components-text-input input[type=email], .wc-block-components-form .wc-block-components-text-input input[type=number], .wc-block-components-form .wc-block-components-text-input input[type=password], .wc-block-components-form .wc-block-components-text-input input[type=tel], .wc-block-components-form .wc-block-components-text-input input[type=text], .wc-block-components-form .wc-block-components-text-input input[type=url], .wc-block-components-text-input input[type=email], .wc-block-components-text-input input[type=number], .wc-block-components-text-input input[type=password], .wc-block-components-text-input input[type=tel], .wc-block-components-text-input input[type=text], .wc-block-components-text-input input[type=url]{
+  background: var(--urbantaxi-tertiary-theme-color) !important;
+  color: #fff !important;
+}
+.wc-block-checkout__billing-fields label,.wc-blocks-components-select .wc-blocks-components-select__select{
+  color: #fff !important;
+}
+/* single product page */
+.single-product .price ins{
+  color: #514F4F;
+  font: 600 20px / 25px var(--urbantaxi-primary-font-family);
+  text-decoration: none;
+  margin-right: 5px;
+}
+.woocommerce div.product div.summary{
+  position: relative;
+}
+.single-product .yith-add-to-wishlist-button-block{
+  bottom: -30px;
+}
+.single-product .price del {
+  color: #A2A2A2;
+  font: 400 14px / 14px var(--urbantaxi-primary-font-family);
+}
+.summary.entry-summary .desc-para{
+  padding: 30px 0px;
+  font: 400 15px / 26px var(--urbantaxi-primary-font-family);
+}
+.single-product .summary.entry-summary p.price del{
+  font: 600 20px / 25px var(--urbantaxi-primary-font-family);
+}
+.shop.shop-product .woocommerce-ordering, .yith-wcwl-add-button span {
+  display: none;
+}
+.woocommerce-product-details__short-description{
+  font: 400 14px / 25px var(--urbantaxi-primary-font-family);
+  color: var(--blackk);
+}
+.woocommerce .loader::before{
+  display: none;
+}
+.entry-summary .rating {
+  color: #ffffff00 !important;
+  background: transparent;
+}
+.woocommerce .star-rating span{
+  color: var(--urbantaxi-primary-font-family);
+}
+.woocommerce div.product .product_title,.woocommerce-Tabs-panel h2{
+  font: 600 35px / 60px var(--urbantaxi-primary-font-family);
+  color: var(--black);
+}
+.woocommerce-product-details__short-description p,.woocommerce div.product div.summary p{
+  flex-direction: row-reverse;
+  display: flex;
+  justify-content: start;
+  padding-bottom: 10px;
+}
+.woocommerce div.product div.images img{
+  width: auto !important;
+  margin: auto;
+  height: 80%;
+}
+.woocommerce .woocommerce-product-rating .star-rating{
+  color: var(--urbantaxi-primary-theme-color);
+}
+#review_form input[type="submit"]{
+  background: var(--urbantaxi-primary-theme-color) !important;
+  color: var(--urbantaxi-secondary-theme-color) !important;
+  padding: 12px 30px !important;
+  font: 400 16px / 20px var(--urbantaxi-primary-font-family);
+}
+#review_form .form-submit:hover input[type="submit"]{
+  background: var(--urbantaxi-tertiary-theme-color) !important;
+}
+.single-product .woocommerce-product-gallery .flex-viewport{
+  background: #f2f2f2;
+}
+.single-product .woocommerce-product-gallery .flex-viewport .woocommerce-product-gallery__image img{
+  position: relative;
+  top: 10%;
+  object-fit: contain;
+}
+.single-product .woocommerce-product-gallery .flex-viewport .woocommerce-product-gallery__image{
+  height: 400px;
+}
+.single-product div.product div.images .flex-control-thumbs li{
+  background: #f2f2f2;
+  position: relative;
+  color: var(--urbantaxi-secondary-theme-color);
+}
+.wc-block-cart-item__quantity button,.is-large.wc-block-cart .wc-block-cart__totals-title,.wc-block-components-totals-coupon .wc-block-components-panel__button,.wp-block-woocommerce-cart-order-summary-totals-block .wc-block-components-totals-wrapper,.wc-block-components-totals-item__label,.wc-block-components-totals-item__value,.is-large.wc-block-cart .wc-block-cart-items{
+  color: var(--urbantaxi-secondary-theme-color) !important;
+}
+.single-product div.product div.images .flex-control-thumbs{
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+.single-product div.product div.images .flex-control-thumbs li img{
+  width: 80px !important;
+  height: 80px !important;
+  margin: 20% auto;
+  object-fit: contain;
+}
+.woocommerce div.product form.cart {
+  margin-bottom: 2em;
+  margin-top: 1%;
+}
+.single-product .woocommerce-product-gallery__trigger{
+  z-index: 1 !important;
+}
+.summary.entry-summary .desc-para:nth-child(6), .summary.entry-summary .desc-para:nth-child(7), .summary.entry-summary .desc-para:nth-child(8), .summary.entry-summary .desc-para:nth-child(8), .summary.entry-summary .desc-para:nth-child(9){
+  display: none;
+}
+.yith-wcwl-add-to-wishlist-button__label {
+  display: none;
+}
+.yith-wcwl-add-to-wishlist-button svg,.product-cart-icon svg {
+  color: var(--white) !important;
+  background: linear-gradient(232.41deg, var(--violet) 6.82%, var(--dark-purple) 55.57%, var(--purple) 95.57%);
+  padding: 5px;
+  width: 30px !important;
+  height: 30px;
+  border-radius: 6px;
+  fill: var(--urbantaxi-secondary-theme-color);
+}
+.yith-wcwl-add-to-wishlist-button--added svg {
+  fill: #FF3D3D !important
+}
+.single-product .woocommerce-notices-wrapper .woocommerce-message a {
+  font: 400 14px / 20px var(--urbantaxi-primary-font-family);
+  color: var(--urbantaxi-secondary-theme-color);
+  font-size: 14px;
+  width: fit-content;
+  position: unset;
+  background: linear-gradient(232.41deg, var(--violet) 6.82%, var(--dark-purple) 55.57%, var(--purple) 95.57%);
+  border-radius: 4px;
+}
+.woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) a.button,.woocommerce-shop .add_to_cart_button ,#related-products .add_to_cart_button, .add_to_cart_button, .added_to_cart,.product-cart-icon .button {
+  border: none;
+  border-radius: 8px;
+  font-size: 0px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background: transparent;
+}
+.woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) a.button:hover{
+  background-color: transparent;
+}
+.product-hover-cart-icons .rating{
+  color: var(--white) !important;
+  background: linear-gradient(232.41deg, var(--violet) 6.82%, var(--dark-purple) 55.57%, var(--purple) 95.57%);
+  padding: 6px 6px;
+  font: 400 13px / 13px var(--urbantaxi-primary-font-family);
+  border-radius: 6px;
+}
+.onsale{
+  display: none;
+}
+.wc-block-components-order-summary .wc-block-components-order-summary-item__image>img{
+  border-radius: 10px !important;
+}
+h3.wc-block-components-product-name:after{
+  display: none;
+}
+.entry-summary .yith-wcwl-add-button a.add_to_wishlist i {
+  border: 2px solid var(--red);
+  font-weight: 500;
+  color: var(--red);
+  font-size: 20px;
+  text-align: center;
+  border-radius: 50px;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  margin-right: unset !important;
+}
+.entry-summary .product_meta {
+  position: relative;
+  top: 0px;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.entry-summary .product_meta .posted_in, .entry-summary .product_meta .tagged_as {
+  font: 500 16px / 20px var(--urbantaxi-primary-font-family);
+}
+.custom-content h6 a{
+  font: 600 18px / 25px var(--urbantaxi-primary-font-family);
+}
+#woosq-popup .summary-content{
+  padding: 6%;
+}
+#woosq-popup .summary-content .price{
+  font: 600 16px / 40px var(--urbantaxi-primary-font-family);
+}
+.woocommerce div.product form.cart .button{
+  background: var(--urbantaxi-primary-theme-color);
+  padding: 13px 30px;
+  border-radius: 4px;
+  font: 500 16px / 16px var(--urbantaxi-primary-font-family);
+  position: unset;
+  bottom: -1%;
+  left: 12%;
+}
+.woocommerce div.product form.cart .button:hover {
+  background: var(--black);
+}
+#woosq-popup h1 {
+  font: 600 35px / 50px var(--urbantaxi-primary-font-family);
+}
+#woosq-popup .thumbnail img{
+  width: 50%;
+  margin: auto;
+  background: #f4f4f4;
+  padding: 40px;
+}
+.woocommerce-cart .wp-block-woocommerce-cart{
+  margin-top: 5%;
+}
+.wc-block-cart-items {
+  box-shadow: 0px 0px 3px 0px var(--urbantaxi-secondary-theme-color);
+  border-radius: 10px;
+  padding: 10px;
+}
+.wp-block-woocommerce-cart-order-summary-block {
+  box-shadow: 0px 0px 3px 0px var(--urbantaxi-secondary-theme-color);
+  border-radius: 10px;
+  padding: 10px;
+}
+.is-large.wc-block-cart .wc-block-cart-items th, .is-large.wc-block-cart .wc-block-cart__totals-title {
+  font: 600 18px / 20px var(--urbantaxi-primary-font-family) !important;
+  text-transform: capitalize !important;
+  color: var(--urbantaxi-secondary-theme-color)!important;
+}
+table.wc-block-cart-items .wc-block-cart-items__row .wc-block-cart-item__wrap {
+  gap: 10px;
+}
+.wc-block-components-product-name {
+  font: 600 18px / 25px var(--urbantaxi-primary-font-family) !important;
+  color: var(--urbantaxi-secondary-theme-color) !important;
+  margin: unset;
+}
+.wp-block-woocommerce-checkout-order-summary-block .wc-block-components-checkout-order-summary__title .wc-block-components-checkout-order-summary__title-text{
+  color: var(--urbantaxi-secondary-theme-color);
+}
+.wc-block-components-product-details__name, .wc-block-components-product-details__value {
+  margin-left: 0;
+  color: var(--urbantaxi-secondary-theme-color) !important;
+  font-size: 14px;
+  line-height: 20px;
+}
+.wc-block-cart__main .wc-block-cart-items th {
+  padding: 8px 16px 12px 10px !important;
+}
+tr:nth-child(n) {
+  background-color: transparent;
+  border-radius: 10px;
+  padding: 10px;
+}
+.wc-block-components-product-details.wc-block-components-product-details li {
+  margin-left: 0;
+  color: var(--urbantaxi-tertiary-theme-color) !important;
+}
+.wc-block-components-checkout-return-to-cart-button{
+  color: var(--urbantaxi-tertiary-theme-color) !important;
+  font: 500 14px / 20px var(--urbantaxi-primary-font-family);
+  background: var(--urbantaxi-primary-theme-color);
+  border-radius: 5px;
+  padding: 10px 10px 10px 30px;
+  width: 23%;
+  margin: auto;
+  text-align: center;
+  margin-right: 10px;
+}
+.wc-block-components-product-price{
+  font: 600 16px / 20px var(--urbantaxi-primary-font-family) !important;
+  color: var(--urbantaxi-secondary-theme-color);
+}
+.wc-block-cart__submit-container{
+  text-align: center;
+}
+.wc-block-components-button__text {
+  background: var(--urbantaxi-primary-theme-color);
+  color: var(--urbantaxi-tertiary-theme-color);
+  padding: 9px 30px;
+  border-radius: 6px;
+  font: 500 14px / 20px var(--urbantaxi-primary-font-family);
+  margin-top: 30px;
+  opacity: 1 !important;
+}
+.wp-block-woocommerce-checkout-actions-block .wc-block-checkout__actions_row{
+  display: block !important;
+}
+body:not(.woocommerce-block-theme-has-button-styles) .wc-block-components-button:not(.is-link){
+  background: none;
+  width: auto;
+}
+.woocommerce-error, .woocommerce-info, .woocommerce-message{
+  color: var(--urbantaxi-tertiary-theme-color) !important;
+  font-weight: 500;
+}
+.woocommerce-Tabs-panel--description .desc-para{
+  font: 400 16px / 25px var(--urbantaxi-primary-font-family);
+}
+.wc-block-components-totals-coupon__form .wc-block-components-button__text{
+  margin: 0;
+}
+.wc-block-components-totals-coupon__form .wc-block-components-button{
+  border: none;
+}
+.wc-block-components-form .wc-block-components-text-input label, .wc-block-components-text-input label{
+  color: var(--urbantaxi-tertiary-theme-color);
+}
+.wc-block-components-form .wc-block-components-text-input input[type=email], .wc-block-components-form .wc-block-components-text-input input[type=number], .wc-block-components-form .wc-block-components-text-input input[type=password], .wc-block-components-form .wc-block-components-text-input input[type=tel], .wc-block-components-form .wc-block-components-text-input input[type=text], .wc-block-components-form .wc-block-components-text-input input[type=url], .wc-block-components-text-input input[type=email], .wc-block-components-text-input input[type=number], .wc-block-components-text-input input[type=password], .wc-block-components-text-input input[type=tel], .wc-block-components-text-input input[type=text], .wc-block-components-text-input input[type=url]{
+  background-color: var(--urbantaxi-quaternary-theme-color);
+}
+.wc-blocks-components-select .wc-blocks-components-select__select{
+  background-color: var(--urbantaxi-quaternary-theme-color);
+  padding: 1px 9px 0;
+}
+.wc-block-checkout__actions_row .wc-block-components-button .wc-block-components-button__text {
+  margin: 0;
+}
+.wc-block-checkout__actions_row .wc-block-components-button {
+  border: none;
+  background: transparent;
+  padding: 0 !important;
+}
+.is-medium table.wc-block-cart-items .wc-block-cart-items__row{
+  padding: 16px 20px !important;
+}
+.wc-block-components-main form{
+  box-shadow: 0px 0px 3px 0px var(--urbantaxi-secondary-theme-color);
+  border-radius: 10px;
+  padding: 30px 10px;
+}
+.wc-block-cart .wc-block-cart__submit-container--sticky:before {
+  box-shadow: 0 1px 6px 0px currentColor !important;
+}
+.wc-block-checkout__actions_row{
+  width: fit-content;
+  margin: auto;
+}
+.is-large .wp-block-woocommerce-checkout-order-summary-block {
+  box-shadow: 0px 0px 3px 0px var(--urbantaxi-secondary-theme-color) !important;
+  border-radius: 10px !important;
+  padding: 0px;
+  position: relative;
+  top: 0px;
+}
+.wp-block-woocommerce-checkout-order-summary-block{
+  box-shadow: 0px 0px 3px 0px var(--urbantaxi-tertiary-theme-color) !important;
+  border-radius: 10px !important;
+  padding: 10px;  
+}
+.wc-block-components-checkbox__label,.wc-block-components-form .wc-block-components-checkout-step{
+  color: var(--urbantaxi-secondary-theme-color);
+}
+.single-product .custom-quantity-select{
+  border: none;
+  width: 60px;
+  height: 35px;
+  border: 1px solid #dcdcdc;
+  background: transparent;
+  padding: 0;
+  margin-left: 5px;
+}
+#single-product-page .entry-summary .yith-wcwl-add-to-wishlist{
+  position: relative;
+  top: -70px;
+  left: 180px;
+  width: fit-content;
+}
+#single-product-page .yith-wcwl-add-button .yith-wcwl-icon-svg {
+  margin: 0 !important;
+  border: 2px solid var(--urbantaxi-primary-theme-color);
+  border-radius: 50%;
+  padding: 5px;
+  width: 38px;
+  stroke: var(--urbantaxi-primary-theme-color);
+}
+#single-product-page .entry-summary .product_meta{
+  position: relative;
+  top: 0px;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+#wp-comment-cookies-consent{
+  align-self: baseline;
+  top: 0px;
+  position: relative;
+}
+#single-product-page .entry-summary .product_meta .posted_in,#single-product-page .entry-summary .product_meta .tagged_as{
+  font: 500 16px/20px var(--urbantaxi-primary-font-family);
+  color: var(--blackk);
+}
+#single-product-page .entry-summary .product_meta .posted_in a,#single-product-page .entry-summary .product_meta .tagged_as a{
+  font: 400 14px/20px var(--urbantaxi-primary-font-family);
+}
+#single-product-page .entry-summary .product form.cart{
+  width: fit-content;
+}
+#single-product-page .entry-summary .yith-wcwl-wishlistaddedbrowse:before, #single-product-page .entry-summary .yith-wcwl-wishlistexistsbrowse:before,#single-product-page .entry-summary  .yith-wcwl-add-button a.add_to_wishlist:before, #single-product-page .entry-summary  .yith-wcwl-wishlistaddedbrowse:before, #single-product-page .entry-summary  .yith-wcwl-wishlistexistsbrowse:before{
+  display: none;
+}
+#single-product-page .entry-summary .yith-wcwl-add-button a.add_to_wishlist i {
+  border: 2px solid var(--urbantaxi-primary-theme-color);
+  font-weight: 500;
+  color: var(--urbantaxi-primary-theme-color);
+  font-size: 20px;
+  text-align: center;
+  border-radius: 50px;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  margin-right: unset !important;
+}
+#single-product-page .entry-summary .yith-wcwl-wishlistaddedbrowse a,#single-product-page .entry-summary .yith-wcwl-wishlistexistsbrowse a{
+  position: unset;
+}
+#single-product-page .entry-summary .yith-wcwl-add-to-wishlist .feedback .yith-wcwl-icon {
+  color: var(--urbantaxi-primary-theme-color);
+  font-size: 20px;
+  border: 2px solid var(--urbantaxi-primary-theme-color);
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50px;
+  text-align: center;
+}
+#single-product-page .entry-summary .yith-wcwl-wishlistaddedbrowse a {
+  position: absolute;
+  z-index: 1;
+  width: 25px;
+  height: 25px;
+  font-size: 0px;
+}
+#single-product-page .yith-wcwl-wishlistaddedbrowse svg{
+  fill: var(--urbantaxi-primary-theme-color);
+  height: auto;
+  width: 38px !important;
+  padding: 5px;
+  border: 2px solid var(--urbantaxi-primary-theme-color);
+  border-radius: 50%;
+}
+.single-product .yith-wcwl-wishlistaddedbrowse .feedback {
+  font-size: 0px;
+}
+.qib-button-wrapper .quantity input.input-text.qty.text {
+  height: 41px;
+  width: 40px;
+  height: 41px;
+  padding: 6px 12px 8px;
+  text-align: center;
+  background: var(--urbantaxi-secondary-theme-color);
+  border: 1px solid #efefef;
+  font-size: 16px;
+  line-height: 27px;
+  box-shadow: none;
+}
+.woocommerce div.product .woocommerce-tabs ul.tabs li{
+  margin: 0 -3px !important;
+}
+.single-product .summary.entry-summary .stock.in-stock {
+  padding-top: 10px;
+  font: 600 15px / 20px var(--urbantaxi-primary-font-family);
+  color: var(--blackk);
+}
+/*  wave */
+.elementor-social-icon a{
+  pointer-events: none;
+}
+.elementor-social-icon{
+  pointer-events: auto;
+}
+/* Target ONLY this field properly */
+#main .urbantaxi-book-wrapper .inputList label {
+  background: transparent !important;
+}
+#main .urbantaxi-book-wrapper #mptbm_map_start_place {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+/* Elementor input override */
+#main .urbantaxi-book-wrapper .formControl {
+  background: transparent !important;
+} 
+/* media css */
+@media screen and (min-width: 992px){
+  #uc_nav_menu_elementor_5d56b76 .ue-menu > li > .sub-menu{
+    display: grid !important;
+    gap: 5px;
+  }
+}
+@media screen and (max-width: 991px){
+  .urbantaxi-transportation-sidebar-com-box{
+    padding: 15px;
+  }
+  .urbantaxi-header-menu-box .ue-nav-menu-mobile svg{
+    position: relative;
+    top: -2px;
+  }
+  #uc_nav_menu_elementor_5d56b76 .ue-menu > li > .sub-menu{
+    display: none;
+  }
+  .urbantaxi-header-menu-box .ue-nav-menu-mobile-wrapper {
+    justify-content: center !important;
+  }
+  .urbantaxi-header-menu-box .elementor-widget-ucaddon_nav_menu{
+    width: 100% !important;
+  }
+  ul li a {
+    width: fit-content;
+  }
+  #urbantaxi-header-section-box .urbantaxi-header-menu-box .ue-menu {
+    top: 200%;
+    padding: 15px;
+    border: 1px solid #fff;
+  }
+  .offer-counter-box,.offer-counter-right-box{
+    width: 100%;
+  }
+}
+@media screen and (max-width: 1620px) and (min-width: 1200px){
+  .taxi-service-bg-text-box p {
+    font: 900 145px / 245px var(--urbantaxi-primary-font-family);
+  }
+}
+@media screen and (max-width: 1399px){
+  .custom-post-comment-box {
+    margin: 0 0px;
+  }
+}
+@media screen and (max-width: 1399px) and (min-width: 1200px){
+   /* services */
+  .post-query-item h3 {
+    margin: 0 0 15px 0;
+  }
+  .post-custom-meta-image-box {
+    padding-top: 15px;
+  }
+  .post-query-item .post-custom-meta {
+    width: 70px;
+    height: 70px;
+  }
+  .post-query-widget .post-excerpt {
+    line-height: 25px !important;
+  }
+  .post-query-item h3 a{
+    font-size: 20px !important;
+  }
+}
+@media screen and (max-width: 1366px){
+  .post-meta-content,.urbantaxi-blog-meta {
+    justify-content: left;
+    flex-wrap: wrap;
+    gap: 10px 0px;
+  }
+  .taxi-cost-calculator-icon-box .pp-icon-wrapper{
+    top: 0 !important;
+  }
+}
+@media screen and (max-width: 1200px){
+  .post-meta-content span {
+    font: 400 14px / 14px var(--urbantaxi-font-family);
+  }
+  /* footer */
+  #urbantaxi-footer-main-section .urbantaxi-footer-main-box > .e-con-inner {
+    grid-template-columns: repeat(2, 1fr);
+    display: grid;
+  }
+  /* get service */
+  .taxi-get-service-car-image-box{
+    position: absolute;
+    bottom: -50px;
+    right: 0px;
+    left: unset;
+    width: 500px;
+  }
+  .taxi-get-service-icon-box{
+    flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 1199px){
+	.post-query-grid .post-content .post-excerpt{
+		-webkit-line-clamp: 3;
+	}
+  /* blog */
+  .urbantaxi-blog-content .urbantaxi-blog-excerpt, .post-box .post-content {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+  /* slider */
+  .taxi-slider-banner-main-section .ut-hero-slider__arrow.swiper-button-prev{
+    top: 70%;
+    left: 3%;
+    opacity: 1;
+  }
+  .taxi-slider-banner-main-section .ut-hero-slider__arrow.swiper-button-next{
+    top: 70%;
+    left: 10%;
+    opacity: 1;
+  }
+  /* title banner */
+  .title-banner-right-img {
+    height: 200px;
+  }
+  .taxi-service-bg-text-box p {
+    font: 900 130px / 130px var(--urbantaxi-primary-font-family);
+  }
+  /* why choose */
+  #taxi-why-choose-main-section .why-choose-service-icon-box .elementor-icon-box-description{
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .taxi-why-choose-right-line,.taxi-why-choose-left-line{
+    width: 100px;
+  }
+}
+@media screen and (max-width: 1024px){  
+  /* custom 404 */
+  .error-page-heading {
+    font: 600 300px / 400px var(--urbantaxi-primary-font-family);
+  }
+  /* title banner */
+  .title-banner-right-img {
+    height: 180px;
+  }
+  .taxi-service-bg-text-box p {
+    font: 900 120px / 120px var(--urbantaxi-primary-font-family);
+  }
+  /* why choose */
+  .taxi-why-choose-right-line,.taxi-why-choose-left-line{
+    width: 60px;
+  }
+	.urbantaxi-single-service-box .post-thumbnail.post-img {
+    height: 250px;
+	}
+  /* title banner */
+  .taxi-service-bg-text-box {
+    top: 70%;
+  }
+  /* cab booking */
+  .utcb-overlay-info .cabs-booking-contents{
+    display: flex;
+    gap: 20px;
+  }
+  .utcb-overlay-info .cabs-booking-contents .counts{
+    margin: 0;
+  }
+  .utcb-taxi-meta{
+    gap: 15px;
+  }
+}
+@media screen and (max-width: 1199px) and (min-width: 1025px){
+  /* blog */
+  .post-meta-content, .urbantaxi-blog-meta{
+    justify-content: center;
+    gap: 10px 15px;
+  }
+  /* services */
+  .post-query-item h3 {
+    margin: 0 0 15px 0;
+  }
+  .post-custom-meta-image-box {
+    padding-top: 15px;
+  }
+  .post-query-item .post-custom-meta {
+    width: 70px;
+    height: 70px;
+  }
+  .post-query-widget .post-excerpt {
+    line-height: 25px !important;
+  }
+  .post-query-item h3 a{
+    font-size: 20px !important;
+  }
+  /* about */
+  .taxi-about-section-paragraph{
+    width: 100%;
+  }
+}
+@media screen and (max-width: 1024px) and (min-width: 992px){
+  /* blog */
+  .post-meta-content, .urbantaxi-blog-meta{
+    justify-content: center;
+    gap: 10px 15px;
+  }
+  /* slider */
+  .taxi-slider-banner-main-section .ut-hero-slider__arrow.swiper-button-prev{
+    top: 65%;
+    left: 3%;
+    opacity: 1;
+  }
+  .taxi-slider-banner-main-section .ut-hero-slider__arrow.swiper-button-next{
+    top: 65%;
+    left: 10%;
+    opacity: 1;
+  }
+  /* cab booking */
+  .utcb-overlay-info .utcb-taxi-meta {
+    flex-direction: column;
+    display: flex;
+    gap: 10px 50px;
+    align-items: start;
+  }
+  .utcb-overlay-info .utcb-taxi-meta .cabs-booking-contents{
+    display: flex;
+    gap: 20px;
+  }
+}
+@media screen and (max-width: 991px) and (min-width:768px){
+  /* galery */
+  .urbantaxi-gallery-page-grid-box{
+    grid-auto-rows: 35px;
+  }
+  .utcb-image-wrapper .utcb-taxi-meta{
+    display: grid;
+    gap: 20px;
+  }
+  /* partner */
+  .taxi-partner-main-box .elementor-widget-image:after{
+    right: -10px;
+  }
+  /* taxi get service */
+  .taxi-get-service-car-image-box {
+    position: absolute;
+    bottom: -50px;
+    right: 0px;
+    left: unset;
+    width: 500px;
+  }
+  /* why choose */
+  .why-choose-center-box,.why-choose-center-box .elementor-widget-image{
+    height: 350px;
+    width: 300px;
+    align-self: center;
+  }
+  .why-choose-center-box img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+@media screen and (max-width:991px){
+  /* slider */
+  .taxi-slider-banner-main-section .ut-hero-slider__arrow.swiper-button-prev{
+    top: 70%;
+    left: 3%;
+    opacity: 1;
+  }
+  .taxi-slider-banner-main-section .ut-hero-slider__arrow.swiper-button-next{
+    top: 70%;
+    left: 10%;
+    opacity: 1;
+  }
+  /* faq */
+  .taxi-faq-after-circle-box{
+    top: unset !important;
+  }
+  .wc-block-components-order-summary-item{
+    flex-direction: column;
+    justify-content: center;
+  }
+  .wc-block-components-order-summary-item__image{
+    margin: 10px auto;
+  }
+  .is-large .wp-block-woocommerce-checkout-order-summary-block{
+    padding: 0px;
+  }
+  ._max_200_mR_xs{  
+    margin: 0 auto !important;
+  }
+  .mpStyle .mainSection {
+    max-width: unset !important;
+    width: 100% !important;
+  }
+  .mpStyle .mainSection {
+    margin-left: 0px !important;
+  }
+  #maincontent .mainSection {
+    width: 100%;
+    max-width: 100% !important;
+  }
+  #maincontent div.mptbm_transport_search_area .mp_sticky_section .leftSidebar {
+    max-width: 100%;
+  }
+  .theme-urbantaxi .mpStyle .flexWrap {
+    height: unset !important;
+    display: block !important;
+  }
+  /* tab slider */
+  .utcb-overlay-info{
+    position: unset;
+    width: 100%;
+    border-radius: 30px;
+  }
+  .utcb-active-image-container{
+    width: 100%;
+  }
+	.theme-urbantaxi #hourly .mpForm:last-child,.theme-urbantaxi #distance .mpForm:last-child {
+		bottom: 65px;
+		right: 22px;
+	}
+	.taxi-check-title-box .elementor-heading-title{
+		color: var(--urbantaxi-tertiary-theme-color) !important;
+	}
+  .testimonial-text{
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+  }
+  /* single blog */
+  .comment-list li{
+    padding: 15px;
+  }
+  #content .comment-respond{
+    padding: 20px;
+  }
+  /* slider form */
+  .urbantaxi-slider-wrapper .swiper-pagination {
+    width: fit-content;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+  }
+  .urbantaxi-modal-content {
+    width: 100%;
+    max-width: 90%;
+    padding: 20px 20px 80px 20px !important;
+    bottom: 80px !important;
+  }
+  /* 404 page */
+  .taxi-404-image-box{
+    width: 200px;
+  }
+  /* title banner */
+  .title-banner-right-img{
+    display: none;
+  }
+  .taxi-service-bg-text-box p {
+    font: 900 60px / 60px var(--urbantaxi-primary-font-family);
+  }
+  /* about */
+  .taxi-about-section-paragraph{
+    width: 100%;
+  }
+  /* get service */
+  .taxi-get-service-icon-box{
+    flex-wrap: nowrap !important;
+    display: flex;
+    flex-direction: column;
+  }
+  .taxi-get-service-main-box .e-con-inner{
+    flex-direction: column !important;
+  }
+  .taxi-get-service-image-box{
+    width: fit-content;
+    margin: 0 auto;
+  }
+  .taxi-get-service-mobile-image-box {
+    position: relative;
+    top: 0px;
+    width: 100%;
+    left: 0px;
+    margin: 0 auto;
+  }
+  .taxi-get-service-contents-box{
+    margin: 0 auto
+  }
+  .taxi-get-service-contents-box .heading-style-widget-heading,.taxi-get-service-contents-box .elementor-heading-title{
+    text-align: center !important;
+  }
+  .taxi-get-service-car-image-box {
+    position: absolute;
+    bottom: 50px;
+    right: 0px;
+    left: 0;
+    width: 550px;
+    margin: 0 auto;
+  }
+  .taxi-get-service-contents-outer-box{
+    width: fit-content;
+    margin: 0 auto;
+  }
+  .taxi-get-service-contents-box .taxi-section-left-heading-box {
+    width: fit-content;
+    margin: unset;
+    align-self: center;
+  }
+  .taxi-get-service-payment-box{
+    justify-content: center;
+  }
+  /* unit test */
+  .ut-prev-wrap span, .ut-next-wrap a{
+    display: inline-flex;
+  }
+  .ut-prev-wrap span, .ut-next-wrap a {
+    text-decoration: none;
+    color: var(--urbantaxi-tertiary-theme-color);
+    font-weight: 400;
+    font-size: 14px;
+  }
+  .ut-pages .page-numbers{
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
+  }
+  .ut-pagination{
+    gap: 10px;
+    margin-bottom: 40px;
+  }
+  .ut-pagination .ut-prev-wrap i,.ut-pagination .ut-next-wrap i{
+    font-size: 15px;
+    top: 3px;
+  }
+}
+@media screen and (max-width: 1024px) and (min-width:575px){
+  .taxi-about-service-icon-box,.taxi-feature-card-grid-box{
+    grid-template-columns: repeat(2, 1fr) !important;
+    display: grid;
+  }
+  /* service */
+  .elementor-widget-urbantaxi_service_cards_widget .post-query-grid{
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+@media screen and (max-width:1599px) and (min-width: 992px){
+  .taxi-get-service-mobile-image-box {
+    position: relative;
+    top: -50px;
+    width: 100%;
+    left: 0px;
+  }
+  .taxi-get-service-car-image-box {
+    position: absolute;
+    bottom: 50px;
+    right: 40px;
+    left: unset;
+    width: 600px;
+  }
+}
+@media screen and (max-width:1199px){
+  .taxi-get-service-car-image-box {
+    position: absolute;
+    bottom: 0px;
+    right: 40px;
+    left: unset;
+    width: 550px;
+  }
+}
+@media screen and (max-width:1092px){
+  .offer-top-box-image {
+    position: absolute;
+    left: 0;
+    top: 0px;
+  }
+}
+@media screen and (max-width:880px){
+  .cost-calculator-form{
+    flex-direction: column;
+  }
+  .cost-calculator-summary,.cost-calculator-fields{
+    width: 100%;
+  }
+  .offer-counter-image-box img{
+    width: 60px !important;
+  }
+  /* calculator */
+  .taxi-calculator-lists-box{
+    width: fit-content;
+  }
+}
+@media screen and (max-width:767px){
+  #content {
+    padding: 30px 0px;
+  }
+  .offer-counter-shape-border-box,.offer-counter-shape-box {
+    clip-path: unset;
+  }
+  .offer-top-box-image{
+    display: none;
+  }
+  .uc_countdown_content{
+    gap: 5px !important;
+  }
+  .urbantaxi-imported .offer-counter-box .uc_countdown_section{
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+  }
+  .elementor-widget-urban-taxi-cab-booking-slider-widget .utcb-post-content-block {
+    flex: 1;
+    display: flex;
+    flex-direction: column !important;
+    justify-content: center;
+    /* padding: 30px 30px 0px 30px; */
+    gap: 20px;
+  }
+  .utcb-overlay-info .utcb-taxi-meta {
+    display: flex;
+    gap: 15px 50px;
+    align-items: center;
+    flex-direction: column;
+  }
+  /* galery */
+  .urbantaxi-gallery-page-grid-box{
+    grid-auto-rows: 35px;
+  }
+  .urbantaxi-blog-categories{
+    margin: 20px auto 0px auto;
+  }
+	.theme-urbantaxi .mpStyle [class*="_themeButton"]{
+		margin: 0 auto;
+	}
+	.mptbm_transport_search_area ._equalChild{
+		flex-direction: column;
+		text-align: center;
+		width: fit-content;
+		margin: 15px auto;
+	}
+	.mptbm_transport_search_area ._equalChild .justifyEnd{
+		width: fit-content;
+		margin: 0 auto;
+	}
+	.mptbm_transport_search_area .fdColumn._fullWidth{
+		text-align: center;
+	}
+	.mptbm_transport_search_area .fdColumn._fullWidth h4{
+		top: 10px;
+		position: relative;
+	}	
+  .list_inline_two {
+    display: block !important;
+  }
+	.mptbm-button-container {
+    width: fit-content;
+	}
+  .urbantaxi-imported .wc-block-components-sidebar-layout .wc-block-components-main {
+    padding-right: 0 !important;
+    width: 100% !important;
+  }
+  .wc-block-components-sidebar {
+    margin-top: 10px !important;
+    width: 100% !important;
+    padding: 0 !important;
+  }
+  .team-social {
+    position: absolute;
+    bottom: 20px;
+  }
+  .taxi-gallery-icon-main-box{
+    left: 0px;
+  }
+  /* footer */
+  .urbantaxi-nesletter-form-box{
+    justify-content: center;
+  }
+  /* get service */
+  .taxi-get-service-car-image-box {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    left: unset;
+    width: 100%;
+  }
+  .taxi-get-service-icon-box{
+    flex-wrap: wrap !important;
+  }
+  /* gallery */
+  .taxi-gallery-center-image-box:before {
+    width: 70%;
+    height: 70%;
+    right: 10px;
+    left: unset;
+    top: 50px;
+  }
+  /* single blog */
+  .single-post .post-thumbnail{
+    padding-bottom: 30px;
+  }
+  #comments {
+    flex-direction: column;
+  }
+  #content .comment-list {
+    margin-top: 50px;
+  }
+  #content .comment-list,
+  #content .comment-respond {
+    width: 100%;
+    max-width: 100%;
+  }
+  .single-post .comment-body {
+    flex-direction: column;
+  }
+  /* partner */
+  .taxi-partner-main-box .elementor-widget-image:nth-child(2):after,.taxi-partner-main-box .elementor-widget-image:nth-child(4):after{
+    border: none;
+  }
+  /* booking form slider banner */
+  #taxi-slider-main-section .mptbm_transport_search_area .mpTabsNext .tabItemNext [class*="circleIcon"] .mp_zero {
+    font-size: 16px;
+  }
+  /* about */
+  .urbantaxi-card-image{
+    padding-bottom: 20px;
+  }
+  /* blog */
+  .post-meta-content, .urbantaxi-blog-meta{
+    justify-content: center !important;
+    gap: 10px 15px;
+  }
+  /* sidebar */
+  .urbantaxi-post-meta{
+    gap: 10px;
+    color: #fff !important;
+  }
+  .urbantaxi-post-date, .urbantaxi-post-comments{
+    gap: 2px;
+  }
+  .urbantaxi-widget-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  .urbantaxi-taxonomy-item {
+    font-size: 16px;
+  }
+  .urbantaxi-arrow {
+    font-size: 20px;
+  }
+  .post-content img, .post-thumbnail img{
+    border-radius: 6px;
+  }
+  .urbantaxi-recent-post-item{
+    padding: 10px;
+    gap: 10px;
+  }
+  .urbantaxi-pages-sidebar-main-box .sidebar-widget,.urbantaxi-taxonomy-item{
+    padding: 10px;
+  }
+  /* custom 404 */
+  .error-page-heading {
+    font: 600 150px / 300px var(--urbantaxi-primary-font-family);
+  }
+  .not-found-content img{
+    bottom: 30%;
+  }
+  /* 404 page */
+  .taxi-404-image-box{
+    width: 100px;
+    bottom: 0;
+  }
+  .taxi-section-left-heading-box{
+    margin: auto;
+  }
+  /* faq */
+  .taxi-faq-left-image-box,.taxi-faq-after-circle-box{
+    display: none;
+  }
+  /* slider banner */
+  .utcb-image-wrapper-inner-box,.utcb-image-wrapper-inner-box{
+    width: auto;
+    height: auto;
+  }
+  .utcb-overlay-info {
+    position: unset;
+    width: 100%;
+  }
+  ._max_200_mR {
+    margin: 15px auto 15px auto !important;
+  }
+  ._max_200_mR {
+    width: 160px !important;
+    max-width: 115px !important;
+    height: 105px !important;
+  }
+  #taxi-banner-main-section > .taxi-spped-content-outer-box{
+    padding: 0px;
+  }
+  ._max_200_mR_xs{  
+    margin: 0 auto !important;
+  }
+  .mpStyle .mainSection {
+    max-width: unset !important;
+    width: 100% !important;
+  }
+  .mpStyle .mainSection {
+    margin-left: 0px !important;
+  }
+  .theme-urbantaxi .mpStyle .flexWrap {
+    height: unset !important;
+    display: block !important;
+  }
+  /* faq */
+  .taxi-section-right-heading-box{
+    margin: auto;
+  }
+  /* why choose */
+  .taxi-why-choose-left-line,.taxi-why-choose-right-line{
+    display: none;
+  }
+  /* service */
+	.post-count-box{
+		bottom: 0px;
+	}
+  .post-query-item h3 {
+    margin: 0 0 20px 0;
+  }
+  .post-custom-meta-image-box {
+    padding-top: 20px;
+  }
+  /* 	 team */
+	#taxi-our-team-main-section .swiper-slide .pp-tm .pp-tm-social-links-wrap{
+		display: block;
+	}
+  /* offer */
+  #uc_timer_countdown_elementor_270ba32-wrapper .uc_countdown_content{
+    gap: 10px !important;
+  }
+}
+@media screen and (max-width:716px){
+  .utcb-category-filter{
+    padding: 10px 0px;
+  }
+} 
+@media screen and (max-width:767px) and (min-width:576px){
+  .book-taxies-bottom-white-image-box {
+    position: relative;
+    top: 20px;
+  }
+  /* team */
+  #taxi-our-team-main-section .swiper-wrapper {
+    width: 100% !important;
+  }
+  #taxi-our-team-main-section .swiper-slide {
+    width: calc(50% - 10px) !important;
+  }
+  /* offer */
+  .uc_countdown_section:after{
+    right: -40px;
+  }
+  .offer-counter-main-content-box,.taxi-about-image-box,.slider-banner-flex-box{
+    --e-con-grid-template-columns: repeat(2, 1fr) !important;
+  }
+  #taxi-check-availability-section .taxi-check-para-box{
+    width: 70%;
+  }
+  /* cab booking */
+  .urban-taxi-cab-booking-slider-widget .utcb-post-content-block{
+    padding: 0px 20px 0px 20px;
+  }
+  /* about */
+  .taxi-about-image-after-box {
+    content: '';
+    width: 60%;
+    height: 90%;
+  }
+  .taxi-about-overlay-box{
+    width: 80%;
+  }
+  /* why choose */
+  .why-choose-content-box{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+  .why-choose-left-box{
+    width: calc(50% - 15px);
+  }
+  .why-choose-right-box{
+    width: calc(50% - 15px);
+    order: 2;
+  }
+  .why-choose-center-box,.why-choose-center-box .elementor-widget-image{
+    order: 3;
+  }
+  .why-choose-center-box,.why-choose-bg-circle-image{
+    display: none;
+  }
+  /* service */
+  .elementor-widget-urbantaxi_service_cards_widget .post-query-grid{
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+@media screen and (max-width:767px) and (min-width:479px){
+  /* offer */
+  .taxi-about-image-box,.offer-counter-main-content-box{
+    --e-con-grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+@media screen and (max-width:575px){
+  /* galery */
+  .urbantaxi-gallery-page-grid-box{
+    display: block !important;
+  }
+  .urbantaxi-footer-menu-box ul li a, .urbantaxi-footer-service-box ul li a{
+    justify-content: center !important;
+    width: auto;
+  }
+  /* header */
+  .taxi-header-logo-box{
+    width: 100%;
+    margin: 0 auto;
+  }
+  .taxi-header-contact-outer-box{
+    width: 50% !important;
+  }
+  /* gallery */
+  .taxi-gallery-center-image-box,.taxi-gallery-right-content-box{
+    width: 100% !important;
+  }
+  
+  /* how works */
+  .how-works-contents-main-box{
+    display: block !important;
+	}
+	.how-works-content-main-box {
+	  margin-bottom: 10px;
+  }
+  /* get service */
+  .taxi-get-service-mobile-image-box {
+    width: 100%;
+  }
+  /* offer */
+  .uc_countdown_section{
+    padding: 20px 5px 20px 5px !important;
+  }
+  .uc_countdown_section:after{
+    right: -10px;
+    font-size: 26px;
+  }
+  .book-taxies-bottom-white-image-box {
+    position: relative;
+    top: 10px;
+  }
+  #urbantaxi-footer-main-section .urbantaxi-footer-main-box > .e-con-inner {
+    grid-template-columns: repeat(1, 1fr);
+    display: grid;
+  }
+  .taxi-footer-contact-box{
+    justify-content: center;
+  }
+  .hfe-nav-menu__submenu-arrow{
+    margin: 0 auto;
+  }
+  #urbantaxi-header-button-box:after{
+    background: transparent;
+  }
+  #urbantaxi-header-button-box {
+    position: relative;
+    width: 100% !important;
+  }
+  /* custom 404 */
+  .error-page-heading {
+    font: 600 200px / 300px var(--urbantaxi-primary-font-family);
+  }
+  /* slider banner */
+  .preloader {
+    width: 35%;
+  }
+  .urbantaxi-close {
+    position: absolute;
+    top: 0px;
+    right: 5px;
+  }
+  .theme-urbantaxi .mpForm{
+    display: block !important;
+  }
+  .theme-urbantaxi .mpForm:last-child{
+    position: unset;
+    width:100%;
+  }
+  .urbantaxi-modal-content{
+    padding: 0px !important;  
+    bottom: -100px !important;
+    border-radius: 10px !important;
+  }
+  .theme-urbantaxi div.mptbm_transport_search_area div.tabsContentNext{
+    padding: 0px;
+  }
+  .theme-urbantaxi .mptbm_transport_search_area .tabListsNext {
+    padding: 0px 0px 20px 0px;
+  }
+  .theme-urbantaxi .mpForm:last-child .inputList.justifyBetween._fdColumn {
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    bottom: -55px;
+    text-align: center;
+  }
+  .theme-urbantaxi .mptbm_transport_search_area{
+    padding: 15px 15px 80px 15px !important;
+  }
+  .theme-urbantaxi div.mptbm_transport_search_area .tabItemNext .circleTitle{
+    font-size: 13px !important;
+  }
+  .wrapper i, .header-login i{
+    height: 35px;
+    width: 35px;
+    line-height: 36px;
+  }
+  .urbantaxi-car-slider {
+    height: 300px;
+  }
+  .urbantaxi-car-image{
+    width: 70%;
+  }
+  .urbantaxi-thumb {
+    width: 60px;
+    height: 60px;
+  }
+  /* privacy-page */
+  #taxi-privacy-policy-page-content-main-box .elementor-icon-box-wrapper,#taxi-terms-condition-page-content-main-box .elementor-icon-box-wrapper{
+    align-items: start;
+  }
+  #taxi-privacy-policy-page-content-main-box .elementor-icon-box-icon,#taxi-terms-condition-page-content-main-box .elementor-icon-box-icon{
+    margin-top: 6px;
+  }
+  #taxi-privacy-policy-page-content-main-box .elementor-widget-icon-box .elementor-icon-box-icon,#taxi-terms-condition-page-content-main-box .elementor-icon-box-icon{
+    position: relative;
+    top: 4px;
+  }
+  /* footer */
+  .urbantaxi-footer-main-box .taxi-footer-title-box .elementor-heading-title{
+    text-align: center;
+  }
+  .urbantaxi-footer-contact-box .elementor-icon-box-wrapper {
+    justify-content: center;
+  }
+  #urbantaxi-footer-main-section .urbantaxi-footer-main-box {
+    display: block;
+  }
+  #urbantaxi-footer-main-section .urbantaxi-footer-main-box {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .urbantaxi-footer-menu-box ul, .urbantaxi-footer-service-box ul {
+    width: fit-content;
+    margin: auto;
+  }
+  .urbantaxi-footer-main-box h6, .urbantaxi-footer-main-box p,#urbantaxi-footer-main-section .urbantaxi-footer-social-box .ekit_social_media{
+    text-align: center;
+  }
+  .taxi-footer-contact-icon-box{
+    width: 80%;
+    margin: auto;
+  }
+  #urbantaxi-footer-main-section .elementor-widget-icon-box .elementor-icon-box-content{
+    flex-grow: unset;
+    width: auto;
+  }
+  /* about */
+  .taxi-about-image-after-box {
+    content: '';
+    width: 80%;
+    height: 85%;
+  }
+  /* why choose */
+  .why-choose-service-icon-box{
+    width: 80%;
+    margin: auto;
+  }
+  /* cab booking */
+  .urban-taxi-cab-booking-slider-widget .utcb-category-filter{
+    border-radius: 10px !important;
+  }
+}
+@media screen and (max-width:480px) {
+  .post-social-icon-box-main {
+    display: flex;
+    gap: 15px;
+    padding-bottom: 20px;
+  }
+  .single-post .post-meta-content{
+    gap: 10px 0px;
+  }
+  .single-post .post-meta-content span i{
+    font-size: 14px;
+  }
+  .single-post .post-meta-content .entry-author a{
+    font-size: 13px;
+  }
+  .single-post .post-meta-content span {
+    font: 400 13px / 13px var(--urbantaxi-font-family);
+  }
+  .single-post .post-meta-content .entry-author{
+    padding: 4px 10px 4px 4px;
+  }
+  #urbantaxi-footer-top-img-box {
+    position: relative;
+    top: 6px;
+  }
+  /* title banner */
+  .taxi-service-bg-text-box p {
+    font: 900 40px / 60px var(--urbantaxi-primary-font-family);
+  }
+  /* footer */
+  .taxi-footer-contact-icon-box{
+    width: 94%;
+    margin: auto;
+  }
+  /* contact page */
+  .urbantaxi-contact-box .elementor-widget-icon {
+    width: 60px;
+    height: 50px;
+    line-height: 60px;
+  }
+}
+/* mac browser issues  */
+.e--ua-safari .searchform:before{
+	top: 10px;
+}
+.e--ua-safari .taxi-404-image-box img{
+	object-fit: contain;
+}
+.mptbm_transport_search_area .fdColumn._fullWidth {
+	gap: 15px 0px;
+}
+
+#taxi-support-page-content-main-box .urbantaxi-button-box:hover .elementor-button-icon svg {
+  right: 20px;
+}
+
+
+
+
+
+.taxi-gallery-center-image-box{
+  animation: rotateCard 2s forwards;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate-reverse;
+  animation-delay: 1s;
+}
+@keyframes rotateCard{
+  0% {
+    transform: perspective(1500px) rotateY(0deg);
+  }
+  100% {
+      transform: perspective(1500px) rotateY(20deg);
+  }
+}
+
+
+.taxi-about-service-icon-box .elementor-widget-icon-box:hover .elementor-icon{
+  -webkit-transition: .7s;
+  -moz-transition: .7s;
+  -ms-transition: .7s;
+  -o-transition: .7s;
+  -webkit-transform: rotateY(360deg);
+  -moz-transform: rotateY(360deg);
+  -o-transform: rotateY(360deg);
+  -ms-transform: rotateY(360deg);
+  transform: rotateY(360deg);
+}
+
+.how-works-content-main-box:hover .taxi-how-works-section-svg-icon-box{
+  border-radius: 6px;
+  transition: all 1s;
+}
