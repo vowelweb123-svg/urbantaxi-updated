@@ -1013,12 +1013,19 @@ add_action('admin_init', 'urbantaxi_maybe_redirect_to_ocdi');
 /**
  * Disable Header Footer Elementor onboarding on admin initialization
  *
+ * Runs only once (guarded by an option flag) so it does not write to the
+ * database on every admin page load, which would interfere with WP Reset.
+ *
  * @since 1.0.0
  * @return void
  */
 function urbantaxi_admin_init(){
-	delete_option('hfe_start_onboarding');
-	update_option('hfe_onboarding_triggered', 'yes');
+	if ( get_option( 'urbantaxi_hfe_onboarding_done' ) ) {
+		return;
+	}
+	delete_option( 'hfe_start_onboarding' );
+	update_option( 'hfe_onboarding_triggered', 'yes' );
+	update_option( 'urbantaxi_hfe_onboarding_done', 'yes' );
 }
 add_action('admin_init', 'urbantaxi_admin_init', 1);
 
@@ -1187,21 +1194,10 @@ function urbantaxi_delete_plugin_demo_posts() {
 		'BMW 5 Series',
 	];
 
-	// If the flag is set AND none of the target posts exist, nothing left to do.
-	if (get_option('mptbm_demo_deleted')) {
-		$remaining = get_posts([
-			'post_type' => 'mptbm_rent',
-			'posts_per_page' => 1,
-			'post_status' => 'any',
-			'no_found_rows' => true,
-			'update_post_meta_cache' => false,
-			'update_post_term_cache' => false,
-			'title' => $titles_to_delete[0], // quick pre-check
-		]);
-		// Only skip if the first title is truly gone (avoids full query every load)
-		if (empty($remaining)) {
-			return;
-		}
+	// Once the flag is set the posts have already been deleted; bail out
+	// immediately without touching the database on every page load.
+	if ( get_option( 'mptbm_demo_deleted' ) ) {
+		return;
 	}
 
 	$posts = get_posts([

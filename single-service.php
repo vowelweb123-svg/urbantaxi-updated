@@ -100,7 +100,7 @@ $new = new WP_Query($args);
                                     'class' => 'post-thumbnail'
                                 )); ?>
 
-                                <div class="service-meta-image"><img src="<?php echo esc_url(get_post_meta($post->ID, 'service_meta_icon', true)); ?>">
+                                <div class="service-meta-image"><img src="<?php echo esc_url(get_post_meta($post->ID, 'service_meta_icon', true)); ?>" alt="<?php echo esc_attr(get_the_title()); ?>">
 
                                 </div>
                                 <div class="service-meta-button-box">

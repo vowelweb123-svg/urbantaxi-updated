@@ -47,7 +47,8 @@ $urbantaxi_animation_attr = $urbantaxi_enable_animation ? 'zoomIn' : 'none';
       <div class="post-meta-content d-flex" style="justify-content:space-between;">
         <?php if (get_theme_mod('urbantaxi_single_post_author_hide', true)): ?>
         <div class="entry-author"><img class="single-author-image"
-            src="<?php echo esc_url(get_avatar_url(get_the_author_meta('ID'))); ?>"><a
+            src="<?php echo esc_url(get_avatar_url(get_the_author_meta('ID'))); ?>"
+            alt="<?php echo esc_attr(get_the_author()); ?>"><a
             href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID'))); ?>">
             <?php the_author(); ?><span class="screen-reader-text">
               <?php the_author(); ?>
@@ -109,7 +110,8 @@ else: ?>
       <div class="post-meta-content d-flex" style="justify-content:space-between;">
         <?php if (get_theme_mod('urbantaxi_single_post_author_hide', true)): ?>
         <div class="entry-author"><img class="single-author-image"
-            src="<?php echo esc_url(get_avatar_url(get_the_author_meta('ID'))); ?>"><a
+            src="<?php echo esc_url(get_avatar_url(get_the_author_meta('ID'))); ?>"
+            alt="<?php echo esc_attr(get_the_author()); ?>"><a
             href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID'))); ?>">
             <?php the_author(); ?><span class="screen-reader-text">
               <?php the_author(); ?>
