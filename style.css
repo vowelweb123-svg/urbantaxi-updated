@@ -72,6 +72,12 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
   font-style: normal;
   font-display: swap;
 }
+/* font awesome */
+@font-face {
+  font-family: "Font Awesome 6 Free";
+  src: url("webfonts/fa-solid-900.woff2") format("woff2");
+  font-display: swap;
+}
 .screen-reader-text {
   border: 0;
   clip: rect(1px, 1px, 1px, 1px);
@@ -2233,9 +2239,9 @@ cite {
   color: var(--urbantaxi-quaternary-theme-color);
 }
 .urbantaxi-transportation-content-box{
-  background: #393737;
+  background: var(--urbantaxi-tertiary-theme-color);
   text-align: center;
-  border-radius: 20px;
+  border-radius: 6px;
   height: 100%;
 }
 .urbantaxi-transportation-image-box{
@@ -2250,8 +2256,8 @@ cite {
 }
 span.cab-booking-btn-text {
   font: 400 16px / 16px var(--urbantaxi-font-family);
-  position: relative;
-  top: 2px;
+  /* position: relative;
+  top: 2px; */
 }
 .transportation-price-box{
   align-self: center;
@@ -3185,6 +3191,9 @@ span.cab-booking-btn-text {
   background: transparent;
 }
 /* slider form */
+.taxi-slider-banner-main-section {
+  height: 800px;
+}
 .mptbm-osm-autocomplete{
   color: #000;
 }

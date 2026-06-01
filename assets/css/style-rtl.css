@@ -49,83 +49,9 @@ body{
     -webkit-transform: scaleX(-1);
     transform: scaleX(-1);
 }
-.taxi-check-availability-road-box{
-    right: -25%;
-    left: unset;
-    top: -10px;
-}
-.taxi-speed-content-box-one,.taxi-speed-content-box-two,.taxi-speed-content-box-four,.taxi-speed-content-box-three,.taxi-speed-content-box-five,.taxi-get-service-car-image-box{
-/*     flex-direction: row-reverse !important; */
-	-webkit-transform: scaleX(-1) !important;
-    transform: scaleX(-1);
-}
-.taxi-speed-content-inner-box-one,.taxi-speed-content-inner-box-three {
-	flex-direction: row-reverse !important;
-}
-.taxi-speed-content-inner-box-one .taxi-speed-content-box,.taxi-speed-content-inner-box-two .taxi-speed-content-box,.taxi-speed-content-inner-box-four .taxi-speed-content-box,.taxi-speed-content-inner-box-three .taxi-speed-content-box,.taxi-speed-content-inner-box-five .taxi-speed-content-box{
-    -webkit-transform: scaleX(-1) !important;
-    transform: scaleX(-1);
-}
-.taxi-speed-content-box-five{
-	left: 90px;
-    right: unset;
-}
-.taxi-speed-content-inner-box-four .taxi-speed-image-box{
-    justify-content: end;
-}
 .utcb-post-content-block .post-read-more-wrapper{
 	justify-content: right;
 }    
-.taxi-content-box-one .taxi-check-count-box {
-    position: relative;
-    left: 40px;
-}
-.taxi-content-box-two .taxi-check-count-box {
-    position: absolute;
-    transform: rotate(-40deg);
-    bottom: -155%;
-    right: -37%;
-    width: fit-content;
-}
-.taxi-content-box-three .taxi-check-count-box {
-    position: absolute;
-    width: fit-content;
-    right: unset;
-    transform: rotate(-20deg);
-    bottom: 140%;
-    left: 0;
-}
-.taxi-content-box-four .taxi-check-count-box {
-    position: absolute;
-    right: -30%;
-    transform: rotate(-55deg);
-    bottom: -110%;
-}
-.taxi-content-box-two .taxi-check-title-box {
-    position: absolute;
-    left: 45%;
-    transform: rotate(-41deg);
-    bottom: -195px;
-}
-.taxi-content-box-three .taxi-check-title-box {
-    position: absolute;
-    right: 50%;
-    transform: rotate(-22deg);
-    bottom: 120%;
-}
-.taxi-content-box-four .taxi-check-title-box {
-    position: absolute;
-    left: 55%;
-    transform: rotate(-50deg);
-    bottom: -95%;
-}
-.taxi-moving-car-box {
-	offset-path: unset;
-	top: 40px;
-	width: 150px !important;
-	right: 22%;
-	transform: rotate(180deg);
-}
 .taxi-slider-form-outer-box {
     position: absolute;
     top: -15%;
@@ -135,9 +61,6 @@ body{
 }
 .utcb-title-list .utcb-title-heading{
     text-align: right !important;
-}
-.taxi-check-availability-container-box {
-    left: 0%;
 }
 .urbantaxi-imported.home .elementor-icon-box-wrapper {
     align-items: center !important;
@@ -156,67 +79,38 @@ body{
 .urbantaxi-imported .urbantaxi-grid-container .urbantaxi-blog-excerpt{
     text-align: right !important;
 }
-
+.heading-style-widget-heading{
+    text-align: right;
+}
+.offer-counter-image-box {
+    left: 30px;
+}
+.taxi-get-service-mobile-image-box{
+    left: unset;
+    right: 100px;
+}
+.taxi-get-service-icon-box .elementor-widget-icon-box .elementor-icon-box-content{
+    text-align: right;
+}
+#taxi-faq-main-section{
+    margin: 0px;
+    padding-right: 0px ;
+    padding-left: 255px;
+    margin-right: 0px;
+    margin-left: 100px;
+}
+.ut-slide__content p,.ut-slide__content h1{
+    text-align: right;
+}
+.ut-slide__content .ut-slide__description{
+    margin-left: auto;
+    margin-right: 0;
+}
 @media screen and (max-width: 1366px){
 	.urbantaxi-car-thumbs{
 		left: 0;
 	}
 }
-@media screen and (max-width: 1120px) and (min-width: 1025px) {
-    .taxi-content-box-one .taxi-check-title-box {
-		top: 42px;
-        transform: rotate(-15deg);
-        left: -50px;
-    }
-	.taxi-content-box-two .taxi-check-title-box {
-		left: 25%;
-		transform: rotate(-26deg);
-		bottom: -155px;
-    }
-	.taxi-content-box-three .taxi-check-title-box {
-		right: 80%;
-		transform: rotate(-42deg);
-		bottom: 30%;
-    }
-	.taxi-content-box-four .taxi-check-title-box {
-		left: 30%;
-		transform: rotate(-53deg);
-		bottom: -125%;
-    }
-}
-@media screen and (max-width: 1024px) and (min-width: 992px) {
-    .taxi-content-box-one .taxi-check-title-box {
-        top: 28px;
-        left: 20px;
-        transform: rotate(-5deg);
-    }
-	.taxi-content-box-two .taxi-check-title-box {
-   	 	position: absolute;
-		left: 12%;
-		transform: rotate(-41deg);
-		bottom: -270px;
-	}
-	.taxi-content-box-three .taxi-check-title-box {
-		position: absolute;
-		right: 40%;
-		transform: rotate(-25deg);
-		bottom: 118%;
-	}
-	.taxi-content-box-four .taxi-check-title-box {
-		position: absolute;
-		left: 28%;
-		transform: rotate(-54deg);
-		bottom: -90%;
-	}
-	.taxi-moving-car-box {
-        offset-path: unset;
-        top: 40px;
-        width: 150px !important;
-        right: 22%;
-        transform: rotate(180deg);
-    }
-}
-
 @media screen and (max-width: 991px) and (min-width: 768px){
 	.taxi-speed-content-box-five {
         position: relative;
@@ -236,24 +130,4 @@ body{
 		left: 0;
 		right: 0;
 	}
-}
-
-
-
-
-
-/* moving car */
-.taxi-moving-car-box {
-    position: absolute;
-    bottom: 0;
-    offset-path: path('M1108.2 43.4979C999.004 4.72794 709.698 -42.5799 426.024 78.3469C156.378 200.319 44.8631 361.933 0.863586 437.294') !important;
-    animation: moveCar 4s linear infinite reverse;
-}
-.taxi-moving-car-box {
-    offset-path: unset;
-    top: 40px;
-    width: 150px !important;
-    right: 7%;
-    transform: rotate(180deg);
-    left: -50%;
 }
