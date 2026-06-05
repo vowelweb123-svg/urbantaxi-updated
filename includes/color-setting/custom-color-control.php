@@ -21,8 +21,8 @@
 
     if($urbantaxi_scroll_alignment == 'right'){
         $urbantaxi_theme_custom_setting_css .='.scroll-up{';
-            $urbantaxi_theme_custom_setting_css .='right: 30px;!important;';
-			$urbantaxi_theme_custom_setting_css .='left: auto;!important;';
+            $urbantaxi_theme_custom_setting_css .='right: 30px !important;';
+			$urbantaxi_theme_custom_setting_css .='left: auto !important;';
         $urbantaxi_theme_custom_setting_css .='}';
     }else if($urbantaxi_scroll_alignment == 'center'){
         $urbantaxi_theme_custom_setting_css .='.scroll-up{';
@@ -30,7 +30,7 @@
         $urbantaxi_theme_custom_setting_css .='}';
     }else if($urbantaxi_scroll_alignment == 'left'){
         $urbantaxi_theme_custom_setting_css .='.scroll-up{';
-            $urbantaxi_theme_custom_setting_css .='left: 30px;!important;';
-			$urbantaxi_theme_custom_setting_css .='right: auto;!important;';
+            $urbantaxi_theme_custom_setting_css .='left: 30px !important;';
+			$urbantaxi_theme_custom_setting_css .='right: auto !important;';
         $urbantaxi_theme_custom_setting_css .='}';
     }

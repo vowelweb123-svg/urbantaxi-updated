@@ -20,7 +20,7 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 :root {
   --urbantaxi-primary-theme-color: #FDC702;
-  --urbantaxi-secondary-theme-color: var(--urbantaxi-secondary-theme-color)fff;
+  --urbantaxi-secondary-theme-color: var(--urbantaxi-secondary-theme-color);
   --urbantaxi-tertiary-theme-color: var(--urbantaxi-tertiary-theme-color);
   --urbantaxi-quaternary-theme-color: #111317;
   --urbantaxi-light-yellow: #40381A;

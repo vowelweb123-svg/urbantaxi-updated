@@ -236,6 +236,8 @@ function urbantaxi_after_import_setup() {
             ),
             array('%s', '%s', '%s', '%s', '%s', '%s')
     );
+
+    update_option('elementor_unfiltered_files_upload', '');
 }
 
 add_action( 'ocdi/after_import', 'urbantaxi_after_import_setup' );
