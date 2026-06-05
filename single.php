@@ -54,6 +54,7 @@ get_header();
       <?php
         $post_share_url   = get_permalink();
         $post_share_title = get_the_title();
+        $instagram_url = get_theme_mod('urbantaxi_instagram_url', 'https://www.instagram.com/');
         $in_share = 'https://wa.me/?text=' . rawurlencode( $post_share_title . ' ' . $post_share_url );
         $tw_share = 'https://twitter.com/intent/tweet?url=' . rawurlencode( $post_share_url ) . '&text=' . rawurlencode( $post_share_title );
         $fb_share = 'https://www.facebook.com/sharer/sharer.php?u=' . rawurlencode( $post_share_url );
@@ -62,7 +63,9 @@ get_header();
       <div class="col-lg-1 col-md-2 text-center">
         <div class="post-social-icon-box">
           <div class="post-social-icon-box-main">
-            <p class=""><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_html_e( 'Instagram', 'urbantaxi' ); ?></span></a></p>
+            <?php if ( $instagram_url ) : ?>
+            <p class=""><a href="<?php echo esc_url( $instagram_url ); ?>" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_html_e( 'Instagram', 'urbantaxi' ); ?></span></a></p>
+            <?php endif; ?>
             <p class=""><a href="<?php echo esc_url( $tw_share ); ?>" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-twitter" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_html_e( 'Share on Twitter', 'urbantaxi' ); ?></span></a></p>
             <p class=""><a href="<?php echo esc_url( $fb_share ); ?>" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_html_e( 'Share on Facebook', 'urbantaxi' ); ?></span></a></p>
             <p class=""><a href="<?php echo esc_url( $li_share ); ?>" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_html_e( 'Share on LinkedIn', 'urbantaxi' ); ?></span></a></p>

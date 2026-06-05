@@ -743,3 +743,46 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // accessibility end
+
+
+// form dropdown accessibility start 
+document.addEventListener('DOMContentLoaded', function () {
+
+    function makeDropdownItemsAccessible() {
+
+        document.querySelectorAll('.mp_input_select_list li').forEach(function (item) {
+
+            item.setAttribute('tabindex', '0');
+            item.setAttribute('role', 'option');
+
+            if (!item.hasAttribute('data-keyboard-bound')) {
+
+                item.setAttribute('data-keyboard-bound', 'true');
+
+                item.addEventListener('keydown', function (e) {
+
+                    if (e.key === 'Enter' || e.key === ' ') {
+
+                        e.preventDefault();
+
+                        item.click();
+
+                    }
+
+                });
+
+            }
+
+        });
+
+    }
+
+    makeDropdownItemsAccessible();
+
+    document.addEventListener('click', function () {
+        setTimeout(makeDropdownItemsAccessible, 100);
+    });
+
+});
+
+// form dropdown accessibility end

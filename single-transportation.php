@@ -12,9 +12,12 @@ if (!defined('ABSPATH')) {
 
 global $wp_query, $post;
 
-$slug = basename(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
+$slug = sanitize_text_field(get_query_var('name'));
+if (empty($slug)) {
+    $slug = sanitize_text_field(get_query_var('pagename'));
+}
 
-$post_obj = get_page_by_path($slug, OBJECT, 'mptbm_rent');
+$post_obj = $slug ? get_page_by_path($slug, OBJECT, 'mptbm_rent') : null;
 
 if ($post_obj) {
 

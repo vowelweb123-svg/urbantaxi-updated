@@ -1181,7 +1181,7 @@ if (!function_exists('skip_ecab_taxi_setup_wizard')) {
 // for ecab booking demo import issue end
 
 // for deleting default posts in taxi plugin
-add_action('wp_loaded', 'urbantaxi_delete_plugin_demo_posts');
+add_action('ocdi/after_import', 'urbantaxi_delete_plugin_demo_posts');
 function urbantaxi_delete_plugin_demo_posts() {
 
 	$titles_to_delete = [

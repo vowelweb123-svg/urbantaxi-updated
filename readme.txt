@@ -6,11 +6,15 @@ Requires PHP: 7.4
 Tested up to: 6.8
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
-Tags: left-sidebar, right-sidebar, custom-background, custom-colors, custom-logo, custom-menu, custom-header, featured-images, full-width-template, one-column, two-columns, theme-options, translation-ready, rtl-language-support, blog, portfolio, e-commerce
+Tags: taxi booking, cab booking, transportation, ride sharing, chauffeur, airport transfer, woocommerce, business, booking, responsive, custom-background, custom-logo, featured-images, translation-ready
 
 == Description ==
 
-Transform your website into the ultimate destination for tech enthusiasts with the Urbantaxi theme. Designed specifically for showcasing innovative Urbantaxis, smart devices, and modern electronics, this theme offers a sleek, responsive, and user-friendly experience for your visitors. Whether you’re running an online store, a review blog, or a product showcase, Urbantaxi is packed with features to make your content shine. With fully customizable layouts, you can highlight smart home devices, kitchen gadgets, lighting solutions, and entertainment gadgets in a visually engaging way. The theme also supports high-resolution images, video embedding, and product sliders, making it perfect for featuring tech accessories, home automation gadgets, security devices, and energy-saving tools. Built with WooCommerce compatibility, you can easily turn your site into an online shop selling the latest home appliances, cleaning gadgets, or fitness tech gadgets. The Urbantaxi theme is fully optimized for SEO, ensuring that your posts on smart thermostats, robotic vacuum cleaners, or innovative kitchen tools rank higher in search engines. Mobile-friendly design ensures your audience enjoys seamless browsing on smartphones, tablets, or desktops. Integrated with popular page builders, including Elementor and Gutenberg, this theme lets you design your website effortlessly. Whether you’re a tech blogger, gadget reviewer, or online retailer, Urbantaxi provides the perfect platform to engage visitors, increase conversions, and showcase cutting-edge home technology. Bring your smart living content to life with this feature-rich, modern, and versatile theme.
+UrbanTaxi is a modern, powerful, and professionally designed Taxi Booking WordPress Theme crafted for online taxi booking businesses, ride-sharing services, cab operators, chauffeur companies, airport transfer services, corporate transportation providers, and mobility startups. Designed for businesses similar to Uber, Ola, Lyft, and local cab service providers, UrbanTaxi delivers a seamless booking experience with a clean interface and conversion-focused design.
+
+Built with full compatibility for the E-Cab Taxi Booking Manager for WooCommerce, UrbanTaxi enables customers to easily book rides, select pickup and drop locations, calculate fares, schedule trips, and complete secure online payments directly from your website. The theme also includes a dedicated driver registration system integrated with Contact Form 7, allowing drivers to submit applications and join your transportation network effortlessly.
+
+UrbanTaxi comes with responsive layouts, service showcase sections, fleet management layouts, driver profiles, testimonials, pricing sections, booking forms, blog pages, FAQ sections, and business-focused inner pages. Fully optimized for speed, SEO, and mobile devices, UrbanTaxi is the complete solution for building a professional taxi booking and ride-sharing website.
 
 == Resources ==
 
@@ -64,15 +68,6 @@ Source 		: https://pxhere.com/en/photo/145986
 License 	: CC0 1.0 Universal (CC0 1.0)
 License URI : https://pxhere.com/license
 Source 		: https://pxhere.com/en/photo/762412
-
-
-
-
-
-
-
-
-
 
 Google Web Fonts (Roboto) By Google - https://google.com
 * Roboto by Indian Type Foundry, Licensed under Open Font License, https://fonts.google.com/specimen/Roboto

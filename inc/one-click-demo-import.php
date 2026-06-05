@@ -28,9 +28,6 @@ function urbantaxi_after_import_setup() {
     }
 
     $settings['enable_view_search_result_page'] = 'slider-booking-form';
-    $settings['enable_return_in_different_date'] = 'yes';
-    $settings['enable_filter_via_features'] = 'yes';
-    $settings['show_summary_mobile'] = 'yes';
 
     update_option('mptbm_general_settings', $settings);
 
