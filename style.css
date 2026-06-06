@@ -20,8 +20,8 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 :root {
   --urbantaxi-primary-theme-color: #FDC702;
-  --urbantaxi-secondary-theme-color: var(--urbantaxi-secondary-theme-color);
-  --urbantaxi-tertiary-theme-color: var(--urbantaxi-tertiary-theme-color);
+  --urbantaxi-secondary-theme-color: #ffffff;
+  --urbantaxi-tertiary-theme-color: #0B0B0B;
   --urbantaxi-quaternary-theme-color: #111317;
   --urbantaxi-light-yellow: #40381A;
   --urbantaxi-font-family: "Roboto";
@@ -1751,6 +1751,7 @@ button.wp-block-search__button:hover {
   border: none;
   width: 100%;
   background: var(--urbantaxi-tertiary-theme-color);
+  color: #fff;
 }
 .urbantaxi-subscribe-btn .wpcf7-spinner {
   position: absolute;
@@ -3123,8 +3124,8 @@ span.cab-booking-btn-text {
 }
 .mptbm-show-search-result .leftSidebar{
   margin-right: 0px !important;
-  height: 750px !important;
-  overflow-y: scroll !important;
+  max-height: 750px !important;
+  overflow-y: auto !important;
 }
 .mptbm-show-search-result{
   background-color: var(--urbantaxi-tertiary-theme-color);
@@ -3206,6 +3207,9 @@ span.cab-booking-btn-text {
   background: transparent;
 }
 /* slider form */
+.mp_input_select_list.start_time_list{
+  height: 150px !important;
+}
 .mp_sticky_depend_area .mptbm-filter-feature{
   display: none !important;
 }
@@ -3245,10 +3249,27 @@ div[class*="dLoader"] {
   margin: 15px 0 0 0;
 }
 .theme-urbantaxi .mpStyle ul.mp_input_select_list li, .theme-urbantaxi .mpStyle ul.mp_input_select_list li{
-  color: var(--urbantaxi-tertiary-theme-color);
+  color: var(--urbantaxi-secondary-theme-color);
+  background: var(--urbantaxi-tertiary-theme-color);
+}
+.theme-urbantaxi table.ui-datepicker-calendar th{
+  color: var(--urbantaxi-secondary-theme-color);;
+}
+.theme-urbantaxi #ui-datepicker-div,.theme-urbantaxi #ui-datepicker-div.ui-datepicker td{
+  background-color: var(--urbantaxi-tertiary-theme-color);
+}
+.theme-urbantaxi #ui-datepicker-div.ui-datepicker td a,.theme-urbantaxi #ui-datepicker-div .ui-state-default{
+  color: var(--urbantaxi-secondary-theme-color);;
 }
 .theme-urbantaxi .mpStyle .mpForm label span,.theme-urbantaxi .mptbm_transport_search_area option,.theme-urbantaxi div.mptbm_transport_search_area .mptbm_search_area label .formControl{
   color: var(--urbantaxi-secondary-theme-color);
+}
+.mptbm-osm-autocomplete{
+  background-color: var(--urbantaxi-tertiary-theme-color);
+  color: var(--urbantaxi-secondary-theme-color);
+}
+.mptbm-osm-autocomplete > div {
+  background-color: #000 !important;
 }
 #taxi-slider-main-section #mptbm_get_vehicle:hover {
   background-color: var(--urbantaxi-secondary-theme-color) !important;
@@ -3895,6 +3916,9 @@ button.woocommerce-Button.button:hover, .woocommerce-Button:hover, .woocommerce-
 .wc-block-components-order-summary .wc-block-components-order-summary-item__quantity span{
   color: var(--urbantaxi-tertiary-theme-color) !important;
 }
+.wc-block-components-textarea{
+  color: var(--urbantaxi-tertiary-theme-color) !important;
+}
 .woocommerce-checkout .wc-block-components-product-price__value.is-discounted,.woocommerce-checkout .wc-block-components-product-price__regular,.woocommerce-checkout .price del{
   font: 400 22px / 28px var(--urbantaxi-primary-font-family);
   color: var(--urbantaxi-tertiary-theme-color);
@@ -3926,6 +3950,10 @@ li.woolentor-cart {
 }
 .wc-block-checkout__billing-fields label,.wc-blocks-components-select .wc-blocks-components-select__select{
   color: var(--urbantaxi-secondary-theme-color) !important;
+}
+.wc-blocks-components-select .wc-blocks-components-select__select{
+  color: #fff !important;
+  background: var(--urbantaxi-quaternary-theme-color) !important;
 }
 /* single product page */
 .single-product .price ins{
@@ -4761,7 +4789,11 @@ body:not(.woocommerce-block-theme-has-button-styles) .wc-block-components-button
     padding: 20px;
   }
   /* slider form */
-  .mptbm-show-search-result .bg_image_area{
+  .mptbm_booking_item .bg_image_area > div {
+    /* background-size: contain!important;
+    background-repeat: no-repeat !important; */
+  }
+  .theme-urbantaxi .mp_sticky_section .mptbm-vehicle-wrapper [data-bg-image]{
     background-size: contain !important;
     background-position: center center !important;
     background-repeat: no-repeat !important;
@@ -5663,11 +5695,15 @@ body:not(.woocommerce-block-theme-has-button-styles) .wc-block-components-button
     transform: scale(400);
 }
 /* service */
-.how-works-content-main-box{
+.taxi-how-works-section-svg-icon-box{
+  position: relative;
+  z-index: 2;
+}
+.how-works-content-main-box,.tsw-card{
 	overflow: hidden;
 	position: relative;
 }
-.how-works-content-main-box::after {
+.how-works-content-main-box::after,.tsw-card::after {
   content: '';
   position: absolute;
   inset: 0;
@@ -5678,7 +5714,7 @@ body:not(.woocommerce-block-theme-has-button-styles) .wc-block-components-button
   opacity: 0.4;
   height: 100%;
   position: absolute;
-  z-index: -1;
+  z-index: 0;
   width: 100%;
   /* left: -50%; */
   bottom: -50%;
@@ -5692,7 +5728,7 @@ body:not(.woocommerce-block-theme-has-button-styles) .wc-block-components-button
   -o-transition: all 0.4s;
   transition: all 0.4s;
 }
-.how-works-content-main-box:hover::after {
+.how-works-content-main-box:hover::after,.tsw-card:hover::after {
   -webkit-transform: scale(3);
   -moz-transform: scale(3);
   -ms-transform: scale(3);
@@ -5739,7 +5775,7 @@ body:not(.woocommerce-block-theme-has-button-styles) .wc-block-components-button
   }
 }
 .taxi-faq-left-image-box img ,.taxi-get-service-car-image-box img{
-  animation : leftright 2s infinite alternate ease-in-out;
+/*   animation : leftright 2s infinite alternate ease-in-out; */
 }
 @keyframes leftright{
   0%, 20% {

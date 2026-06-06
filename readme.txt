@@ -23,8 +23,7 @@ Images
 * Some images are sourced from PxHere and are licensed under the Creative Commons CC0 (Public Domain) license:https://pxhere.com/
 * CC0 licensed images are free for commercial use and redistribution.
 
-Images used in location.
-
+Images used in Destination.
 License 	: CC0 1.0 Universal (CC0 1.0)
 License URI : https://pxhere.com/license
 Source 		: https://pxhere.com/en/photo/900057
@@ -42,7 +41,6 @@ License URI : https://pxhere.com/license
 Source 		: https://pxhere.com/en/photo/7619
 
 Images used in about.
-
 License 	: CC0 1.0 Universal (CC0 1.0)
 License URI : https://pxhere.com/license
 Source 		: https://pxhere.com/en/photo/854665
@@ -51,23 +49,72 @@ License 	: CC0 1.0 Universal (CC0 1.0)
 License URI : https://pxhere.com/license
 Source 		: https://pxhere.com/en/photo/322378
 
-Images used in team.
+License 	: CC0 1.0 Universal (CC0 1.0)
+License URI : https://pxhere.com/license
+Source 		: https://www.pexels.com/photo/busy-ethnic-man-with-hand-in-pocket-5835310/
 
+License 	: CC0 1.0 Universal (CC0 1.0)
+License URI : https://pxhere.com/license
+Source 		: https://www.pexels.com/photo/multiethnic-cab-drivers-with-coffee-to-go-talking-on-road-5835432/
+
+License 	: CC0 1.0 Universal (CC0 1.0)
+License URI : https://pxhere.com/license
+Source 		: https://www.pexels.com/photo/a-couple-calling-a-taxi-13931535/
+
+License 	: CC0 1.0 Universal (CC0 1.0)
+License URI : https://pxhere.com/license
+Source 		: https://www.pexels.com/photo/taxi-car-on-city-street-12777405/
+
+License 	: CC0 1.0 Universal (CC0 1.0)
+License URI : https://pxhere.com/license
+Source 		: https://www.pexels.com/photo/anonymous-ethnic-female-traveler-opening-door-of-cab-on-city-street-6280698/
+
+Images used in team background.
 License 	: CC0 1.0 Universal (CC0 1.0)
 License URI : https://pxhere.com/license
 Source 		: https://pxhere.com/en/photo/426683
 
+Images used in service page.
 License 	: CC0 1.0 Universal (CC0 1.0)
 License URI : https://pxhere.com/license
-Source 		: https://pxhere.com/en/photo/867530
+Source 		: https://www.pexels.com/photo/diverse-confident-cab-drivers-near-car-in-town-5835458/
 
 License 	: CC0 1.0 Universal (CC0 1.0)
 License URI : https://pxhere.com/license
-Source 		: https://pxhere.com/en/photo/145986
+Source 		: https://www.pexels.com/photo/cheerful-young-man-driving-orange-car-11614611/
+
+Images used in Blog posts.
+License 	: CC0 1.0 Universal (CC0 1.0)
+License URI : https://pxhere.com/license
+Source 		: https://www.pexels.com/photo/motor-vehicles-on-the-road-5995046/
 
 License 	: CC0 1.0 Universal (CC0 1.0)
 License URI : https://pxhere.com/license
-Source 		: https://pxhere.com/en/photo/762412
+Source 		: https://www.pexels.com/photo/praha-airport-terminal-1-with-yellow-taxis-36046866/
+
+License 	: CC0 1.0 Universal (CC0 1.0)
+License URI : https://pxhere.com/license
+Source 		: https://www.pexels.com/photo/ethnic-man-talking-on-smartphone-standing-near-cab-5835318/
+
+License 	: CC0 1.0 Universal (CC0 1.0)
+License URI : https://pxhere.com/license
+Source 		: https://www.pexels.com/photo/praha-airport-terminal-1-with-yellow-taxis-36046866/
+
+License 	: CC0 1.0 Universal (CC0 1.0)
+License URI : https://pxhere.com/license
+Source 		: https://www.pexels.com/photo/man-holding-newspaper-1843360/
+
+License 	: CC0 1.0 Universal (CC0 1.0)
+License URI : https://pxhere.com/license
+Source 		: https://www.pexels.com/photo/yellow-uber-taxi-on-urban-street-30463342/
+
+License 	: CC0 1.0 Universal (CC0 1.0)
+License URI : https://pxhere.com/license
+Source 		: https://www.pexels.com/photo/man-in-black-suit-standing-and-waving-hand-near-yellow-vehicle-4964920/
+
+License 	: CC0 1.0 Universal (CC0 1.0)
+License URI : https://pxhere.com/license
+Source 		: https://www.pexels.com/photo/self-confident-ethnic-taxi-driver-leaning-on-car-in-city-5835457/
 
 Google Web Fonts (Roboto) By Google - https://google.com
 * Roboto by Indian Type Foundry, Licensed under Open Font License, https://fonts.google.com/specimen/Roboto
@@ -135,6 +182,6 @@ If you have any questions regarding licensing, please contact: support@vowelweb.
 
 == Changelog ==
 
-= 09-01-2026 - 1.0.0 =
+= 06-06-2026 - 1.0.0 =
 
 * Initial Release.
